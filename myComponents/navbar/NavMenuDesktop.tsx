@@ -9,9 +9,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-export default function NavMenu() {
+export default function NavMenuDesktop() {
   return (
-    <>
+    <div className="absolute    top-full -translate-y-1/2  left-1/2 -translate-x-1/2 w-fit">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -109,6 +109,6 @@ export default function NavMenu() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-    </>
+    </div>
   );
 }

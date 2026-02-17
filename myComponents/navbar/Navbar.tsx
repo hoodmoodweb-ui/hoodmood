@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 import MenuButton from "./MenuButton";
-import NavMenu from "./NavMenu";
+import NavMenuDesktop from "./NavMenuDesktop";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className=" flex justify-between">
+    <nav className="relative flex justify-between items-center bg-blue-200 ">
       ble ble ble
-      <NavMenu />
+      <NavMenuDesktop />
       <MenuButton menuState={isOpen} menuHandler={setIsOpen} />
     </nav>
   );
