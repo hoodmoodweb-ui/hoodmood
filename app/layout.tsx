@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/myComponents/themeProvider/ThemeProvider";
 
 const fontAnton = Anton({
   variable: "--anton",
@@ -26,9 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="pl" suppressHydrationWarning>
       <body className={`${fontAnton.variable} ${fontRoboto.variable} `}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

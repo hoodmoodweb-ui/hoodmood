@@ -1,4 +1,4 @@
-import ThemeSwitch from "@/myComponents/navbar/ThemeSwitch";
+import ThemeSwitch from "@/myComponents/themeSwitch/ThemeSwitch";
 
 export default function Home() {
   return (

@@ -1,4 +1,4 @@
-import { Switch } from "@/components/ui/switch";
+import { Switch } from "@/myComponents/themeSwitch/switch";
 
 export default function ThemeSwitch() {
   return (
