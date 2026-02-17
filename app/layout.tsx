@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Anton, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/myComponents/themeProvider/ThemeProvider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const fontAnton = Anton({
   variable: "--anton",
@@ -35,7 +36,10 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <TooltipProvider>
+
           {children}
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>
