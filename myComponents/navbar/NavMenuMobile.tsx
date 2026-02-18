@@ -7,12 +7,11 @@ import {
 import Link from "next/link";
 import ButtonSecondary from "../common/ButtonSecondary";
 import ButtonPrimary from "../common/ButtonPrimary";
-import { Switch } from "../themeSwitch/switch";
 
 export default function NavMenuMobile() {
   return (
-    <div className="absolute top-full left-0 right-0 bg-black md:hidden">
-      <Accordion type="single" collapsible className="max-w-lg uppercase">
+    <div className="absolute top-full left-0 right-0 bg-black md:hidden px-5">
+      <Accordion type="single" collapsible className=" uppercase">
         <AccordionItem value="shipping">
           <AccordionTrigger>Oferta</AccordionTrigger>
           <AccordionContent>
@@ -71,13 +70,15 @@ export default function NavMenuMobile() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="kadra">
-          <AccordionTrigger>kadra</AccordionTrigger>
+          <AccordionTrigger hideChevron={true}>
+            <Link href="/docs">kadra</Link>
+          </AccordionTrigger>
         </AccordionItem>
         <AccordionItem value="kolonie">
-          <AccordionTrigger>kolonie</AccordionTrigger>
+          <AccordionTrigger hideChevron={true}>kolonie</AccordionTrigger>
         </AccordionItem>
-        <AccordionItem value="aktualnosci">
-          <AccordionTrigger>aktualności</AccordionTrigger>
+        <AccordionItem value="kolonie">
+          <AccordionTrigger hideChevron={true}>Aktualności</AccordionTrigger>
         </AccordionItem>
       </Accordion>
       <div className="bg-blue-500 flex justify-end gap-2">
