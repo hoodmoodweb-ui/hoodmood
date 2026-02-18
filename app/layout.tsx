@@ -30,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" suppressHydrationWarning>
-      <body className={`${fontAnton.variable} ${fontRoboto.variable} `}>
+      <body
+        className={`${fontAnton.variable} ${fontRoboto.variable} max-w-480 m-auto`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

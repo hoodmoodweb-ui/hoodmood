@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 export default function NavMenuDesktop() {
   return (
-    <div className="absolute    top-full -translate-y-1/2  left-1/2 -translate-x-1/2 w-fit">
+    <div className="hidden  md:flex justify-center  ">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
