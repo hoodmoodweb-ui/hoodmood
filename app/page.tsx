@@ -1,4 +1,4 @@
-import Offer from "../myComponents/sections/Offer";
+import Offer from "../myComponents/sections/offer/Offer";
 
 export default function Home() {
   return (
