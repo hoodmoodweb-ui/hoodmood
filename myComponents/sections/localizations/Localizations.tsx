@@ -22,7 +22,7 @@ export default function Localizations() {
           />
         ))}
       </div>
-      <Link href="/oferta/koszalin">Zobacz pełną ofertę</Link>
+      <Link href="/oferta/koszalin">Sprawdź grafik</Link>
     </SectionContainer>
   );
 }

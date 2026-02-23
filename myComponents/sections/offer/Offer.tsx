@@ -3,6 +3,7 @@ import SectionContent from "../../common/SectionContent";
 import { data, offer } from "./data";
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import { HoverCard } from "@/myComponents/common/HoverCard";
+import Link from "next/link";
 const Offer = () => {
   return (
     <SectionContainer>
@@ -22,6 +23,7 @@ const Offer = () => {
           />
         ))}
       </div>
+      <Link href="/oferta/koszalin">Zobacz pełną ofertę</Link>
     </SectionContainer>
   );
 };
