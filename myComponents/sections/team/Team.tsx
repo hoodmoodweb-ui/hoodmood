@@ -21,10 +21,16 @@ export default function Team() {
         description={data.description}
       />
       {/* <div className="flex flex-col overflow-hidden gap-4 md:flex-row md:items-center  md:justify-between"> */}
-      <Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 2000 })]}>
+      <Carousel
+        opts={{ align: "start", loop: true }}
+        plugins={[Autoplay({ delay: 2000 })]}
+      >
         <CarouselContent>
           {instructors.map((item) => (
-            <CarouselItem className="basis-1/4" key={item.id}>
+            <CarouselItem
+              className="basis-1/1 md:basis-1/3 lg:basis-1/3 xl:basis-1/4 md:pl-8 lg:pl-8 xl:pl-8"
+              key={item.id}
+            >
               <HoverCard
                 title={item.name}
                 description={item.role}
