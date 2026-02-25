@@ -12,7 +12,7 @@ export default function Localizations() {
         title={data.title}
         description={data.description}
       />
-      <div className="flex flex-col overflow-hidden gap-4 md:flex-row md:items-center  md:justify-between">
+      <div className="flex flex-col overflow-hidden gap-8 md:flex-row md:items-center  md:justify-between">
         {localizations.map((item) => (
           <HoverCard
             key={item.title}
@@ -20,11 +20,13 @@ export default function Localizations() {
             description={item.description}
             img={item.img}
             hoverImg={item.hoverImg}
-            headerStyles="text-7xl"
+            headerStyles="text-5xl md:text-3xl"
           />
         ))}
       </div>
-      <ButtonPrimary href="/oferta/koszalin">Sprawdź grafik</ButtonPrimary>
+      
+        <ButtonPrimary href="/oferta/koszalin">Sprawdź grafik</ButtonPrimary>
+    
     </SectionContainer>
   );
 }
