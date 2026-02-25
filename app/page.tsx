@@ -5,12 +5,14 @@ import ProofBento from "@/myComponents/sections/proofBento/ProofBento";
 import HowToJoin from "@/myComponents/sections/howToJoin/HowToJoin";
 import Opinions from "@/myComponents/sections/opinions/Opinions";
 import Faq from "@/myComponents/sections/faq/Faq";
+import Player from "@/myComponents/sections/player/Player";
 
 export default function Home() {
   return (
     <main className=" space-y-36 my-36">
       <Offer />
       <Localizations />
+      <Player />
       <Team />
       <ProofBento />
       <HowToJoin />
