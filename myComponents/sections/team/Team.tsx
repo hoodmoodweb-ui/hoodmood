@@ -24,12 +24,13 @@ export default function Team() {
       <Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 2000 })]}>
         <CarouselContent>
           {instructors.map((item) => (
-            <CarouselItem className="basis-1/4" key={item.title}>
+            <CarouselItem className="basis-1/4" key={item.id}>
               <HoverCard
-                title={item.title}
-                description={item.description}
+                title={item.name}
+                description={item.role}
                 img={item.img}
                 hoverImg={item.hoverImg}
+                headerStyles="text-2xl"
               />
             </CarouselItem>
           ))}

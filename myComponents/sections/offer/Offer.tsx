@@ -19,6 +19,7 @@ const Offer = () => {
             description={item.description}
             img={item.img}
             hoverImg={item.hoverImg}
+            headerStyles="text-2xl"
           />
         ))}
       </div>

@@ -20,6 +20,7 @@ export default function Localizations() {
             description={item.description}
             img={item.img}
             hoverImg={item.hoverImg}
+            headerStyles="text-7xl"
           />
         ))}
       </div>
