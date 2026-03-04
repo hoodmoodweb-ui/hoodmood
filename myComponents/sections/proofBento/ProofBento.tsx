@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import ButtonPrimary from "@/myComponents/common/ButtonPrimary";
 export default function ProofBento() {
   return (
     <SectionContainer>
@@ -53,7 +54,7 @@ export default function ProofBento() {
           </div>
         ))}
       </div>
-      <Link href="/oferta/koszalin">Zobacz pełną ofertę</Link>
+      <ButtonPrimary href="/oferta/koszalin">Zobacz pełną ofertę</ButtonPrimary>
     </SectionContainer>
   );
 }

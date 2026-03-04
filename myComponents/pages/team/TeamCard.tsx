@@ -24,7 +24,7 @@ export default function TeamCard({
 }: Trainer) {
   return (
     <Card className=" overflow-hidden h-fit">
-      <div className="w-full relative aspect-video">
+      <div className="w-full relative aspect-square">
         <Image
           src={img}
           fill
@@ -34,16 +34,15 @@ export default function TeamCard({
         />
       </div>
       <CardHeader>
-        {/* <Badge variant={"secondary"} className="w-fit ">
+        <Badge
+          variant={"default"}
+          className="w-fit  text-xs bg-(--brand-900) text-white px-2 font-semibold  tracking-wider mb-2"
+        >
           {role}
-        </Badge> */}
+        </Badge>
         <div className="inline-flex items-center gap-4">
           <CardTitle>{name}</CardTitle>
-          <a
-            className="bg-(--brand-700) p-1 rounded-lg"
-            href=""
-            target="_blank"
-          >
+          <a className="bg-white p-1 rounded-lg" href="" target="_blank">
             <img src="/icons/instagram.svg" className="w-4 " />
           </a>
         </div>
@@ -54,7 +53,7 @@ export default function TeamCard({
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>
+        <p className="text-sm leading-6">
           <ExpandableCardDescription
             shortBio={shortBio}
             description={description}

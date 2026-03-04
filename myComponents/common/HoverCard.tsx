@@ -26,7 +26,6 @@ export function HoverCard({
         customStyles
       }
     >
-      {/* base */}
       <Image
         quality={75}
         src={img}
@@ -37,7 +36,6 @@ export function HoverCard({
         priority={false}
       />
 
-      {/* hover */}
       <Image
         src={hoverImg}
         quality={75}
@@ -48,10 +46,8 @@ export function HoverCard({
         priority={false}
       />
 
-      {/* overlay */}
       <div className="absolute inset-0 bg-black/30 transition-colors duration-500 " />
 
-      {/* content */}
       <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
         <h3 className={headerStyles}>{title}</h3>
         <p className="mt-2 text-sm opacity-90">{description}</p>
