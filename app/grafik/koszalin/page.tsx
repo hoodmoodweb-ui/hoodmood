@@ -2,7 +2,7 @@ import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
 import { data, classesByDay, dayLabelsPl } from "./data";
 import ScheduleGrid from "@/myComponents/pages/schedule/ScheduleGrid";
-export default function Offer() {
+export default function Schedule() {
   return (
     <main>
       <SectionContainer>

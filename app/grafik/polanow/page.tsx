@@ -1,7 +1,8 @@
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
-import { data } from "./data";
-export default function Offer() {
+import { data, classesByDay, dayLabelsPl } from "./data";
+import ScheduleGrid from "@/myComponents/pages/schedule/ScheduleGrid";
+export default function Schedule() {
   return (
     <main>
       <SectionContainer>
@@ -10,6 +11,7 @@ export default function Offer() {
           title={data.title}
           description={data.description}
         ></SectionContent>
+        <ScheduleGrid classesByDay={classesByDay} dayLabelsPl={dayLabelsPl} />
       </SectionContainer>
     </main>
   );
