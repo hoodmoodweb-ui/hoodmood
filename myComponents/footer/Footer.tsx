@@ -29,6 +29,7 @@ export default function Footer() {
                     height={24}
                     alt={`${icon} logo`}
                     src={`/icons/${icon}.svg`}
+                    className="dark:invert"
                   />
                 </Link>
               ))}

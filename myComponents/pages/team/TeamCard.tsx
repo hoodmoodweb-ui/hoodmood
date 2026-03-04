@@ -32,6 +32,13 @@ export default function TeamCard({
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
           className="object-cover"
         />
+        <a
+          className="p-3 rounded-full absolute right-4 bottom-4 bg-(--brand-700) shadow-xl hover:bg-(--brand-900)"
+          href=""
+          target="_blank"
+        >
+          <img src="/icons/instagram.svg" className="w-5 invert" />
+        </a>
       </div>
       <CardHeader>
         <Badge
@@ -42,9 +49,6 @@ export default function TeamCard({
         </Badge>
         <div className="inline-flex items-center gap-4">
           <CardTitle>{name}</CardTitle>
-          <a className="bg-white p-1 rounded-lg" href="" target="_blank">
-            <img src="/icons/instagram.svg" className="w-4 " />
-          </a>
         </div>
         <CardDescription className="space-x-2">
           {localizations.map((localization) => (
