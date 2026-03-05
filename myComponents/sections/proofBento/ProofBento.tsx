@@ -40,7 +40,7 @@ export default function ProofBento() {
                   </div>
                 )}
 
-                <CardHeader className="h-fit  ">
+                <CardHeader className="h-fit  pb-6">
                   <CardTitle className="text-lg leading-tight font-anton font-normal">
                     {featureCard.title}
                   </CardTitle>
