@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="border    w-full ">
       <div className="max-w-380 mx-auto px-8 md:px-12 lg:px-16">
-        <div className="flex flex-col gap-8  lg:flex-row lg:justify-between lg:items-center border-b py-4 ">
+        <div className="flex flex-col gap-8 md:flex-row  md:justify-between lg:items-center border-b py-4 ">
           {/* LEFT COL */}
           <div className="space-y-2">
             <Image src={logo} alt="logo" width={120} height={60} />
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
 
           {/* RIGHT COL */}
-          <div className="flex flex-col gap-8 lg:flex-row">
+          <div className="flex flex-col gap-8 md:flex-row">
             <div>
               <p className="font-semibold mb-2">Nawigacja:</p>
               <ul className="space-y-1">
@@ -101,7 +101,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col-reverse lg:flex lg:flex-row  lg:justify-between lg:items-center py-4 lg:py-8">
+        <div className="flex flex-col-reverse md:flex md:flex-row  md:justify-between lg:items-center py-4 lg:py-8">
           <p>Hoodmood&copy; {date.getFullYear()}</p>
           <div className="flex flex-col gap-1 xl:flex-row xl:gap-8">
             <Link href="/polityka-prywatnosci" className={a11y}>
