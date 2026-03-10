@@ -5,7 +5,7 @@ export const data = {
     "Wiemy, że przed pierwszymi zajęciami w głowie pojawia się milion pytań. Zebraliśmy te najczęstsze - zanim do nas napiszesz sprawdź, czy nie ma tu odpowiedzi.",
 };
 
-type FaqItem = {
+export type FaqItem = {
   question: string;
   answer: string;
 };
