@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { Info } from "lucide-react";
 
 export type PriceItem = {
   name: string;
@@ -46,20 +52,20 @@ export default function PricingTable({
 
         <div className="overflow-hidden rounded-2xl border  backdrop-blur-sm">
           <div
-            className={`hidden ${desktopGrid} items-center gap-4 border-b  px-5 py-3 text-xs font-medium uppercase tracking-[0.18em]  md:grid`}
+            className={`hidden ${desktopGrid} items-center gap-4 border-b  px-5 py-3 text-xs font-medium uppercase tracking-[0.18em]  md:grid text-muted-foreground`}
           >
-            <span>Rodzaj zajęć</span>
-            <span>Wiek</span>
-            <span>Częstotliwość</span>
-            <span>Cena</span>
-            <span className="">Akcja</span>
+            <span className=" ">Rodzaj zajęć</span>
+            <span className=" text-center">Wiek</span>
+            <span className=" text-center">Częstotliwość</span>
+            <span className=" text-center">Cena</span>
+            <span className=" text-center">Akcja</span>
           </div>
 
           <div className="divide-y divide-white/10">
             {items.map((item, index) => (
               <article
                 key={`${item.name}-${item.age}-${index}`}
-                className={`group grid gap-4 px-4 py-4 transition-colors md:px-5 ${desktopGrid} md:items-center`}
+                className={`group grid gap-4 px-4 py-4 transition-colors md:px-5 ${desktopGrid} md:items-center hover:bg-black/10 dark:hover:bg-white/5`}
               >
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
@@ -77,27 +83,69 @@ export default function PricingTable({
                   </div>
 
                   <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:hidden ">
-                    <span className="/60">
-                      {item.age || "Bez limitu wieku"}
-                    </span>
-                    <span className="/60">{item.frequency}</span>
+                    <span className="">{item.age || "Bez limitu wieku"}</span>
+                    <span className="">{item.frequency}</span>
                     <span className="font-semibold ">{item.price}</span>
                   </div>
                 </div>
 
-                <div className="hidden text-sm  md:block ">
+                <div className="hidden text-sm  md:block  text-center">
                   {item.age || "—"}
                 </div>
 
-                <div className="hidden text-sm  md:block ">
+                <div className="hidden text-sm  md:block  text-center">
                   {item.frequency}
+
+                  {item.name.includes("+") ? (
+                    <HoverCard key="bottom" openDelay={20} closeDelay={20}>
+                      <HoverCardTrigger>
+                        <button type="button" className="px-2">
+                          <Info className="w-4 text-muted-foreground" />
+                        </button>
+                      </HoverCardTrigger>
+
+                      <HoverCardContent className="text-sm md:hidden">
+                        Na każde zajęcia z pakietu można wejść maksymalnie{" "}
+                        {item.frequency} raz(y) w tygodniu.
+                      </HoverCardContent>
+
+                      <HoverCardContent
+                        className="hidden text-sm md:block"
+                        align="center"
+                      >
+                        Na każde zajęcia z pakietu można wejść maksymalnie{" "}
+                        {item.frequency.replace(/\D/g, "")} raz(y) w tygodniu.
+                      </HoverCardContent>
+                    </HoverCard>
+                  ) : item.frequency !== "-" ? (
+                    <HoverCard key="bottom" openDelay={20} closeDelay={20}>
+                      <HoverCardTrigger>
+                        <button type="button" className="px-2">
+                          <Info className="w-4 text-muted-foreground" />
+                        </button>
+                      </HoverCardTrigger>
+
+                      <HoverCardContent className="text-sm md:hidden">
+                            Na wybrane zajęcia można wejść maksymalnie{" "}
+                        {item.frequency.replace(/\D/g, "")} raz(y) w tygodniu.
+                      </HoverCardContent>
+
+                      <HoverCardContent
+                        className="hidden text-sm md:block"
+                        align="center"
+                      >
+                        Na wybrane zajęcia można wejść maksymalnie{" "}
+                        {item.frequency.replace(/\D/g, "")} raz(y) w tygodniu.
+                      </HoverCardContent>
+                    </HoverCard>
+                  ) : null}
                 </div>
 
-                <div className="hidden text-sm font-semibold  md:block ">
+                <div className="hidden text-sm font-semibold  md:block  text-center">
                   {item.price}
                 </div>
 
-                <div className="flex md:justify-self-end  w-full">
+                <div className="flex md:justify-self-center  ">
                   <Button asChild size="sm" variant={"secondary"}>
                     <Link href={ctaHref}>Zapisz się</Link>
                   </Button>
@@ -110,13 +158,3 @@ export default function PricingTable({
     </section>
   );
 }
-
-// Example usage:
-// import PricingTable from "@/components/pricing-table";
-// import { priceList } from "@/data/price-list";
-//
-// <PricingTable
-//   title="Zajęcia dla dzieci i młodzieży"
-//   items={priceList.filter((item) => item.category !== "individual" && item.category !== "wedding")}
-//   ctaHref="/kontakt"
-// />;
