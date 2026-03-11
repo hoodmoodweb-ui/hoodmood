@@ -1,0 +1,68 @@
+import { PriceItem } from "../data";
+
+export const data: PriceItem[] = [
+  {
+    name: "Taniec współczesny solo",
+    price: "160 zł/h",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "individual",
+  },
+  {
+    name: "Taniec współczesny duet",
+    price: "100 zł/h od osoby",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "individual",
+  },
+  {
+    name: "Hip-hop solo",
+    price: "140 zł/h",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "individual",
+  },
+  {
+    name: "Hip-hop duet",
+    price: "90 zł/h od osoby",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "individual",
+  },
+  {
+    name: "Hip-hop trio",
+    price: "80 zł/h od osoby",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "individual",
+  },
+  {
+    name: "K-pop solo",
+    price: "130 zł/h",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "individual",
+  },
+  {
+    name: "Akrobatyka",
+    price: "160 zł/h",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "individual",
+  },
+  {
+    name: "Pierwszy taniec",
+    price: "150 zł/h",
+    frequency: "-",
+    trending: false,
+    age: "-",
+    category: "wedding",
+  },
+];
