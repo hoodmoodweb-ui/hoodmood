@@ -13,7 +13,8 @@ export type PriceItem = {
   price: string;
   frequency: string;
   trending: boolean;
-  age: string;
+  minAge: string;
+  maxAge: string;
   category:
     | "kidsDance"
     | "youngGeneration"
@@ -37,7 +38,7 @@ export type PricingTableProps = {
 };
 
 const desktopGrid =
-  "md:grid-cols-[minmax(0,1.6fr)_90px_120px_100px_120px] lg:grid-cols-[minmax(0,1.8fr)_140px_180px_140px_140px_140px]";
+  "md:grid-cols-[minmax(0,1.6fr)_90px_120px_100px_120px] lg:grid-cols-[minmax(0,1.8fr)_140px_180px_140px_140px]";
 
 export default function PricingTable({
   title,
@@ -56,7 +57,6 @@ export default function PricingTable({
             className={`hidden ${desktopGrid} items-center gap-4 border-b  px-5 py-3 text-xs font-medium uppercase tracking-[0.18em]  md:grid text-muted-foreground`}
           >
             <span className=" ">Rodzaj zajęć</span>
-            <span className=" text-center">Zaawansowanie</span>
             <span className=" text-center">Wiek</span>
             <span className=" text-center">Częstotliwość</span>
             <span className=" text-center">Cena</span>
@@ -70,7 +70,7 @@ export default function PricingTable({
             )}
             {items.map((item, index) => (
               <article
-                key={`${item.name}-${item.age}-${index}`}
+                key={`${item.name}-${item.minAge}-${index}`}
                 className={`group grid gap-4 px-4 py-4 transition-colors md:px-5 ${desktopGrid} md:items-center hover:bg-black/10 dark:hover:bg-white/5`}
               >
                 <div className="min-w-0">
@@ -89,8 +89,9 @@ export default function PricingTable({
                   </div>
 
                   <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-md md:hidden text-muted-foreground">
-                    <span className="">{item.age || "Bez limitu wieku"}</span>
-                    <span className="">{item.age || "Bez limitu wieku"}</span>
+                    <span className="">
+                      {item.minAge + "-" + item.maxAge || "Bez limitu wieku"}
+                    </span>
                     <span className="inline-flex items-center ">
                       {item.frequency}{" "}
                       {item.name.includes("+") ? (
@@ -109,7 +110,7 @@ export default function PricingTable({
                             tygodniu.
                           </HoverCardContent>
                         </HoverCard>
-                      ) : item.frequency !== "-" ? (
+                      ) : item.frequency !== "—" ? (
                         <HoverCard key="bottom" openDelay={20} closeDelay={20}>
                           <HoverCardTrigger>
                             <button type="button" className="px-1">
@@ -130,10 +131,9 @@ export default function PricingTable({
                 </div>
 
                 <div className="hidden text-sm  md:block  text-center">
-                  {item.age || "—"}
-                </div>
-                <div className="hidden text-sm  md:block  text-center">
-                  {item.age || "—"}
+                  {item.minAge !== "" && item.maxAge !== ""
+                    ? `${item.minAge}-${item.maxAge} lat`
+                    : "bez limitu"}
                 </div>
 
                 <div className="hidden text-sm  md:block  text-center">

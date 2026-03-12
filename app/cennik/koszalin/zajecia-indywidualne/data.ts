@@ -6,7 +6,8 @@ export const data: PriceItem[] = [
     price: "160 zł/h",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "individual",
   },
   {
@@ -14,7 +15,8 @@ export const data: PriceItem[] = [
     price: "100 zł/h od osoby",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "individual",
   },
   {
@@ -22,7 +24,8 @@ export const data: PriceItem[] = [
     price: "140 zł/h",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "individual",
   },
   {
@@ -30,7 +33,8 @@ export const data: PriceItem[] = [
     price: "90 zł/h od osoby",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "individual",
   },
   {
@@ -38,7 +42,8 @@ export const data: PriceItem[] = [
     price: "80 zł/h od osoby",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "individual",
   },
   {
@@ -46,7 +51,8 @@ export const data: PriceItem[] = [
     price: "130 zł/h",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "individual",
   },
   {
@@ -54,7 +60,8 @@ export const data: PriceItem[] = [
     price: "160 zł/h",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "individual",
   },
   {
@@ -62,7 +69,8 @@ export const data: PriceItem[] = [
     price: "150 zł/h",
     frequency: "-",
     trending: false,
-    age: "-",
+    minAge: "",
+    maxAge: "",
     category: "wedding",
   },
 ];

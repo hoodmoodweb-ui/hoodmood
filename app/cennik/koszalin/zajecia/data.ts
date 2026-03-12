@@ -6,7 +6,8 @@ export const data: PriceItem[] = [
     price: "170 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "4–6 lat",
+    minAge: "4",
+    maxAge: "6",
     category: "kidsDance",
   },
   {
@@ -14,7 +15,8 @@ export const data: PriceItem[] = [
     price: "170 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "6–8 lat",
+    minAge: "6",
+    maxAge: "8",
     category: "breakdance",
   },
   {
@@ -22,7 +24,8 @@ export const data: PriceItem[] = [
     price: "170 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "ballet",
   },
   {
@@ -30,7 +33,8 @@ export const data: PriceItem[] = [
     price: "230 zł",
     frequency: "2x/tyg",
     trending: false,
-    age: "7–9 lat",
+    minAge: "7",
+    maxAge: "9",
     category: "youngGeneration",
   },
   {
@@ -38,7 +42,8 @@ export const data: PriceItem[] = [
     price: "280 zł",
     frequency: "-",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "foundation",
   },
   {
@@ -46,7 +51,8 @@ export const data: PriceItem[] = [
     price: "290 zł",
     frequency: "2x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "hiphop",
   },
   {
@@ -54,7 +60,8 @@ export const data: PriceItem[] = [
     price: "180 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "4–6 lat",
+    minAge: "4",
+    maxAge: "6",
     category: "acrobatics",
   },
   {
@@ -62,7 +69,8 @@ export const data: PriceItem[] = [
     price: "180 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "7–9 lat",
+    minAge: "7",
+    maxAge: "9",
     category: "acrobatics",
   },
   {
@@ -70,7 +78,8 @@ export const data: PriceItem[] = [
     price: "180 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "10–14 lat",
+    minAge: "10",
+    maxAge: "14",
     category: "acrobatics",
   },
   {
@@ -78,7 +87,8 @@ export const data: PriceItem[] = [
     price: "230 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "partnerAcro",
   },
   {
@@ -86,7 +96,8 @@ export const data: PriceItem[] = [
     price: "200 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "dorośli",
+    minAge: "",
+    maxAge: "",
     category: "adults",
   },
   {
@@ -94,7 +105,8 @@ export const data: PriceItem[] = [
     price: "180 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "dorośli",
+    minAge: "18",
+    maxAge: "99",
     category: "adults",
   },
   {
@@ -102,7 +114,8 @@ export const data: PriceItem[] = [
     price: "210 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "8–12 lat",
+    minAge: "8",
+    maxAge: "12",
     category: "modernDance",
   },
   {
@@ -110,7 +123,8 @@ export const data: PriceItem[] = [
     price: "220 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "13–18 lat",
+    minAge: "13",
+    maxAge: "18",
     category: "modernDance",
   },
   {
@@ -118,7 +132,8 @@ export const data: PriceItem[] = [
     price: "310 zł",
     frequency: "2x/tyg",
     trending: false,
-    age: "13–18 lat",
+    minAge: "13",
+    maxAge: "18",
     category: "modernDance",
   },
   {
@@ -126,7 +141,8 @@ export const data: PriceItem[] = [
     price: "230 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "partnerAcro",
   },
   {
@@ -134,7 +150,8 @@ export const data: PriceItem[] = [
     price: "230 zł",
     frequency: "2x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "kpop",
   },
 ];

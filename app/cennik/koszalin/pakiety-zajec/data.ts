@@ -6,7 +6,8 @@ export const data: PriceItem[] = [
     price: "230 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "4–6 lat",
+    minAge: "4",
+    maxAge: "6",
     category: "kidsDance",
   },
   {
@@ -14,7 +15,8 @@ export const data: PriceItem[] = [
     price: "240 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "4–6 lat",
+    minAge: "4",
+    maxAge: "6",
     category: "kidsDance",
   },
   {
@@ -22,7 +24,8 @@ export const data: PriceItem[] = [
     price: "240 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "ballet",
   },
   {
@@ -30,7 +33,8 @@ export const data: PriceItem[] = [
     price: "270 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "7–9 lat",
+    minAge: "7",
+    maxAge: "9",
     category: "youngGeneration",
   },
   {
@@ -38,7 +42,8 @@ export const data: PriceItem[] = [
     price: "320 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "foundation",
   },
   {
@@ -46,7 +51,8 @@ export const data: PriceItem[] = [
     price: "320 zł",
     frequency: "-",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "foundation",
   },
   {
@@ -54,7 +60,8 @@ export const data: PriceItem[] = [
     price: "380 zł",
     frequency: "-",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "foundation",
   },
   {
@@ -62,7 +69,8 @@ export const data: PriceItem[] = [
     price: "420 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "foundation",
   },
   {
@@ -70,7 +78,8 @@ export const data: PriceItem[] = [
     price: "330 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "",
+    minAge: "",
+    maxAge: "",
     category: "hiphop",
   },
   {
@@ -78,7 +87,8 @@ export const data: PriceItem[] = [
     price: "300 zł",
     frequency: "1x/tyg",
     trending: false,
-    age: "8–12 lat",
+    minAge: "8",
+    maxAge: "12",
     category: "modernDance",
   },
   {
@@ -86,7 +96,8 @@ export const data: PriceItem[] = [
     price: "380 zł",
     frequency: "2x/tyg + 1x/tyg",
     trending: false,
-    age: "13–18 lat",
+    minAge: "13",
+    maxAge: "18",
     category: "modernDance",
   },
 ];

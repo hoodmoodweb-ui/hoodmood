@@ -22,16 +22,32 @@ import {
 export default function page() {
   const [searchInput, setSearchInput] = useState("");
   const [searchAge, setSearchAge] = useState("");
+
   const filteredData = useMemo(() => {
     const words = normalize(searchInput).trim().split(/\s+/).filter(Boolean);
-
-    if (words.length === 0) return data;
+    const age = Number(searchAge);
+    const hasValidAge = searchAge.trim() !== "" && !Number.isNaN(age);
 
     return data.filter((item) => {
       const normalizedName = normalize(item.name);
-      return words.every((word) => normalizedName.includes(word));
+
+      const matchesText =
+        words.length === 0 ||
+        words.every((word) => normalizedName.includes(word));
+
+      const min = item.minAge ? Number(item.minAge) : null;
+      const max = item.maxAge ? Number(item.maxAge) : null;
+
+      const matchesAge =
+        !hasValidAge ||
+        (min === null && max === null) ||
+        (min !== null && max === null && age >= min) ||
+        (min === null && max !== null && age <= max) ||
+        (min !== null && max !== null && age >= min && age <= max);
+
+      return matchesText && matchesAge;
     });
-  }, [searchInput, data]);
+  }, [searchInput, data, searchAge]);
 
   const clearInput = () => {
     setSearchInput("");
