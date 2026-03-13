@@ -10,6 +10,24 @@ export const data = {
 //   items: PriceItem[];
 //   ctaHref?: string;
 // };
+export const tabs = [
+  {
+    label: "ZAJĘCIA",
+    href: "/cennik/koszalin/zajecia",
+    segment: "/cennik/koszalin/zajecia",
+  },
+  {
+    label: "PAKIETY ZAJĘĆ",
+    href: "/cennik/koszalin/pakiety-zajec",
+    segment: "/cennik/koszalin/pakiety-zajec",
+  },
+  {
+    label: "ZAJĘCIA INDYWIDUALNE",
+    href: "/cennik/koszalin/zajecia-indywidualne",
+    segment: "/cennik/koszalin/zajecia-indywidualne",
+  },
+];
+
 
 export type PriceItem = {
   name: string;

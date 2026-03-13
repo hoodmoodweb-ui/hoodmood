@@ -3,6 +3,8 @@ import SectionContent from "@/myComponents/common/SectionContent";
 import { data, classesByDay, dayLabelsPl } from "./data";
 import ScheduleGrid from "@/myComponents/pages/schedule/ScheduleGrid";
 import AnyQuestionsContact from "@/myComponents/common/AnyQuestionsContact";
+import TabsNav from "@/myComponents/common/ToggleButtons";
+import { tabs } from "../tabs";
 export default function Schedule() {
   return (
     <main>
@@ -12,8 +14,9 @@ export default function Schedule() {
           title={data.title}
           description={data.description}
         ></SectionContent>
+        <TabsNav tabs={tabs} />
         <ScheduleGrid classesByDay={classesByDay} dayLabelsPl={dayLabelsPl} />
-        <AnyQuestionsContact/>
+        <AnyQuestionsContact />
       </SectionContainer>
     </main>
   );

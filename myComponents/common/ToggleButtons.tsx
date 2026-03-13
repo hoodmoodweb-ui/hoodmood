@@ -1,27 +1,19 @@
 "use client";
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 
-const tabs = [
-  {
-    label: "ZAJĘCIA",
-    href: "/cennik/koszalin/zajecia",
-    segment: "zajecia",
-  },
-  {
-    label: "PAKIETY ZAJĘĆ",
-    href: "/cennik/koszalin/pakiety-zajec",
-    segment: "pakiety-zajec",
-  },
-  {
-    label: "ZAJĘCIA INDYWIDUALNE",
-    href: "/cennik/koszalin/zajecia-indywidualne",
-    segment: "zajecia-indywidualne",
-  },
-];
+type Item = {
+  label: string;
+  href: string;
+  segment: string;
+};
 
-export default function TabsNav() {
-  const activeSegment = useSelectedLayoutSegment();
+type Props = {
+  tabs: Item[];
+};
+
+export default function TabsNav({ tabs }: Props) {
+  const activeSegment = usePathname();
 
   return (
     <div className="flex gap-4 w-fit mx-auto flex-wrap">

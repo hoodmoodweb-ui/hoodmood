@@ -1,9 +1,9 @@
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
-import { data } from "./data";
+import { data, tabs } from "./data";
 import AnyQuestionsContact from "@/myComponents/common/AnyQuestionsContact";
 import { ReactNode } from "react";
-import ToggleButtons from "@/myComponents/pages/pricing/ToggleButtons";
+import ToggleButtons from "@/myComponents/common/ToggleButtons";
 import { PricingFiltersProvider } from "../../../myComponents/pages/pricing/PricingFiltersProvider";
 import PricingFilterBar from "../../../myComponents/pages/pricing/PricingFilterBar";
 export default function Schedule({ children }: { children: ReactNode }) {
@@ -16,7 +16,7 @@ export default function Schedule({ children }: { children: ReactNode }) {
             title={data.title}
             description={data.description}
           ></SectionContent>
-          <ToggleButtons />
+          <ToggleButtons  tabs={tabs}/>
           <PricingFilterBar />
           {children}
           <AnyQuestionsContact />

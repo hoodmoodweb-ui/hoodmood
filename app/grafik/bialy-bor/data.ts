@@ -46,3 +46,5 @@ export const dayLabelsPl: Record<keyof typeof classesByDay, string> = {
   thursday: "Czwartek",
   friday: "Piątek",
 };
+
+
