@@ -9,8 +9,6 @@ import {
 import { Info } from "lucide-react";
 import { PriceItem } from "@/app/cennik/types";
 
-
-
 export type PricingTableProps = {
   title?: string;
   items: PriceItem[];
@@ -32,7 +30,7 @@ export default function PricingTable({
           <h2 className=" text-white text-lg">{title}</h2>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border  backdrop-blur-sm">
+        <div className=" rounded-2xl border  backdrop-blur-sm">
           <div
             className={`hidden ${desktopGrid} items-center gap-4 border-b  px-5 py-3 text-xs font-medium uppercase tracking-[0.18em]  md:grid text-muted-foreground`}
           >

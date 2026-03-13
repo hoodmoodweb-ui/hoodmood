@@ -1,8 +1,7 @@
 import { normalize } from "@/myComponents/pages/faq/faqFilter";
-import { PriceItem } from "../types";
+import { PriceItem } from "../../../app/cennik/types";
 
 type SortingValue = "default" | "ascending" | "descending" | "alphabetical";
-
 
 const parsePrice = (price: string) => Number(price.replace(/\D/g, ""));
 

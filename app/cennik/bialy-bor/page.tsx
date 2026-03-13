@@ -1,9 +1,9 @@
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
-import { data, classesByDay, dayLabelsPl } from "./data";
-import ScheduleGrid from "@/myComponents/pages/schedule/ScheduleGrid";
+import { data, pricingData } from "./data";
 import AnyQuestionsContact from "@/myComponents/common/AnyQuestionsContact";
-export default function Schedule() {
+import PricingTable from "@/myComponents/pages/pricing/PricingTable";
+export default function PricingBialyBor() {
   return (
     <main>
       <SectionContainer>
@@ -12,8 +12,8 @@ export default function Schedule() {
           title={data.title}
           description={data.description}
         ></SectionContent>
-        <ScheduleGrid classesByDay={classesByDay} dayLabelsPl={dayLabelsPl} />
-        <AnyQuestionsContact/>
+        <PricingTable items={pricingData} />
+        <AnyQuestionsContact />
       </SectionContainer>
     </main>
   );

@@ -5,11 +5,11 @@ export const data = {
     "Sprawdź, ile kosztują zajęcia grupowe, lekcje indywidualne oraz zajęcia w naszych filiach. Płatności rozliczamy w systemie miesięcznym za wyjątkiem lekcji indywidualnych. Chcesz chodzić na więcej niż jedne zajęcia? Sprawdź pakiety promocyjne - zestawy kilku zajęć w promocyjnych cenach!",
 };
 
-export type PricingTableProps = {
-  title?: string;
-  items: PriceItem[];
-  ctaHref?: string;
-};
+// export type PricingTableProps = {
+//   title?: string;
+//   items: PriceItem[];
+//   ctaHref?: string;
+// };
 
 export type PriceItem = {
   name: string;
@@ -34,47 +34,47 @@ export type PriceItem = {
     | "wedding";
 };
 
-type PackageEntry = {
-  name: string;
-  frequency?: string;
-};
+// type PackageEntry = {
+//   name: string;
+//   frequency?: string;
+// };
 
-type PackageItem = {
-  title: string;
-  price: string;
-  age?: string;
-  trending: boolean;
-  category:
-    | "kidsPackages"
-    | "balletPackages"
-    | "youngGenerationPackages"
-    | "foundationPackages"
-    | "hiphopPackages"
-    | "modernDancePackages";
-  entries: PackageEntry[];
-};
+// type PackageItem = {
+//   title: string;
+//   price: string;
+//   age?: string;
+//   trending: boolean;
+//   category:
+//     | "kidsPackages"
+//     | "balletPackages"
+//     | "youngGenerationPackages"
+//     | "foundationPackages"
+//     | "hiphopPackages"
+//     | "modernDancePackages";
+//   entries: PackageEntry[];
+// };
 
-export const packageList: PackageItem[] = [
-  {
-    title: "Pakiet 4–6 lat + balet",
-    price: "230 zł",
-    age: "4–6 lat",
-    trending: false,
-    category: "kidsPackages",
-    entries: [
-      { name: "Taniec dla 4–6 latków" },
-      { name: "Balet", frequency: "1x/tyg" },
-    ],
-  },
-  {
-    title: "Pakiet 13–18 lat + partnerowanie",
-    price: "380 zł",
-    age: "13–18 lat",
-    trending: false,
-    category: "modernDancePackages",
-    entries: [
-      { name: "Taniec współczesny", frequency: "2x/tyg" },
-      { name: "Partnerowanie akro", frequency: "1x/tyg" },
-    ],
-  },
-];
+// export const packageList: PackageItem[] = [
+//   {
+//     title: "Pakiet 4–6 lat + balet",
+//     price: "230 zł",
+//     age: "4–6 lat",
+//     trending: false,
+//     category: "kidsPackages",
+//     entries: [
+//       { name: "Taniec dla 4–6 latków" },
+//       { name: "Balet", frequency: "1x/tyg" },
+//     ],
+//   },
+//   {
+//     title: "Pakiet 13–18 lat + partnerowanie",
+//     price: "380 zł",
+//     age: "13–18 lat",
+//     trending: false,
+//     category: "modernDancePackages",
+//     entries: [
+//       { name: "Taniec współczesny", frequency: "2x/tyg" },
+//       { name: "Partnerowanie akro", frequency: "1x/tyg" },
+//     ],
+//   },
+// ];
