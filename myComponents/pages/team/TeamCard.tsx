@@ -1,6 +1,5 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -10,25 +9,30 @@ import {
 import Image from "next/image";
 import { Trainer } from "@/app/kadra/data";
 import { Badge } from "@/components/ui/badge";
-import ExpandableCardDescription from "./ExpandableCardDescription";
 import { cn } from "@/lib/utils";
 import { a11y } from "@/public/styles";
+import ButtonSecondary from "@/myComponents/common/ButtonSecondary";
+
+type Props = {
+  name: string;
+  role: string;
+  images: string[];
+  localizations: string[];
+  id: string;
+};
 
 export default function TeamCard({
   name,
   role,
-  styles,
-  shortBio,
-  description,
-  img,
-  hoverImg,
+  images,
   localizations,
-}: Trainer) {
+  id,
+}: Props) {
   return (
     <Card className=" overflow-hidden h-fit">
       <div className="w-full relative aspect-square">
         <Image
-          src={img}
+          src={images[0]}
           fill
           alt="img"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
@@ -46,29 +50,26 @@ export default function TeamCard({
         </a>
       </div>
       <CardHeader>
-        <Badge
+        {/* <Badge
           variant={"default"}
           className="w-fit  text-xs bg-(--brand-900) text-white px-2 font-semibold  tracking-wider mb-2"
         >
           {role}
-        </Badge>
+        </Badge> */}
         <div className="inline-flex items-center gap-4">
           <CardTitle>{name}</CardTitle>
         </div>
         <CardDescription className="space-x-2">
-          {localizations.map((localization) => (
+          {/* {localizations.map((localization) => (
             <span key={localization}>{localization}</span>
-          ))}
+          ))} */}
+          {role}
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <p className="text-sm leading-6">
-          <ExpandableCardDescription
-            shortBio={shortBio}
-            description={description}
-          />
-        </p>
-      </CardContent>
+
+      <CardFooter className="flex justify-end">
+        <ButtonSecondary href={`/kadra/${id}`}>Zobacz więcej</ButtonSecondary>
+      </CardFooter>
     </Card>
   );
 }
