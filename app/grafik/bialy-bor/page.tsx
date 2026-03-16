@@ -25,7 +25,7 @@ export default function Schedule() {
           pdfRef={pdfRef}
           name="grafik-bialy-bor.pdf"
         />
-        <div className="fixed -left-[10px]">
+        <div className="fixed -left-[10000px]">
           <SchedulePdfTable
             pdfRef={pdfRef}
             classesByDay={classesByDay}

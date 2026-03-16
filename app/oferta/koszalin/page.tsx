@@ -25,6 +25,7 @@ export default function Offer() {
               instructorAvatar={item.instructorAvatar}
               age={item.age}
               description={item.description}
+              experience={item.experience}
               localization={"koszalin"}
             />
           ))}

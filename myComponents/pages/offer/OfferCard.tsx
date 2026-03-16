@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import { CalendarDays, User } from "lucide-react";
+import { CalendarDays, ChartNoAxesColumnIncreasing, User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ButtonPrimary from "@/myComponents/common/ButtonPrimary";
 import Link from "next/link";
@@ -16,6 +16,7 @@ type Props = {
   img: string;
   description: string;
   instructor: string;
+  experience: string;
   age: string;
   instructorAvatar: string;
   localization: string;
@@ -27,6 +28,7 @@ export default function OfferCard({
   description,
   instructor,
   instructorAvatar,
+  experience,
   age,
   localization,
 }: Props) {
@@ -39,10 +41,7 @@ export default function OfferCard({
         <CardTitle className="text-lg">{name}</CardTitle>
         <CardDescription className="">{description}</CardDescription>
       </CardHeader>
-      <div className="flex  gap-3 text-muted-foreground p-6">
-        <span className="inline-flex gap-2 items-end text-sm">
-          <User className="w-5 text-black dark:text-white" /> {age}
-        </span>
+      <div className="flex  gap-8 text-muted-foreground p-6 mb-2">
         <Link
           href={`/grafik/${localization}`}
           className="inline-flex gap-2 items-end text-sm hover:underline focus-visible:border-ring focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px] rounded-sm"
@@ -50,6 +49,13 @@ export default function OfferCard({
           <CalendarDays className="w-5 text-black dark:text-white " /> Sprawdź
           grafik
         </Link>
+        <span className="inline-flex gap-2 items-end text-sm">
+          <User className="w-5 text-black dark:text-white" /> {age}
+        </span>
+        <span className="inline-flex gap-2 items-end text-sm">
+          <ChartNoAxesColumnIncreasing className="w-5 text-black dark:text-white" />{" "}
+          {experience}
+        </span>
       </div>
       <CardFooter className="flex-row gap-2  items-center ">
         <Avatar>

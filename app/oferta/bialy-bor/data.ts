@@ -13,6 +13,7 @@ type Classes = {
   instructor: string;
   img: string;
   instructorAvatar: string;
+  experience: string;
 };
 
 export const kidsBialyBor: Classes[] = [
@@ -25,6 +26,7 @@ export const kidsBialyBor: Classes[] = [
     instructor: "Talita Jarzęcka",
     img: "/assets/images/offer/taniec4-6.jpg",
     instructorAvatar: "/assets/images/team/talitaJarzecka.jpg",
+    experience: "Zaawansowani",
   },
   {
     name: "Hip-hop (8–13 lat)",
@@ -35,5 +37,6 @@ export const kidsBialyBor: Classes[] = [
     instructor: "Talita Jarzęcka",
     img: "/assets/images/offer/qualityCrew.jpg",
     instructorAvatar: "/assets/images/team/talitaJarzecka.jpg",
+    experience: "Zaawansowani",
   },
 ];

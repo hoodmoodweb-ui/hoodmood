@@ -13,6 +13,7 @@ type Classes = {
   instructor: string;
   img: string;
   instructorAvatar: string;
+  experience: string;
 };
 
 export const kids: Classes[] = [
@@ -25,6 +26,7 @@ export const kids: Classes[] = [
     instructor: "Talita Jarzęcka",
     img: "/assets/images/offer/balet.jpg",
     instructorAvatar: "/assets/images/team/talitaJarzecka.jpg",
+    experience: "Średniozaawansowani",
   },
   {
     name: "KPOP",
@@ -35,6 +37,7 @@ export const kids: Classes[] = [
     instructor: "Alina Lemańska",
     img: "/assets/images/offer/kpop.jpg",
     instructorAvatar: "/assets/images/team/alinaLemanska.jpg",
+    experience: "Zaawansowani",
   },
   {
     name: "Taniec dla 4–6 latków",
@@ -45,6 +48,7 @@ export const kids: Classes[] = [
     instructor: "Magdalena Sokołowska",
     img: "/assets/images/offer/taniec4-6.jpg",
     instructorAvatar: "/assets/images/team/magdalenaSokolowska.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Akrobatyka 4–6 latki",
@@ -55,6 +59,7 @@ export const kids: Classes[] = [
     instructor: "Oliwia Piec",
     img: "/assets/images/offer/akrobatyka4-6.jpg",
     instructorAvatar: "/assets/images/team/oliwiaPiec.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Young Generation (hip-hop 7–9 lat)",
@@ -65,6 +70,7 @@ export const kids: Classes[] = [
     instructor: "Maria Kober",
     img: "/assets/images/offer/youngGeneration7-9.jpg",
     instructorAvatar: "/assets/images/team/mariaKober.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Akrobatyka 7–9 lat",
@@ -75,6 +81,7 @@ export const kids: Classes[] = [
     instructor: "Paulina Walikowska",
     img: "/assets/images/offer/akrobatyka7-9.jpg",
     instructorAvatar: "/assets/images/team/paulinaWalikowska.jpg",
+    experience: "Początkujący",
   },
   {
     name: "The Beat Hunters (hip-hop 10–12 lat)",
@@ -85,6 +92,7 @@ export const kids: Classes[] = [
     instructor: "Wiktoria Butwicka",
     img: "/assets/images/offer/theBeatHunters10-12.jpg",
     instructorAvatar: "/assets/images/team/wiktoriaButwicka.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Akrobatyka 10–14 lat",
@@ -95,6 +103,7 @@ export const kids: Classes[] = [
     instructor: "Talita Jarzęcka",
     img: "/assets/images/offer/akrobatyka10-14.jpg",
     instructorAvatar: "/assets/images/team/talitaJarzecka.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Taniec Współczesny 8–12 lat",
@@ -105,6 +114,7 @@ export const kids: Classes[] = [
     instructor: "Magdalena Sokołowska",
     img: "/assets/images/offer/taniecWspolczesny8-12.jpg",
     instructorAvatar: "/assets/images/team/magdalenaSokolowska.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Taniec Współczesny 13–18 lat",
@@ -115,6 +125,7 @@ export const kids: Classes[] = [
     instructor: "Wiktoria Butwicka",
     img: "/assets/images/offer/taniecWspolczesny13-18.jpg",
     instructorAvatar: "/assets/images/team/wiktoriaButwicka.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Quality Crew (grupa zaawansowana hip-hop)",
@@ -125,6 +136,7 @@ export const kids: Classes[] = [
     instructor: "Oliwia Piec",
     img: "/assets/images/offer/qualityCrew.jpg",
     instructorAvatar: "/assets/images/team/oliwiaPiec.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Partnerowanie Akro",
@@ -135,6 +147,7 @@ export const kids: Classes[] = [
     instructor: "Maria Kober",
     img: "/assets/images/offer/partnerowanieAkro.jpg",
     instructorAvatar: "/assets/images/team/mariaKober.jpg",
+    experience: "Początkujący",
   },
   {
     name: "Lekcje Indywidualne",
@@ -145,6 +158,7 @@ export const kids: Classes[] = [
     instructor: "Alina Lemańska",
     img: "/assets/images/offer/indywidualne.jpg",
     instructorAvatar: "/assets/images/team/alinaLemanska.jpg",
+    experience: "Początkujący",
   },
 ];
 
@@ -158,6 +172,7 @@ export const adults: Classes[] = [
     instructor: "Anna Kowalska",
     img: "",
     instructorAvatar: "",
+    experience: "Początkujący",
   },
   {
     name: "Formacja dla Dorosłych",
@@ -168,6 +183,7 @@ export const adults: Classes[] = [
     instructor: "Anna Kowalska",
     img: "",
     instructorAvatar: "",
+    experience: "Początkujący",
   },
   {
     name: "Partnerowanie Akro",
@@ -178,6 +194,7 @@ export const adults: Classes[] = [
     instructor: "Anna Kowalska",
     img: "",
     instructorAvatar: "",
+    experience: "Początkujący",
   },
   {
     name: "Lekcje Indywidualne",
@@ -188,5 +205,6 @@ export const adults: Classes[] = [
     instructor: "Anna Kowalska",
     img: "",
     instructorAvatar: "",
+    experience: "Początkujący",
   },
 ];

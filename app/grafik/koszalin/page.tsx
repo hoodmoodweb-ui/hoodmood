@@ -23,7 +23,7 @@ export default function Schedule() {
         <TabsNav tabs={tabs} />
         <ScheduleGrid classesByDay={classesByDay} dayLabelsPl={dayLabelsPl} />
         <DownloadSchedulePdfButton pdfRef={pdfRef} name="grafik-koszalin.pdf" />
-        <div className="fixed -left-[1000px]">
+        <div className="fixed -left-[10000px]">
           <SchedulePdfTable
             pdfRef={pdfRef}
             classesByDay={classesByDay}
