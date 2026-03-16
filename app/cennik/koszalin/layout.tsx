@@ -8,7 +8,7 @@ import { PricingFiltersProvider } from "../../../myComponents/pages/pricing/Pric
 import PricingFilterBar from "../../../myComponents/pages/pricing/PricingFilterBar";
 export default function Schedule({ children }: { children: ReactNode }) {
   return (
-    <main>
+    <main className="mt-24">
       <PricingFiltersProvider>
         <SectionContainer>
           <SectionContent
@@ -16,7 +16,7 @@ export default function Schedule({ children }: { children: ReactNode }) {
             title={data.title}
             description={data.description}
           ></SectionContent>
-          <ToggleButtons  tabs={tabs}/>
+          <ToggleButtons tabs={tabs} />
           <PricingFilterBar />
           {children}
           <AnyQuestionsContact />
