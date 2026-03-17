@@ -13,12 +13,7 @@ type ClassItem = {
   age: string;
 };
 
-type DayKey =
-  | "poniedziałek"
-  | "wtorek"
-  | "środa"
-  | "czwartek"
-  | "piątek";
+type DayKey = "poniedziałek" | "wtorek" | "środa" | "czwartek" | "piątek";
 
 type ClassesByDay = Record<DayKey, ClassItem[]>;
 
@@ -49,7 +44,7 @@ export default function ScheduleGrid({ classesByDay }: Props) {
               className="h-fit rounded-lg border p-4 dark:bg-white/5"
             >
               <header className="mb-4">
-                <h3 id={headingId} className="text-lg font-semibold capitalize">
+                <h3 id={headingId} className="text-lg  capitalize">
                   {dayKey}
                 </h3>
               </header>
@@ -57,9 +52,7 @@ export default function ScheduleGrid({ classesByDay }: Props) {
               <ul className="space-y-2">
                 {items.map((c, idx) => (
                   <li key={`${dayKey}-${c.name}-${c.time}-${idx}`}>
-                    <article
-                      className="group w-full rounded-lg border p-3 text-left transition hover:border-white/20 hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-                    >
+                    <article className="group w-full rounded-lg border p-3 text-left transition hover:border-white/20 hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
                       <div className="flex items-start justify-between gap-3">
                         <div className="min-w-0">
                           <div className="text-sm font-semibold">{c.name}</div>

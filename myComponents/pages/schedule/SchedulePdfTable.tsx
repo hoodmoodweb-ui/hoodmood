@@ -1,28 +1,42 @@
 "use client";
 
 import type { RefObject } from "react";
-import type { ClassItem, DayKey } from "@/app/grafik/koszalin/data";
+
+type ClassItem = {
+  name: string;
+  time: string;
+  instructor: string;
+  age: string;
+  info: string;
+};
+
+export type ClassesByDay = Record<string, ClassItem[]>;
 
 type Props = {
   pdfRef: RefObject<HTMLDivElement | null>;
-  classesByDay: Record<DayKey, ClassItem[]>;
-  dayLabels: Record<DayKey, string>;
+  classesByDay: ClassesByDay;
   title?: string;
   brandName?: string;
   brandUrl?: string;
 };
 
+const dayOrder = [
+  "poniedziałek",
+  "wtorek",
+  "środa",
+  "czwartek",
+  "piątek",
+] as const;
+
 export default function SchedulePdfTable({
   pdfRef,
   classesByDay,
-  dayLabels,
   title,
-  brandName = "Hoodmood",
   brandUrl = "www.hoodmood.pl",
 }: Props) {
-  const dayKeys = Object.keys(classesByDay) as DayKey[];
+  const days = dayOrder.filter((day) => day in classesByDay);
   const maxRows = Math.max(
-    ...dayKeys.map((day) => classesByDay[day].length),
+    ...days.map((day) => classesByDay[day]?.length ?? 0),
     0,
   );
 
@@ -30,156 +44,57 @@ export default function SchedulePdfTable({
     <div
       id="pdf-root"
       ref={pdfRef}
-      style={{
-        width: "1600px",
-        backgroundColor: "#ffffff",
-        color: "#111111",
-        padding: "40px",
-        fontFamily: "Arial, Helvetica, sans-serif",
-        boxSizing: "border-box",
-      }}
+      className="box-border w-[1600px] bg-white p-10 text-zinc-900"
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          marginBottom: "32px",
-        }}
-      >
+      <div className="mb-8 flex items-end justify-between">
         <div>
-          <h1
-            style={{
-              margin: 0,
-              fontSize: "30px",
-              lineHeight: 1.2,
-              color: "#111111",
-            }}
-          >
-            {title}
-          </h1>
+          <h1 className="m-0 text-[30px] leading-[1.2]">{title}</h1>
 
-          <p
-            style={{
-              marginTop: "8px",
-              marginBottom: 0,
-              fontSize: "14px",
-              color: "#525252",
-            }}
-          >
-            {brandUrl}
-          </p>
+          <p className="mb-0 mt-2 text-sm text-zinc-600">{brandUrl}</p>
         </div>
       </div>
 
-      <div
-        style={{
-          overflow: "hidden",
-          borderRadius: "16px",
-          border: "1px solid #d4d4d4",
-        }}
-      >
-        <table
-          style={{
-            width: "100%",
-            borderCollapse: "collapse",
-            tableLayout: "fixed",
-            textAlign: "left",
-          }}
-        >
+      <div className="overflow-hidden rounded-2xl border border-zinc-300">
+        <table className="w-full table-fixed border-collapse text-left">
           <thead>
             <tr>
-              {dayKeys.map((day, dayIndex) => {
-                const isLastColumn = dayIndex === dayKeys.length - 1;
-
-                return (
-                  <th
-                    key={day}
-                    style={{
-                      backgroundColor: "#f5f5f5",
-                      borderBottom: "1px solid #d4d4d4",
-                      borderRight: isLastColumn ? "none" : "1px solid #d4d4d4",
-                      padding: "16px",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      color: "#111111",
-                    }}
-                  >
-                    {dayLabels[day]}
-                  </th>
-                );
-              })}
+              {days.map((day) => (
+                <th
+                  key={day}
+                  className="border-b border-r border-zinc-300 bg-zinc-100 p-4 text-base font-bold last:border-r-0"
+                >
+                  {day.charAt(0).toUpperCase() + day.slice(1)}
+                </th>
+              ))}
             </tr>
           </thead>
 
           <tbody>
             {Array.from({ length: maxRows }).map((_, rowIndex) => (
               <tr key={rowIndex}>
-                {dayKeys.map((day, dayIndex) => {
-                  const item = classesByDay[day][rowIndex];
-                  const isLastColumn = dayIndex === dayKeys.length - 1;
+                {days.map((day) => {
+                  const item = classesByDay[day]?.[rowIndex];
 
                   return (
                     <td
                       key={`${day}-${rowIndex}`}
-                      style={{
-                        height: "150px",
-                        width: `${100 / dayKeys.length}%`,
-                        verticalAlign: "top",
-                        borderBottom: "1px solid #d4d4d4",
-                        borderRight: isLastColumn
-                          ? "none"
-                          : "1px solid #d4d4d4",
-                        padding: "16px",
-                        boxSizing: "border-box",
-                      }}
+                      className="h-[150px] align-top border-b border-r border-zinc-300 p-4 last:border-r-0"
                     >
                       {item ? (
                         <div>
-                          <p
-                            style={{
-                              margin: 0,
-                              fontSize: "15px",
-                              fontWeight: 700,
-                              lineHeight: 1.35,
-                              color: "#111111",
-                            }}
-                          >
+                          <p className="m-0 text-[15px] font-bold leading-[1.35] text-zinc-900">
                             {item.name}
                           </p>
 
-                          <p
-                            style={{
-                              marginTop: "8px",
-                              marginBottom: 0,
-                              fontSize: "14px",
-                              color: "#404040",
-                            }}
-                          >
+                          <p className="mb-0 mt-2 text-sm text-zinc-700">
                             {item.time}
                           </p>
 
-                          <p
-                            style={{
-                              marginTop: "8px",
-                              marginBottom: 0,
-                              fontSize: "13px",
-                              color: "#525252",
-                              lineHeight: 1.4,
-                            }}
-                          >
+                          <p className="mb-0 mt-2 text-[13px] leading-[1.4] text-zinc-600">
                             Prowadzący: {item.instructor}
                           </p>
 
-                          <p
-                            style={{
-                              marginTop: "6px",
-                              marginBottom: 0,
-                              fontSize: "13px",
-                              color: "#525252",
-                              lineHeight: 1.4,
-                            }}
-                          >
+                          <p className="mb-0 mt-1.5 text-[13px] leading-[1.4] text-zinc-600">
                             Wiek: {item.age}
                           </p>
                         </div>

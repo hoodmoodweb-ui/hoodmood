@@ -5,6 +5,7 @@ import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
 import TabsNav from "@/myComponents/common/ToggleButtons";
 import ScheduleGrid from "@/myComponents/pages/schedule/ScheduleGrid";
+import DownloadSchedule from "./DownloadSchedule";
 
 type SchedulePageProps = {
   header: { title: string; description: string };
@@ -23,8 +24,12 @@ export default function SchedulePageTemplate({
           description={header.description}
           badge="grafik"
         ></SectionContent>
-        <TabsNav tabs={scheduleTabs}/>
+        <TabsNav tabs={scheduleTabs} />
         <ScheduleGrid classesByDay={scheduleContent} />
+        <DownloadSchedule
+          title={header.title}
+          scheduleContent={scheduleContent}
+        />
         <AnyQuestionsContact />
       </SectionContainer>
     </main>
