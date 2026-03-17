@@ -1,6 +1,6 @@
 "use client";
 
-import { CircleX, SearchIcon, User } from "lucide-react";
+import { CircleX, RotateCcw, SearchIcon, User } from "lucide-react";
 import { Field, FieldLabel } from "@/components/ui/field";
 import {
   InputGroup,
@@ -22,6 +22,12 @@ export type OfferSortingValue =
   | "alphabetical-desc"
   | "age-asc";
 
+export type ExperienceFilterValue =
+  | "all"
+  | "Początkujący"
+  | "Średniozaawansowani"
+  | "Zaawansowani";
+
 type Props = {
   searchName: string;
   setSearchName: (value: string) => void;
@@ -29,6 +35,9 @@ type Props = {
   setSearchAge: (value: string) => void;
   sorting: OfferSortingValue;
   setSorting: (value: OfferSortingValue) => void;
+  experience: ExperienceFilterValue;
+  setExperience: (value: ExperienceFilterValue) => void;
+  onClearFilters: () => void;
 };
 
 export default function OfferFilterBar({
@@ -38,9 +47,18 @@ export default function OfferFilterBar({
   setSearchAge,
   sorting,
   setSorting,
+  experience,
+  setExperience,
+  onClearFilters,
 }: Props) {
+  const hasActiveFilters =
+    searchName !== "" ||
+    searchAge !== "" ||
+    sorting !== "default" ||
+    experience !== "all";
+
   return (
-    <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
       <Field className="flex-1">
         <FieldLabel htmlFor="searchName">Wyszukaj zajęcia</FieldLabel>
         <InputGroup>
@@ -101,12 +119,34 @@ export default function OfferFilterBar({
       </Field>
 
       <Field className="flex-1">
+        <FieldLabel>Poziom zaawansowania</FieldLabel>
+        <Select
+          value={experience}
+          onValueChange={(value) =>
+            setExperience(value as ExperienceFilterValue)
+          }
+        >
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem value="all">Wszystkie poziomy</SelectItem>
+              <SelectItem value="Początkujący">Początkujący</SelectItem>
+              <SelectItem value="Średniozaawansowani">
+                Średniozaawansowani
+              </SelectItem>
+              <SelectItem value="Zaawansowani">Zaawansowani</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </Field>
+
+      <Field className="flex-1">
         <FieldLabel>Sortowanie</FieldLabel>
         <Select
           value={sorting}
-          onValueChange={(value) =>
-            setSorting(value as OfferSortingValue)
-          }
+          onValueChange={(value) => setSorting(value as OfferSortingValue)}
         >
           <SelectTrigger>
             <SelectValue />
@@ -120,6 +160,19 @@ export default function OfferFilterBar({
             </SelectGroup>
           </SelectContent>
         </Select>
+      </Field>
+
+      <Field className="flex-1">
+        <FieldLabel className="opacity-0">Wyczyść</FieldLabel>
+        <button
+          type="button"
+          onClick={onClearFilters}
+          disabled={!hasActiveFilters}
+          className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-md border px-4 text-sm font-medium transition hover:bg-accent disabled:pointer-events-none disabled:opacity-50"
+        >
+          <RotateCcw className="w-4" />
+          Wyczyść filtry
+        </button>
       </Field>
     </div>
   );

@@ -3,17 +3,16 @@
 import { useMemo, useState } from "react";
 import { ClassesOfferType } from "@/data/ofertaData";
 import OfferCard from "@/myComponents/pages/offer/OfferCard";
-import OfferFilterBar, { OfferSortingValue } from "./OfferFilterBar";
+import OfferFilterBar, {
+  ExperienceFilterValue,
+  OfferSortingValue,
+} from "./OfferFilterBar";
 
 type Props = {
   offerContent: ClassesOfferType[];
 };
 
-function matchesAge(
-  minAge: number | null | undefined,
-  maxAge: number | null | undefined,
-  searchedAge: string,
-) {
+function matchesAge(minAge: number, maxAge: number, searchedAge: string) {
   if (!searchedAge) return true;
 
   const ageNumber = Number(searchedAge);
@@ -23,13 +22,21 @@ function matchesAge(
   if (minAge != null && maxAge == null) return ageNumber >= minAge;
   if (minAge == null && maxAge != null) return ageNumber <= maxAge;
 
-  return ageNumber >= minAge! && ageNumber <= maxAge!;
+  return ageNumber >= minAge && ageNumber <= maxAge;
 }
 
 export default function OfferFiltersSection({ offerContent }: Props) {
   const [searchName, setSearchName] = useState("");
   const [searchAge, setSearchAge] = useState("");
   const [sorting, setSorting] = useState<OfferSortingValue>("default");
+  const [experience, setExperience] = useState<ExperienceFilterValue>("all");
+
+  const handleClearFilters = () => {
+    setSearchName("");
+    setSearchAge("");
+    setSorting("default");
+    setExperience("all");
+  };
 
   const filteredOffers = useMemo(() => {
     const normalizedSearch = searchName.trim().toLowerCase();
@@ -41,7 +48,10 @@ export default function OfferFiltersSection({ offerContent }: Props) {
 
       const ageMatches = matchesAge(+item.minAge, +item.maxAge, searchAge);
 
-      return matchesName && ageMatches;
+      const experienceMatches =
+        experience === "all" || item.experience === experience;
+
+      return matchesName && ageMatches && experienceMatches;
     });
 
     if (sorting === "alphabetical-asc") {
@@ -61,7 +71,7 @@ export default function OfferFiltersSection({ offerContent }: Props) {
     }
 
     return result;
-  }, [offerContent, searchName, searchAge, sorting]);
+  }, [offerContent, searchName, searchAge, sorting, experience]);
 
   return (
     <>
@@ -72,7 +82,14 @@ export default function OfferFiltersSection({ offerContent }: Props) {
         setSearchAge={setSearchAge}
         sorting={sorting}
         setSorting={setSorting}
+        experience={experience}
+        setExperience={setExperience}
+        onClearFilters={handleClearFilters}
       />
+
+      <div className="mb-6 text-sm text-muted-foreground">
+        Znaleziono: {filteredOffers.length}
+      </div>
 
       {filteredOffers.length > 0 ? (
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
