@@ -86,33 +86,34 @@ export default function OfferFiltersSection({ offerContent }: Props) {
         setExperience={setExperience}
         onClearFilters={handleClearFilters}
       />
+      <div>
+        <div className="text-sm text-muted-foreground mb-6">
+          Znaleziono: {filteredOffers.length} wyników
+        </div>
 
-      <div className="text-sm text-muted-foreground">
-        Znaleziono: {filteredOffers.length}
+        {filteredOffers.length > 0 ? (
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {filteredOffers.map((item, id) => (
+              <OfferCard
+                key={`${item.name}-${id}`}
+                name={item.name}
+                instructor={item.instructor}
+                img={item.img}
+                instructorAvatar={item.instructorAvatar}
+                minAge={item.minAge}
+                maxAge={item.maxAge}
+                description={item.description}
+                experience={item.experience}
+                scheduleSrc={item.scheduleSrc}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className=" p-6 text-md text-muted-foreground text-center">
+            Nie znaleziono zajęć dla podanych filtrów.
+          </div>
+        )}
       </div>
-
-      {filteredOffers.length > 0 ? (
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {filteredOffers.map((item, id) => (
-            <OfferCard
-              key={`${item.name}-${id}`}
-              name={item.name}
-              instructor={item.instructor}
-              img={item.img}
-              instructorAvatar={item.instructorAvatar}
-              minAge={item.minAge}
-              maxAge={item.maxAge}
-              description={item.description}
-              experience={item.experience}
-              scheduleSrc={item.scheduleSrc}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="rounded-xl border p-6 text-sm text-muted-foreground">
-          Nie znaleziono zajęć dla podanych filtrów.
-        </div>
-      )}
     </>
   );
 }
