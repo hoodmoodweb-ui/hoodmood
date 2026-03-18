@@ -15,7 +15,7 @@ export default function ToggleButtons({ tabs }: TabsProps) {
 
   return (
     <div className="w-full overflow-x-auto md:overflow-visible flex items-center">
-      <div className="flex min-w-max gap-4 px-1 md:min-w-0 md:flex-wrap md:justify-center mx-auto ">
+      <div className="flex min-w-max gap-4 px-1 pb-2 md:min-w-0 md:flex-wrap md:justify-center mx-auto ">
         {tabs.map((tab) => {
           const isActive = activeSegment === tab.href;
 

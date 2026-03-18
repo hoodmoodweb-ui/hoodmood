@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/hover-card";
 import { Info } from "lucide-react";
 import { PricingItem } from "@/app/cennik/koszalin/[category]/data";
+import ButtonSecondary from "@/myComponents/common/ButtonSecondary";
 
 export type PricingTableProps = {
   title?: string;
@@ -24,13 +25,13 @@ export default function PricingTable({
   ctaHref = "/kontakt",
 }: PricingTableProps) {
   return (
-    <section className="w-full">
+    <section className="w-full ">
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-4">
           <h2 className=" text-white text-lg">{title}</h2>
         </div>
 
-        <div className=" rounded-2xl border  backdrop-blur-sm">
+        <div className=" rounded-2xl border  backdrop-blur-2xl bg-black/2 dark:bg-white/5">
           <div
             className={`hidden ${desktopGrid} items-center gap-4 border-b  px-5 py-3 text-xs font-medium uppercase tracking-[0.18em]  md:grid text-muted-foreground`}
           >
@@ -40,7 +41,7 @@ export default function PricingTable({
             <span className=" text-center">Cena</span>
           </div>
 
-          <div className="divide-y divide-white/10">
+          <div className="divide-y divide-border-style ">
             {items.length === 0 && (
               <p className="text-center py-4 max-w-md mx-auto leading-relaxed text-balance">
                 Nie znaleziono zajęć pasujących do wprowadzonego hasła.
@@ -49,7 +50,7 @@ export default function PricingTable({
             {items.map((item, index) => (
               <article
                 key={`${item.name}-${item.minAge}-${index}`}
-                className={`group grid gap-4 px-4 py-4 transition-colors md:px-5 ${desktopGrid} md:items-center hover:bg-black/10 dark:hover:bg-white/5`}
+                className={`group grid gap-4 px-4 py-4 transition-colors md:px-5 ${desktopGrid} md:items-center bg-white/90   hover:bg-black/0.5 dark:bg-background/50 dark:hover:bg-white/0.5`}
               >
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
@@ -165,9 +166,7 @@ export default function PricingTable({
                 </div>
 
                 <div className="flex justify-self-end md:justify-self-end  ">
-                  <Button asChild size="sm" variant={"secondary"}>
-                    <Link href={ctaHref}>Zapisz się</Link>
-                  </Button>
+                  <ButtonSecondary href={ctaHref}>Zapisz się</ButtonSecondary>
                 </div>
               </article>
             ))}
