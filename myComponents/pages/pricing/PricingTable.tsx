@@ -7,11 +7,11 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Info } from "lucide-react";
-import { PriceItem } from "@/app/cennik/types";
+import { PricingItem } from "@/app/cennik/koszalin/[category]/data";
 
 export type PricingTableProps = {
   title?: string;
-  items: PriceItem[];
+  items: PricingItem[];
   ctaHref?: string;
 };
 

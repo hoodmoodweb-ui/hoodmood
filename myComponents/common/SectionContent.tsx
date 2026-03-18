@@ -15,7 +15,7 @@ export default function SectionContent({ badge, title, description }: Props) {
         </Badge>
         <h2 className="text-2xl xl:text-3xl">{title}</h2>
       </div>
-      <p className="leading-6 text-(--muted-foreground)">{description}</p>
+      <p className="leading-6 text-muted-foreground">{description}</p>
     </div>
   );
 }

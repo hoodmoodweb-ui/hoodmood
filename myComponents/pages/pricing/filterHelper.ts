@@ -1,5 +1,5 @@
+import { PricingItem } from "@/app/cennik/koszalin/[category]/data";
 import { normalize } from "@/myComponents/pages/faq/faqFilter";
-import { PriceItem } from "../../../app/cennik/types";
 
 type SortingValue = "default" | "ascending" | "descending" | "alphabetical";
 
@@ -14,7 +14,7 @@ const parseAgeValue = (value: string) => {
 };
 
 export function filterAndSortPricingData(
-  data: PriceItem[],
+  data: PricingItem[],
   searchInput: string,
   searchAge: string,
   sorting: SortingValue,
