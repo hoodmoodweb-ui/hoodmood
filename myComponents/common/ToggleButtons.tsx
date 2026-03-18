@@ -11,7 +11,7 @@ type Item = {
 type Props = {
   tabs: Item[];
 };
-export default function TabsNav({ tabs }: Props) {
+export default function ToggleButtons({ tabs }: Props) {
   const activeSegment = usePathname();
 
   return (
