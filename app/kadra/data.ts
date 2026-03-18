@@ -21,7 +21,7 @@ export const instructors: Trainer[] = [
     id: "talita-jarzecka",
     name: "Talita Jarzęcka",
     role: "CEO",
-    styles:  ["Heels", "Commercial", "High Heels Basic", "Stretching"],
+    styles: ["Heels", "Commercial", "High Heels Basic", "Stretching"],
 
     description:
       "Talita to doświadczona choreografka, trenerka i artystka sceniczna, której fundamentem jest solidne wykształcenie muzyczno-taneczne. Ukończyła studia licencjackie na kierunku Taniec Nowoczesny na Wydziale Sztuk Scenicznych Akademii Muzycznej w Łodzi. Wcześniej kształciła się w Szkole Muzycznej im. Grażyny Bacewicz w Koszalinie na Wydziale Rytmiki. Brała udział w spektaklu „Projektowanie człowieka” (chor. Maciej Mołdoch / Sheva), stworzyła autorskie spektakle „Halucynacje” i „Gen Z”. Uczestniczyła w licznych warsztatach i programach artystycznych w Polsce i za granicą (m.in. Ateny, Mediolan, Paryż, Londyn). Od ośmiu lat prowadzi grupę Quality Crew, która zdobywa miejsca na turniejach. Jej misją jest przygotowywanie młodych tancerzy do profesjonalnego wejścia na scenę.",
@@ -31,6 +31,7 @@ export const instructors: Trainer[] = [
       "/assets/images/team/talitaJarzecka.jpg",
     ],
     localizations: ["Koszalin", "Polanów", "Biały Bór"],
+    instagram: "https://www.instagram.com",
   },
   {
     id: "wiktoria-butwicka",
@@ -46,6 +47,7 @@ export const instructors: Trainer[] = [
       "/assets/images/team/wiktoriaButwicka.jpg",
     ],
     localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com",
   },
   {
     id: "paulina-walikowska",
@@ -61,6 +63,7 @@ export const instructors: Trainer[] = [
       "/assets/images/team/paulinaWalikowska.jpg",
     ],
     localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com",
   },
   {
     id: "alina-lemanska",
@@ -76,6 +79,7 @@ export const instructors: Trainer[] = [
       "/assets/images/team/alinaLemanska.jpg",
     ],
     localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com",
   },
   {
     id: "magdalena-sokolowska-japona",
@@ -91,6 +95,7 @@ export const instructors: Trainer[] = [
       "/assets/images/team/magdalenaSokolowska.jpg",
     ],
     localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com",
   },
   {
     id: "maria-kober",
@@ -106,6 +111,7 @@ export const instructors: Trainer[] = [
       "/assets/images/team/mariaKober.jpg",
     ],
     localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com",
   },
   {
     id: "oliwia-piec",
@@ -121,5 +127,6 @@ export const instructors: Trainer[] = [
       "/assets/images/team/oliwiaPiec.jpg",
     ],
     localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com",
   },
 ];

@@ -29,7 +29,7 @@ export default function TeamCarousel({ instructors }: Props) {
       opts={{ align: "start", loop: true, dragFree: true }}
       plugins={[autoplay.current]}
     >
-      <CarouselContent>
+      <CarouselContent className="py-4">
         {instructors.map((item) => (
           <CarouselItem
             className="basis-1/1 md:basis-1/3 lg:basis-1/3 xl:basis-1/4 md:pl-8 lg:pl-8 xl:pl-8 py-1"

@@ -16,6 +16,9 @@ import AnyQuestionsContact from "@/myComponents/common/AnyQuestionsContact";
 import MainWrapper from "@/myComponents/common/MainWrapper";
 import { Badge } from "@/components/ui/badge";
 import ButtonSecondary from "@/myComponents/common/ButtonSecondary";
+import { ChevronRight, Instagram } from "lucide-react";
+import { a11y } from "@/public/styles";
+import { cn } from "@/lib/utils";
 
 type PageProps = {
   params: Promise<{
@@ -58,16 +61,27 @@ export default async function TrainerPage({ params }: PageProps) {
   return (
     <MainWrapper>
       <SectionContainer>
-        <Link
-          href="/kadra"
-          className="inline-flex items-center w-fit text-sm text-muted-foreground transition hover:text-black dark:hover:text-white"
-        >
-          ← Wróć do kadry
-        </Link>
+        <div className="space-y-4">
+          <span className="inline-flex items-start">
+            <Link
+              href="/"
+              className="inline-flex items-center  w-fit text-sm text-muted-foreground transition hover:text-black dark:hover:text-white"
+            >
+              Strona główna
+            </Link>
+            <span>
+              <ChevronRight className="h-5 text-muted-foreground" />
+            </span>
+            <Link
+              href="/kadra"
+              className="inline-flex items-center w-fit text-sm text-muted-foreground transition hover:text-black dark:hover:text-white"
+            >
+              Kadra
+            </Link>
+          </span>
 
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-18 ">
-          <div className="relative">
-            <div className="">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-18   ">
+            <div className="relative ">
               <Carousel
                 className="w-full"
                 opts={{
@@ -95,58 +109,62 @@ export default async function TrainerPage({ params }: PageProps) {
                 <CarouselNext className="right-4 bg-black/20 text-white hover:text-white hover:cursor-pointer  dark:bg-black/20  backdrop-blur-md hover:bg-black/30 dark:hover:bg-black/30" />
               </Carousel>
             </div>
-          </div>
 
-          <div className="flex flex-col justify-between ">
-            <div>
-              <h1 className=" text-3xl ">{trainer.name}</h1>
+            <div className="flex flex-col justify-between ">
+              <div>
+                <h1 className=" text-3xl ">{trainer.name}</h1>
 
-              <p className="mt-3 text-base text-neutral-400 sm:text-lg">
-                {trainer.role}
-              </p>
+                <p className="mt-3 text-base text-neutral-400 sm:text-lg">
+                  {trainer.role}
+                </p>
 
-              <div className="flex gap-2">
-                {trainer.localizations.map((localization, id) => (
-                  <p className="mt-2 text-sm text-neutral-500" key={id}>
-                    {localization}
-                  </p>
-                ))}
-              </div>
-
-              <p className="mt-8 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                {trainer.description}
-              </p>
-            </div>
-
-            {trainer.styles?.length > 0 && (
-              <div className="mt-8">
-                <h2 className="text-sm  uppercase tracking-wide text-muted-foreground">
-                  Prowadzone zajęcia
-                </h2>
-
-                <div className="mt-4 flex flex-wrap gap-3">
-                  {trainer.styles.map((item) => (
-                    <Badge key={item} variant={"secondary"}>
-                      {item}
-                    </Badge>
+                <div className="flex gap-2">
+                  {trainer.localizations.map((localization, id) => (
+                    <p className="mt-2 text-sm text-neutral-500" key={id}>
+                      {localization}
+                    </p>
                   ))}
                 </div>
+
+                <p className="mt-8 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+                  {trainer.description}
+                </p>
               </div>
-            )}
 
-            <div className="mt-10 flex flex-wrap gap-3 place-self-end ">
-              {/* {trainer.name && (
-                <a
-                  href={"www.youtube.com"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-5 py-3 text-sm font-medium text-black transition hover:opacity-90"
-                >
-                  Instagram
-                </a>
-              )} */}
+              {trainer.styles?.length > 0 && (
+                <div className="mt-8">
+                  <h2 className="text-sm  uppercase tracking-wide text-muted-foreground">
+                    Prowadzone zajęcia
+                  </h2>
 
-              <ButtonSecondary href="/kadra">Zobacz całą kadrę</ButtonSecondary>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {trainer.styles.map((item) => (
+                      <Badge key={item} variant={"secondary"}>
+                        {item}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className=" flex flex-wrap gap-3 place-self-start mt-8 xl:place-self-end">
+                {trainer.instagram && (
+                  <ButtonSecondary href={trainer.instagram} blank={true}>
+                    <img
+                      width={14}
+                      height={14}
+                      alt={`instagram logo`}
+                      src={`/icons/instagram.svg`}
+                      className={cn("dark:invert", a11y)}
+                    />{" "}
+                    Instagram
+                  </ButtonSecondary>
+                )}
+
+                <ButtonSecondary href="/kadra">
+                  Zobacz całą kadrę
+                </ButtonSecondary>
+              </div>
             </div>
           </div>
         </div>
