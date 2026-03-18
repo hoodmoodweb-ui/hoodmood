@@ -38,7 +38,7 @@ export const NAV: NavItem[] = [
     dropdown: true,
     label: "Cennik",
     items: [
-      { label: "Koszalin", href: "/cennik/koszalin" },
+      { label: "Koszalin", href: "/cennik/koszalin/zajecia" },
       { label: "Polanów", href: "/cennik/polanow" },
       { label: "Biały Bór", href: "/cennik/bialy-bor" },
     ],

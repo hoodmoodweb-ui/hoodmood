@@ -46,6 +46,7 @@ export default function NavMenuMobile({ isOpen, handleOpenNav }: Props) {
                             href={link.href}
                             className=" w-full py-1"
                             onClick={() => closeNavOnClick()}
+                            scroll
                           >
                             {link.label}
                           </Link>
