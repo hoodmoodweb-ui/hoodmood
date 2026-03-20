@@ -18,7 +18,7 @@ export default function Navbar() {
       className="
         fixed inset-x-0 top-0 z-50
         border-b border-black/[0.06] dark:border-white/[0.08]
-        bg-white/[0.72] dark:bg-[#21191d]/72
+        bg-white/[0.72] dark:bg-black/42
         backdrop-blur-xl
         shadow-[0_8px_30px_rgba(0,0,0,0.06)]
         dark:shadow-[0_8px_30px_rgba(0,0,0,0.20)]
