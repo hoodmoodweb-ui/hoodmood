@@ -53,9 +53,17 @@
 }
 
 :root {
+  --brand-50:  #fff8fa;
+  --brand-100: #ffeef3;
+  --brand-200: #ffdee7;
+  --brand-300: #f7bdd0;
+  --brand-400: #eb94b1;
+  --brand-500: #d96f93;
+  --brand-600: #c4587b;
   --brand-700: #ac4967;
-  --brand-200: rgb(255, 222, 231);
-  --brand-900: rgb(131, 57, 79);
+  --brand-800: #944059;
+  --brand-900: #83394f;
+  --brand-950: #572334;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

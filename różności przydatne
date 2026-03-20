@@ -1,1 +1,16 @@
 focus-visible:border-ring focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px] - a11y focus ring na klikalne
+
+
+
+
+  rounded-[28px]
+  border border-white/20
+  bg-white/10
+  backdrop-blur-2xl
+  shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+  ring-1 ring-inset ring-white/20
+  before:absolute before:inset-0 before:rounded-[28px]
+  before:bg-gradient-to-br before:from-white/25 before:via-white/10 before:to-white/5
+  before:pointer-events-none
+  overflow-hidden
+  relative

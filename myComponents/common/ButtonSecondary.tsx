@@ -13,7 +13,64 @@ export default function ButtonSecondary({ children, href, blank }: Props) {
       href={`${href}`}
       target={blank ? "_blank" : "_self"}
       scroll
-      className="inline-flex items-center text-slate-900 dark:text-slate-50 justify-center gap-2 whitespace-nowrap uppercase rounded-full  text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3 w-fit"
+      className="
+  relative inline-flex items-center justify-center gap-2
+  overflow-hidden
+  whitespace-nowrap uppercase
+  rounded-full
+  py-2 px-5
+  text-[12px] font-semibold tracking-[0.15em]
+
+  text-[#21191d] dark:text-white/92
+
+  border border-black/[0.08] dark:border-white/[0.10]
+
+  bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(245,241,243,0.92))]
+  dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.05))]
+
+  backdrop-blur-lg
+
+  ring-1 ring-inset ring-black/[0.04] dark:ring-white/[0.08]
+
+  shadow-[0_10px_24px_rgba(0,0,0,0.10),inset_0_1px_0_rgba(255,255,255,0.65)]
+  dark:shadow-[0_10px_24px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.14)]
+
+  transition-all duration-300
+
+  hover:-translate-y-[1px]
+  hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(240,234,237,0.98))]
+  dark:hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.07))]
+
+  hover:border-black/[0.12] dark:hover:border-white/[0.14]
+
+  hover:shadow-[0_14px_32px_rgba(0,0,0,0.14),inset_0_1px_0_rgba(255,255,255,0.78)]
+  dark:hover:shadow-[0_14px_32px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.18)]
+
+  active:translate-y-0 active:scale-[0.985]
+
+  outline-none
+  focus-visible:outline-none
+  focus-visible:ring-4
+  focus-visible:ring-[#21191d]/30 dark:focus-visible:ring-white/85
+  focus-visible:ring-offset-2
+  focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#21191d]
+
+  disabled:pointer-events-none disabled:opacity-50
+
+  before:absolute before:inset-x-0 before:top-0 before:h-1/2
+  before:bg-[linear-gradient(180deg,rgba(255,255,255,0.55),rgba(255,255,255,0))]
+  dark:before:bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0))]
+  before:pointer-events-none
+
+  after:absolute after:inset-0 after:rounded-full
+  after:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.22),transparent_55%)]
+  dark:after:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_55%)]
+  after:pointer-events-none
+
+  [&_svg]:pointer-events-none
+  [&_svg:not([class*='size-'])]:size-4
+  [&_svg]:shrink-0
+"
     >
       {children}
     </Link>

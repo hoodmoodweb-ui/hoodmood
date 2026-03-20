@@ -20,7 +20,7 @@ export default function NavMenuDesktop() {
             item.dropdown ? (
               <NavigationMenuItem key={item.label}>
                 <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent >
                   {item.items.map((link) => (
                     <NavigationMenuLink
                       key={link.label}

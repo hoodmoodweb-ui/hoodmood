@@ -37,10 +37,10 @@ export default function OpinionsCarousel({ testimonials }: Props) {
       opts={{ align: "start", loop: true, dragFree: true }}
       plugins={[autoplay.current]}
     >
-      <CarouselContent>
+      <CarouselContent className="py-1">
         {testimonials.map((testimonial) => (
           <CarouselItem
-            className="basis-1/1 md:basis-1/2 lg:basis-1/3 "
+            className="basis-1/1 md:basis-1/2 lg:basis-1/3 pointer-events-none"
             key={testimonial.id}
           >
             <Card>

@@ -28,6 +28,7 @@ export default function TeamCarousel({ instructors }: Props) {
     <Carousel
       opts={{ align: "start", loop: true, dragFree: true }}
       plugins={[autoplay.current]}
+      className="transparent"
     >
       <CarouselContent className="py-4">
         {instructors.map((item) => (

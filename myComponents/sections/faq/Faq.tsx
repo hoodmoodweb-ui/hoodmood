@@ -18,7 +18,7 @@ export default function Faq() {
         description={data.description}
       />
       <Accordion type="single" collapsible>
-        {faq.splice(0,3).map((question) => (
+        {faq.splice(0, 3).map((question) => (
           <AccordionItem value={question.question} key={question.question}>
             <AccordionTrigger>{question.question}</AccordionTrigger>
             <AccordionContent>{question.answer}</AccordionContent>

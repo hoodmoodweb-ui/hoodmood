@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import ButtonPrimary from "@/myComponents/common/ButtonPrimary";
 export default function ProofBento() {
   return (
     <SectionContainer>
@@ -25,7 +24,7 @@ export default function ProofBento() {
             {group.map((featureCard) => (
               <Card
                 key={featureCard.id}
-                className="w-full   overflow-hidden rounded-lg border border-white/10 bg-background  mx-auto max-w-none "
+                className="w-full   overflow-hidden  mx-auto max-w-none "
               >
                 {/* <div className="h-fit "> */}
                 {featureCard.img !== null && (

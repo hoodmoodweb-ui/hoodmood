@@ -36,8 +36,8 @@ export default function RootLayout({
       <body
         className={`${fontAnton.variable} ${fontRoboto.variable} w-full relative bg-transparent`}
       >
-        <div className="inset-0 fixed -z-40 bg-[url('/assets/images/background.jpg')] bg-cover bg-center bg-no-repeat">
-          <div className="bg-black/30 inset-0 fixed"></div>
+        <div className="inset-0 fixed -z-40 bg-[url(/assets/images/background-white.jpg)] dark:bg-[url(/assets/images/background.jpg)] bg-cover bg-center bg-no-repeat">
+          <div className="bg-white/70 dark:bg-black/30 inset-0 fixed"></div>
         </div>
         <NextTopLoader
           color="#ac4967"
@@ -47,6 +47,7 @@ export default function RootLayout({
           crawlSpeed={200}
           crawl={true}
           speed={200}
+          showSpinner={false}
         />
         <ThemeProvider
           attribute="class"

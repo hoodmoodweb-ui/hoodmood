@@ -18,7 +18,7 @@ type Props = {
 
 export default function TeamCard({ id, name, role, images }: Props) {
   return (
-    <Card className="overflow-hidden rounded-xl focus-within:ring-[3px] focus-within:ring-ring/50 focus-within:ring-offset-2 hover:scale-105 transition-transform ease-in-out duration-200">
+    <Card className="overflow-hidden  hover:scale-102 transition-transform ease-in-out duration-200 ">
       <div className="relative aspect-square w-full overflow-hidden">
         <Image
           quality={75}
@@ -39,7 +39,7 @@ export default function TeamCard({ id, name, role, images }: Props) {
         </Link>
       </div>
 
-      <CardHeader>
+      <CardHeader className="pointer-events-none">
         <div className="flex justify-between  w-full items-start">
           <CardTitle className="font-anton font-normal ">{name}</CardTitle>
         </div>
