@@ -1,41 +1,65 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import MenuButton from "./MenuButton";
 import NavMenuDesktop from "./NavMenuDesktop";
 import NavMenuMobile from "./NavMenuMobile";
 import ButtonSecondary from "../common/ButtonSecondary";
 import ButtonPrimary from "../common/ButtonPrimary";
 import { Switch } from "../themeSwitch/switch";
-import Link from "next/link";
 import Container from "../common/Container";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full  py-4 xl:py-2  bg-neutral-100 dark:bg-neutral-800 z-1000 shadow-md">
+    <nav
+      className="
+        fixed inset-x-0 top-0 z-50
+        border-b border-black/[0.06] dark:border-white/[0.08]
+        bg-white/[0.72] dark:bg-[#21191d]/72
+        backdrop-blur-xl
+        shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+        dark:shadow-[0_8px_30px_rgba(0,0,0,0.20)]
+      "
+    >
       <Container>
-        <div className="flex  items-center w-full ">
+        <div className="flex min-h-18 items-center gap-4 xl:min-h-19">
           {/* LEFT */}
-          <div className=" w-full ">
-            <Link href="/">
+          <div className="flex min-w-0 flex-1 items-center">
+            <Link
+              href="/"
+              className="
+                inline-flex items-center rounded-2xl
+                outline-none transition-transform duration-200
+                hover:scale-[0.98]
+                focus-visible:outline-none
+                focus-visible:ring-2 focus-visible:ring-[#21191d]/20
+                focus-visible:ring-offset-2 focus-visible:ring-offset-white
+                dark:focus-visible:ring-white/80
+                dark:focus-visible:ring-offset-[#21191d]
+              "
+              aria-label="Przejdź do strony głównej"
+            >
               <img
                 src="/assets/svg/mainLogo/logo.svg"
-                className="max-h-12 lg:max-h-18 hover:scale-95 transition-transform ease-in-out duration-100"
+                alt="Hoodmood"
+                className="h-auto max-h-11 w-auto xl:max-h-14"
               />
             </Link>
           </div>
 
           {/* CENTER */}
-          <div className="flex flex-1 justify-center  ">
+          <div className="hidden xl:flex flex-1 justify-center">
             <NavMenuDesktop />
           </div>
 
           {/* RIGHT */}
-          <div className="flex w-full items-center gap-3 justify-end ">
+          <div className="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-3">
             <Switch className="xl:hidden" />
             <MenuButton menuState={isOpen} menuHandler={setIsOpen} />
+
             <div className="hidden xl:flex items-center gap-3">
               <Switch />
               <ButtonSecondary href="/kontakt">kontakt</ButtonSecondary>
