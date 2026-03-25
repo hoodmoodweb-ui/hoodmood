@@ -13,10 +13,16 @@ export const selectedClassSchema = z.object({
   currency: z.literal("PLN"),
 });
 
+const namePattern = /^[\p{L}\s-]+$/u;
+
 export const enrollmentSchema = z
   .object({
     participantFullName: z
       .string()
+      .regex(
+        namePattern,
+        "Imię i nazwisko uczestnika może zawierać tylko litery.",
+      )
       .min(2, "Imię i nazwisko uczestnika musi mieć co najmniej 2 znaki."),
     participantType: z.enum(["youth", "adult"], {
       message: "Wybierz grupę wiekową uczestnika.",
@@ -27,6 +33,10 @@ export const enrollmentSchema = z
       .min(1, "Wybierz co najmniej jedne zajęcia."),
     parentFullName: z
       .string()
+      .regex(
+        namePattern,
+        "Imię i nazwisko opiekuna może zawierać tylko litery.",
+      )
       .min(2, "Imię i nazwisko opiekuna musi mieć co najmniej 2 znaki."),
     email: z.string().email("Podaj poprawny adres e-mail."),
     phone: z.string().min(9, "Podaj poprawny numer telefonu."),

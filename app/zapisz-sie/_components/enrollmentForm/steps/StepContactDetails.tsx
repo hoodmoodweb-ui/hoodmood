@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import type { EnrollmentFormData } from "@/lib/schemas/enrollmentSchema";
 import FormTextField from "@/myComponents/forms/fields/FormTextField";
 import FormTextareaField from "@/myComponents/forms/fields/FormTextareaField";
+import { sanitizeNameInput } from "../utils";
 
 
 export default function StepContactDetails() {
@@ -18,7 +19,11 @@ export default function StepContactDetails() {
         label="Imię i nazwisko opiekuna"
         placeholder="Wprowadź imię i nazwisko"
         icon={User}
-        registration={register("parentFullName")}
+        registration={register("parentFullName", {
+          onChange: (event) => {
+            event.target.value = sanitizeNameInput(event.target.value);
+          },
+        })}
         error={errors.parentFullName}
         disabled={isSubmitting}
       />

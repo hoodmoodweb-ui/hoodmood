@@ -10,6 +10,7 @@ import {
 import type { EnrollmentFormData } from "@/lib/schemas/enrollmentSchema";
 import FormTextField from "@/myComponents/forms/fields/FormTextField";
 import { inputStyles } from "@/myComponents/pages/pricing/PricingFilterBar";
+import { sanitizeNameInput } from "../utils";
 
 const participantTypeOptions = [
   {
@@ -42,7 +43,11 @@ export default function StepParticipant() {
         label="Imię i nazwisko uczestnika"
         placeholder="Wpisz imię i nazwisko"
         icon={User}
-        registration={register("participantFullName")}
+        registration={register("participantFullName", {
+          onChange: (event) => {
+            event.target.value = sanitizeNameInput(event.target.value);
+          },
+        })}
         error={errors.participantFullName}
         disabled={isSubmitting}
       />

@@ -160,22 +160,32 @@ export default function EnrollmentForm() {
 
   const step = steps[currentStep];
   const isLastStep = currentStep === steps.length - 1;
+  const shouldShowIllustration = currentStep !== 1;
+  const isClassesStep = currentStep === 1;
 
   return (
     <FormProvider {...methods}>
       <EnrollmentStepLayout
         illustration={
-          <div className="relative mx-auto aspect-[1.05] w-full">
-            <Image
-              alt={step.imageAlt}
-              src={step.imageSrc}
-              fill
-              className="object-contain"
-              sizes="(max-width: 1279px) 70vw, 35vw"
-              priority
-            />
-          </div>
+          isClassesStep ? (
+            <StepClassesSelection mode="configurator" />
+          ) : shouldShowIllustration ? (
+            <div className="relative mx-auto aspect-[1.05] w-full">
+              <Image
+                alt={step.imageAlt}
+                src={step.imageSrc}
+                fill
+                className="object-contain"
+                sizes="(max-width: 1279px) 70vw, 35vw"
+                priority
+              />
+            </div>
+          ) : undefined
         }
+        illustrationContainerClassName={
+          isClassesStep ? "items-start justify-stretch p-5 md:p-6" : undefined
+        }
+        illustrationContentClassName={isClassesStep ? "max-w-none" : undefined}
       >
         <div className="flex h-full flex-col gap-6">
           <EnrollmentStepHeader currentStep={currentStep} steps={steps} />
@@ -193,7 +203,7 @@ export default function EnrollmentForm() {
             )}
 
             {currentStep === 0 && <StepParticipant />}
-            {currentStep === 1 && <StepClassesSelection />}
+            {currentStep === 1 && <StepClassesSelection mode="summary" />}
             {currentStep === 2 && <StepContactDetails />}
             {currentStep === 3 && <StepSummary />}
             {currentStep === 4 && <StepConsents />}

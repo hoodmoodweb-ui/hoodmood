@@ -19,28 +19,27 @@ export default function EnrollmentStepHeader({
   return (
     <div className="flex flex-col gap-6">
       <div className="space-y-4">
-        <div className="flex flex-wrap items-center gap-3 text-xs text-white/55">
+        <div className="grid grid-cols-5 gap-2 text-xs sm:gap-3">
           {steps.map((item, index) => {
             const isActive = index === currentStep;
-            const isCompleted = index < currentStep;
 
             return (
               <div
                 key={item.navLabel}
-                className={`inline-flex items-center gap-2 transition ${
-                  isActive ? "text-white" : "text-white/45"
+                className={`flex min-w-0 items-center justify-center gap-2 rounded-xl px-1 py-1.5 text-center transition sm:justify-start sm:px-0 ${
+                  isActive ? "text-white" : "text-white/40"
                 }`}
               >
                 <span
                   className={`flex h-5 w-5 items-center justify-center rounded-[4px] text-[10px] font-semibold ${
-                    isActive || isCompleted
+                    isActive
                       ? "bg-[#ac4967] text-white"
                       : "bg-white/10 text-white/55"
                   }`}
                 >
                   {index + 1}
                 </span>
-                <span className="text-sm">{item.navLabel}</span>
+                <span className="truncate text-xs sm:text-sm">{item.navLabel}</span>
               </div>
             );
           })}
