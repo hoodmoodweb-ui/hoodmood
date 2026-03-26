@@ -49,7 +49,7 @@ const steps = [
   },
   {
     navLabel: "Zajęcia",
-    title: "Wybierz lokalizację i zajęcia",
+    title: "Wybierz zajęcia które Cię interesują",
     description:
       "Dodaj jedne lub kilka zajęć. Po prawej stronie zobaczysz aktualne podsumowanie i ceny.",
     imageSrc: "/assets/images/enrollmentForm/target.svg",
@@ -59,15 +59,15 @@ const steps = [
     navLabel: "Kontakt",
     title: "Dane kontaktowe",
     description:
-      "Podaj dane opiekuna, abyśmy mogli potwierdzić zgłoszenie i przekazać szczegóły organizacyjne.",
+      "Podaj dane kontaktowe, abyśmy mogli potwierdzić zgłoszenie i przekazać szczegóły organizacyjne.",
     imageSrc: "/assets/images/enrollmentForm/calendar.svg",
     imageAlt: "Ilustracja danych kontaktowych",
   },
   {
     navLabel: "Podsumowanie",
-    title: "Sprawdź dane, zgody i wyślij",
+    title: "Sprawdź czy wszystko się zgadza",
     description:
-      "Na tym etapie możesz jeszcze raz sprawdzić wybrane zajęcia, dane kontaktowe oraz zaakceptować wymagane zgody.",
+      "Upewnij się, że wszystkie dane są poprawne. Jeśli wszystko jest w porządku, zaakceptuj regulamin i wyślij zgłoszenie. Czekamy na ciebie w studio!",
     imageSrc: "/assets/images/enrollmentForm/checking.svg",
     imageAlt: "Ilustracja podsumowania zgłoszenia",
   },
@@ -161,7 +161,7 @@ export default function EnrollmentForm() {
           isClassesStep ? (
             <StepClassesSelection mode="configurator" />
           ) : (
-            <div className="relative mx-auto hidden aspect-[1.2] w-full lg:block">
+            <div className="relative mx-auto  aspect-[2] w-full ">
               <Image
                 alt={step.imageAlt}
                 src={step.imageSrc}

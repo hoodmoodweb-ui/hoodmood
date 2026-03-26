@@ -10,9 +10,7 @@ export default function StepConsents() {
   } = useFormContext<EnrollmentFormData>();
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 md:p-5">
-      <h3 className="mb-3 text-base font-semibold text-white/95">Wymagane zgody</h3>
-
+    <section className=" px-1 md:p-5">
       <FormCheckboxField<EnrollmentFormData>
         control={control}
         name="consentsAccepted"
@@ -20,9 +18,14 @@ export default function StepConsents() {
         error={errors.consentsAccepted}
         disabled={isSubmitting}
         label={
-          <p className="text-sm leading-6 text-white/80">
+          <p className="text-xs leading-6 text-white/80">
             Akceptuję{" "}
-            <a href="/regulamin" className="underline decoration-white/35 underline-offset-4" target="_blank" rel="noopener">
+            <a
+              href="/regulamin"
+              className="underline decoration-white/35 underline-offset-4"
+              target="_blank"
+              rel="noopener"
+            >
               regulamin
             </a>{" "}
             i{" "}

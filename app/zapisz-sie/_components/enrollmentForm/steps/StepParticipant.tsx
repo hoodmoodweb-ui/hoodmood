@@ -50,7 +50,9 @@ export default function StepParticipant() {
   const participantAge = watch("participantAge");
   const selectedLocationId = watch("selectedLocationId");
   const isYouthParticipant = participantType === "youth";
-  const ageErrorId = errors.participantAge ? "participant-age-error" : undefined;
+  const ageErrorId = errors.participantAge
+    ? "participant-age-error"
+    : undefined;
   const locationErrorId = errors.selectedLocationId
     ? "participant-location-error"
     : undefined;
@@ -64,7 +66,7 @@ export default function StepParticipant() {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:gap-5">
+    <div className="grid grid-cols-1 gap-0 md:gap-5 ">
       <FormTextField
         id="participant-full-name"
         label="Imię i nazwisko uczestnika"
@@ -137,7 +139,7 @@ export default function StepParticipant() {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 ">
         <Field
           className={`flex flex-col gap-2.5 transition ${
             !isYouthParticipant ? "opacity-55" : ""
@@ -156,14 +158,18 @@ export default function StepParticipant() {
               type="text"
               inputMode="numeric"
               pattern="[0-9]*"
-              placeholder={isYouthParticipant ? "Np. 8" : "Tylko dla dzieci i młodzieży"}
+              placeholder={
+                isYouthParticipant ? "Np. 8" : "Tylko dla dzieci i młodzieży"
+              }
               disabled={isSubmitting || !isYouthParticipant}
               aria-invalid={!!errors.participantAge}
               aria-describedby={ageErrorId}
               value={participantAge}
               {...register("participantAge", {
                 onChange: (event) => {
-                  const value = event.target.value.replace(/\D/g, "").slice(0, 2);
+                  const value = event.target.value
+                    .replace(/\D/g, "")
+                    .slice(0, 2);
                   setValue("participantAge", value, {
                     shouldDirty: true,
                     shouldTouch: true,
@@ -199,11 +205,15 @@ export default function StepParticipant() {
           <Select
             value={selectedLocationId}
             onValueChange={(value) => {
-              setValue("selectedLocationId", value as EnrollmentFormData["selectedLocationId"], {
-                shouldDirty: true,
-                shouldTouch: true,
-                shouldValidate: true,
-              });
+              setValue(
+                "selectedLocationId",
+                value as EnrollmentFormData["selectedLocationId"],
+                {
+                  shouldDirty: true,
+                  shouldTouch: true,
+                  shouldValidate: true,
+                },
+              );
               handleClassesReset();
             }}
             disabled={isSubmitting}
@@ -212,7 +222,7 @@ export default function StepParticipant() {
               id="participant-location"
               aria-invalid={!!errors.selectedLocationId}
               aria-describedby={locationErrorId}
-              className={`${selectTriggerStyles} min-h-10 w-full rounded-2xl border-white/10 bg-white/[0.06] px-4 text-white`}
+              className={`${selectTriggerStyles} min-h-10 w-full  border-white/10 bg-white/[0.06] px-4 text-white`}
             >
               <SelectValue placeholder="Wybierz lokalizację" />
             </SelectTrigger>

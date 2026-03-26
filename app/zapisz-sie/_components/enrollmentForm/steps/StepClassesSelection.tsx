@@ -8,6 +8,7 @@ import type {
 
 import ClassConfigurator from "../selection/ClassConfigurator";
 import SelectedClassesPanel from "../selection/SelectedClassesPanel";
+import { MapPin, User } from "lucide-react";
 
 type StepClassesSelectionProps = {
   mode?: "default" | "configurator" | "summary";
@@ -40,18 +41,17 @@ export default function StepClassesSelection({
   const selectedLocationLocativeLabel =
     selectedLocation?.locativeLabel ?? "wybranej lokalizacji";
 
-  const availabilityLabel =
-    participantType === "adult"
-      ? `Zajęcia w ${selectedLocationLocativeLabel} dla dorosłych.`
-      : `Zajęcia w ${selectedLocationLocativeLabel} dla ${
-          participantAge ? `${participantAge} latków.` : "wybranego wieku."
-        }`;
-
   const configuratorContent = (
-    <div className="space-y-4">
-      <p className="font-[var(--anton)] text-lg tracking-[0.02em] text-white md:text-xl">
-        {availabilityLabel}
-      </p>
+    <div className="space-y-4 h-150">
+      <div className=" flex  gap-4">
+        <p className="font-[var(--anton)]  tracking-[0.02em] text-white md:text-xl inline-flex text-sm items-end gap-1 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 w-full justify-center md:items-center">
+          <User className="w-4 md:w-8 opacity-60" /> {participantAge} lat
+        </p>
+        <p className="font-[var(--anton)]  tracking-[0.02em] text-white md:text-xl inline-flex text-sm items-end gap-1 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 w-full justify-center md:items-center">
+          <MapPin className="w-4 md:w-8 opacity-60" />
+          {selectedLocationLocativeLabel}
+        </p>
+      </div>
 
       <ClassConfigurator
         items={items}
@@ -80,7 +80,7 @@ export default function StepClassesSelection({
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(320px,0.92fr)_minmax(340px,1fr)] xl:items-start ">
+    <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(320px,0.92fr)_minmax(340px,1fr)] xl:items-start  ">
       {configuratorContent}
       <SelectedClassesPanel items={items} onRemove={remove} />
     </div>

@@ -38,7 +38,7 @@ export default function EnrollmentStepNavigation({
           disabled={isSubmitting}
           className={`${buttonPrimaryStyes} min-h-11 w-full justify-center sm:w-auto disabled:cursor-not-allowed disabled:opacity-50`}
         >
-          {isSubmitting ? "Wysyłanie..." : "Wyślij zgłoszenie"}
+          {isSubmitting ? "Wysyłanie..." : "Wyślij"}
         </button>
       ) : (
         <button
