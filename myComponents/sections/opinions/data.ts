@@ -1,8 +1,8 @@
 export const data = {
   badge: "opinie",
-  title: "Co mówią nasi kursanci i rodzice",
+  title: "Opinie kursantów i rodziców o Hoodmood",
   description:
-    "Zamiast obiecywać gruszki na wierzbie, wolimy oddać głos tym, którzy naprawdę tańczą w Hoodmood. Sprawdź, jak oni czują nasze zajęcia, klimat i ekipę.",
+    "Zobacz, co o zajęciach tanecznych i akrobatycznych w Hoodmood mówią kursanci i rodzice z Koszalina, Polanowa i Białego Boru.",
 };
 
 export type Testimonial = {
