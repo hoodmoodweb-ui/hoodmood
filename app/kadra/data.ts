@@ -129,4 +129,20 @@ export const instructors: Trainer[] = [
     localizations: ["Koszalin"],
     instagram: "https://www.instagram.com",
   },
+  {
+    id: "robin-williams",
+    name: "Robin Williams",
+    role: "Formacje dla dorosłych",
+    styles: ["Formacje dla dorosłych", "Zajęcia dla dzieci 4–6"],
+
+    description:
+      "Robin Williams od lat rozwija się tanecznie w ekipie Quality Crew, gdzie zdobywa doświadczenie jako tancerka sceniczna i instruktorka. Ma doświadczenie warsztatowe u wielu trenerów, współtworzyła projekty filmowe (w tym produkcję nominowaną na International Cyprus Dance Film Festival) oraz występowała w spektaklach „Halucynacje” i „Gen Z”. W studiu prowadzi formację dla dorosłych oraz zajęcia dla dzieci w wieku 4–6 lat.",
+    images: [
+      "/assets/images/team/robin_williams.jpeg",
+      "/assets/images/team/robin_williams.jpeg",
+      "/assets/images/team/robin_williams.jpeg",
+    ],
+    localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com",
+  },
 ];

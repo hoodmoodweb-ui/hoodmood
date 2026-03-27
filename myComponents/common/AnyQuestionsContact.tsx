@@ -5,7 +5,7 @@ import { Mail, Phone } from "lucide-react";
 export default function AnyQuestionsContact() {
   return (
     <div className="max-w-140  flex flex-col items-start gap-4 xl:gap-2">
-      <h4 className="text-xl md:text-2xl">Masz pytania?</h4>
+      <h4 className="text-xl md:text-2xl font-anton">Masz pytania?</h4>
       <p className="leading-6">
         W pierwszej kolejności sprawdź stronę 
         <Link href={"/faq"} className="text-(--brand-700) underline">

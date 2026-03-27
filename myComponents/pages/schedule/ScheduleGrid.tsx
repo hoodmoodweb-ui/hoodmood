@@ -59,7 +59,7 @@ export default function ScheduleGrid({ classesByDay }: Props) {
               <header className="mb-4 px-1">
                 <h3
                   id={headingId}
-                  className="text-base  uppercase tracking-[0.12em] text-[#21191d] dark:text-white/92"
+                  className="text-base font-semibold uppercase tracking-[0.12em] text-[#21191d] dark:text-white/92"
                 >
                   {dayKey}
                 </h3>

@@ -94,7 +94,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-8"
+      className="flex flex-col gap-2"
       noValidate
     >
       {submitStatus.type && (
