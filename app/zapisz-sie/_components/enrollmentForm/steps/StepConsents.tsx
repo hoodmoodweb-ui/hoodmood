@@ -10,7 +10,7 @@ export default function StepConsents() {
   } = useFormContext<EnrollmentFormData>();
 
   return (
-    <section className=" px-1 md:p-5">
+    <section className=" px-1 ">
       <FormCheckboxField<EnrollmentFormData>
         control={control}
         name="consentsAccepted"

@@ -51,7 +51,7 @@ export default function FormCheckboxField<T extends FieldValues>({
       </Field>
       <span
         id={errorId}
-        className={`min-h-5 pl-1 text-xs text-red-600 dark:text-red-400 ${
+        className={`min-h-5 pl-1 text-xs text-red-600 dark:text-red-400  ${
           error ? "visible" : "invisible"
         }`}
       >

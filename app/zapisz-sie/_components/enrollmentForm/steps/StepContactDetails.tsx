@@ -15,7 +15,7 @@ export default function StepContactDetails() {
 
   return (
     <div className="grid grid-cols-1  ">
-      <div className="grid grid-cols-1  md:grid-cols-2 ">
+      <div className="grid grid-cols-1  md:grid-cols-2 md:gap-8">
         <FormTextField
           id="parent-full-name"
           label="Imię i nazwisko opiekuna"

@@ -22,11 +22,11 @@ export default function StepSummary({
     values.participantType === "adult" ? "Dorośli" : "Dzieci i młodzież";
 
   return (
-    <div className="flex h-full flex-col gap-4 md:gap-5 ">
+    <div className="flex h-full flex-col gap-4  overflow-y-scroll xl:max-h-90 xl:pr-2">
       <section className="rounded-xl border border-white/10 bg-white/4 p-4 ">
-        {/* <h3 className="mb-3 text-base font-semibold text-white/95 xl:mb-0">
+        <h3 className="mb-3 text-base font-semibold text-white/95 ">
           Uczestnik
-        </h3> */}
+        </h3>
         <div className="grid grid-cols-1 gap-3 text-sm leading-6 text-white/75 md:grid-cols-3">
           <div className="flex flex-col">
             <span className="text-white/45 text-xs">Imię i nazwisko:</span>{" "}
@@ -45,10 +45,10 @@ export default function StepSummary({
         </div>
       </section>
 
-      <section className="rounded-xl border border-white/10 bg-white/[0.04] p-4 ">
-        {/* <h3 className="mb-3 text-base font-semibold text-white/95 xl:mb-0">
+      <section className="rounded-xl border border-white/10 bg-white/4 p-4 ">
+        <h3 className="mb-3 text-base font-semibold text-white/95 ">
           Dane kontaktowe
-        </h3> */}
+        </h3>
         <div className="grid grid-cols-1 gap-3 text-sm leading-6 text-white/75 md:grid-cols-3">
           <div className="flex flex-col">
             <span className="text-white/45 text-wrap text-xs">
@@ -74,20 +74,18 @@ export default function StepSummary({
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/[0.04] p-4 md:p-5">
-        {/* <h3 className="mb-3 text-base font-semibold text-white/95">
+        <h3 className="mb-3 text-base font-semibold text-white/95">
           Wybrane zajęcia
-        </h3> */}
+        </h3>
 
-        <div className="space-y-3 max-h-5 overflow-y-scroll">
+        <div className="space-y-3 ">
           {values.selectedClasses.map((item) => (
             <div
               key={item.clientId}
               className="flex flex-col justify-between gap-2   md:flex-row md:items-center"
             >
               <div>
-                <div className="text-sm font-semibold text-white">
-                  {item.classTypeName}
-                </div>
+                <div className="text-sm  text-white">{item.classTypeName}</div>
                 <div className="text-xs leading-5 text-white/55">
                   {item.locationName} • {item.timeLabel}
                 </div>

@@ -12,7 +12,7 @@ export default function EnrollmentStepContent({
   return (
     <div
       className={cn(
-        "flex w-full flex-col rounded-[24px] bg-white/[0.02] p-4 md:p-5 h-170 ",
+        "flex w-full flex-col rounded-[24px] bg-white/2 p-4 md:p-5 xl:h-170 ",
         className,
       )}
     >
