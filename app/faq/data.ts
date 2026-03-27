@@ -1,8 +1,8 @@
 export const data = {
   badge: "F.A.Q",
-  title: "Najczęściej zadawane pytania",
+  title: "Najczęściej zadawane pytania o zajęcia taneczne i akrobatyczne",
   description:
-    "Wiemy, że przed pierwszymi zajęciami w głowie pojawia się milion pytań. Zebraliśmy te najczęstsze - zanim do nas napiszesz sprawdź, czy nie ma tu odpowiedzi.",
+    "Sprawdź odpowiedzi na najczęstsze pytania o zapisy, zajęcia próbne, grupy wiekowe, poziomy zaawansowania, płatności i organizację zajęć w Hoodmood.",
 };
 
 export type FaqItem = {

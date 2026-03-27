@@ -1,7 +1,7 @@
 export const data = {
   badge: "zapisy",
-  title: "Jak dołączyć do Hoodmood?",
-  description: "Zapis na zajęcia ogarniesz online w kilka minut. Wybierz lokalizację, sprawdź grafik, wypełnij formularz – a my odezwiemy się z potwierdzeniem miejsca i wszystkimi szczegółami."
+  title: "Jak zapisać się na zajęcia w Hoodmood?",
+  description: "Zapis na zajęcia w Hoodmood zajmuje tylko kilka minut. Wybierz lokalizację, sprawdź grafik, wypełnij formularz i poczekaj na potwierdzenie miejsca oraz szczegóły pierwszych zajęć."
 };
 
 export type Step = {
@@ -15,22 +15,24 @@ export const steps: Step[] = [
     id: 1,
     title: "Wybierz lokalizację",
     description:
-      "Sprawdź, która filia Hoodmood najlepiej pasuje do Twojego planu dnia.",
+      "Sprawdź, czy chcesz zapisać się na zajęcia w Koszalinie, Polanowie czy Białym Borze.",
   },
   {
     id: 2,
     title: "Wybierz zajęcia",
-    description: "Wybierz styl i poziom, który najbardziej Cię kręci.",
+    description:
+      "Dobierz styl, grupę wiekową i poziom zaawansowania odpowiedni dla siebie lub dziecka.",
   },
   {
     id: 3,
     title: "Wypełnij formularz",
-    description: "Podaj podstawowe dane i zaznacz wybrane zajęcia.",
+    description:
+      "Podaj podstawowe dane i zaznacz wybrane zajęcia, a my sprawdzimy dostępność miejsc.",
   },
   {
     id: 4,
-    title: "Gotowe!",
+    title: "Potwierdź zapis",
     description:
-      "Wpadnij kilka minut przed zajęciami, żeby ogarnąć formalności.",
+      "Odewiemy się z potwierdzeniem, szczegółami organizacyjnymi i informacją o pierwszych zajęciach.",
   },
 ];

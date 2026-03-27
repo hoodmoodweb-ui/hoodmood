@@ -1,8 +1,8 @@
 export const data = {
   badge: "oferta",
-  title: "Jakie zajęcia prowadzimy w Hoodmood?",
+  title: "Zajęcia taneczne i akrobatyczne dla dzieci, młodzieży i dorosłych",
   description:
-    "W Hoodmood każdy jest mile widziany! Prowadzimy zajęcia dla dzieci, młodzieży i dorosłych - od pierwszych kroków po zaawansowane choreografie. Wybierz grupę dopasowaną do wieku i poziomu, a jeśli lubisz mocniejsze wejście w technikę, dołącz też na akrobatykę - idealną jako uzupełnienie hip hopu, street dance i tańca współczesnego.",
+    "Prowadzimy zajęcia taneczne i akrobatyczne w Koszalinie, Polanowie i Białym Borze. W naszej ofercie znajdziesz m.in. hip-hop, breakdance, balet, taniec współczesny, high heels i akrobatykę dla dzieci, młodzieży i dorosłych.",
 };
 
 export const offer = [

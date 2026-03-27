@@ -14,7 +14,7 @@ export default function Hero({
   videoSrc = "/assets/videos/lightHeroVid.mp4",
   posterSrc = "/assets/videos/vidPoster.png",
   title = "Hoodmood",
-  description = "Zajęcia taneczne i akrobatyczne dla dzieci, młodzieży i dorosłych. Street dance, high heels, pierwszy taniec i akrobatyka — grupy dopasowane do wieku i poziomu.",
+  description = "Zajęcia dla dzieci, młodzieży i dorosłych, w tym hip-hop, breakdance, balet, taniec współczesny, high heels, KPOP, akrobatykę i lekcje indywidualne.",
 }: HeroProps) {
   return (
     <div className="relative min-h-screen   isolate  overflow-hidden  text-white ">
@@ -32,7 +32,7 @@ export default function Hero({
         <source src={videoSrc} type="video/mp4" />
         <img
           src={posterSrc}
-          alt="Video poster"
+          alt="Hoodmood - szkoła tańca i akrobatyki"
           className="absolute inset-0 h-full w-full object-cover -z-20"
         />
       </video>
@@ -41,12 +41,15 @@ export default function Hero({
         <div className="px-8   lg:px-12 xl:px-16">
           <LocationBadge />
 
-          <h1 className="max-w-[10ch] text-5xl font-black uppercase leading-[0.9] tracking-tight text-white sm:text-6xl md:text-7xl xl:text-[7rem]">
+          <div className="max-w-[10ch] font-anton text-5xl font-black uppercase leading-[0.9] tracking-wider text-white sm:text-6xl md:text-7xl xl:text-[7rem]">
             {title}
-          </h1>
+          </div>
 
-          <p className="mt-6 max-w-xl text-sm leading-7 text-white/80 sm:text-base">
-            {description}
+          <h1 className="mt-6 max-w-xl text-sm leading-7 text-white/90 sm:text-lg font-bold ">
+            Szkoła tańca i akrobatyki w Koszalinie, Polanowie i Białym Borze
+          </h1>
+          <p className=" max-w-xl text-sm leading-7 text-white/60 sm:text-base">
+            {description}{" "}
           </p>
 
           <div className="mt-8 flex  gap-3 ">
@@ -54,7 +57,7 @@ export default function Hero({
               Sprawdź grafik
             </ButtonSecondary>
 
-            <ButtonPrimary href="/oferta/koszalin">Poznaj ofertę</ButtonPrimary>
+            <ButtonPrimary href="/oferta/koszalin">Zobacz ofertę</ButtonPrimary>
           </div>
         </div>
 

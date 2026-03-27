@@ -13,7 +13,7 @@ const Offer = () => {
           title={data.title}
           description={data.description}
         />
-        <div className="grid grid-cols-1  gap-8 md:grid-cols-2 lg:grid-cols-4 items-stretch ">
+        <section className="grid grid-cols-1  gap-8 md:grid-cols-2 lg:grid-cols-4 items-stretch ">
           {offer.map((item, id) => (
             <Card key={id} className="h-full flex flex-col justify-start ">
               <HoverCard
@@ -32,10 +32,8 @@ const Offer = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-        <ButtonPrimary href="/oferta/koszalin">
-          Zobacz pełną ofertę
-        </ButtonPrimary>
+        </section>
+        <ButtonPrimary href="/oferta/koszalin">Poznaj ofertę</ButtonPrimary>
       </SectionContainer>
     </div>
   );
