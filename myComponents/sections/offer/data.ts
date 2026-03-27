@@ -16,13 +16,13 @@ export const offer = [
   {
     title: "Młodzież",
     description:
-      "Akrobatyka, Formacje taneczne, Taniec współczesny, Hip-Hop, Zajęcia indywidualne, K-POP, Partnerowanie akrobatyczne",
+      "Akrobatyka, Formacje taneczne, Hip-Hop, Taniec współczesny, Zajęcia indywidualne, K-POP, Partnerowanie akrobatyczne",
     img: "/assets/images/landingOffer/teens1.jpg",
     hoverImg: "/assets/images/landingOffer/teens2.jpg",
   },
   {
     title: "Dorośli",
-    description: "Feminine Flow, Formacje taneczne, Zajęcia indywidualne",
+    description: "Feminine Flow, Zajęcia indywidualne, Formacje taneczne",
     img: "/assets/images/landingOffer/adults2.jpg",
     hoverImg: "/assets/images/landingOffer/adults1.jpg",
   },
