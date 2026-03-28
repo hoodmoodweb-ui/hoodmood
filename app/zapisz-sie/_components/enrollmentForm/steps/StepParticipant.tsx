@@ -222,7 +222,7 @@ export default function StepParticipant() {
               id="participant-location"
               aria-invalid={!!errors.selectedLocationId}
               aria-describedby={locationErrorId}
-              className={`${selectTriggerStyles} min-h-10 w-full  border-white/10 bg-white/[0.06] px-4 text-white`}
+              className={`${selectTriggerStyles} w-full`}
             >
               <SelectValue placeholder="Wybierz lokalizację" />
             </SelectTrigger>

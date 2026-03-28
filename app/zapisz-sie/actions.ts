@@ -39,12 +39,12 @@ export async function submitEnrollmentForm(data: EnrollmentFormData) {
 
         <h3>Uczestnik</h3>
         <p><strong>Imię i nazwisko:</strong> ${escapeHtml(validatedData.participantFullName)}</p>
-        <p><strong>Typ uczestnika:</strong> ${validatedData.participantType === "adult" ? "Dorosły" : "Dziecko / młodzież"}</p>
+        <p><strong>Grupa wiekowa:</strong> ${validatedData.participantType === "adult" ? "Dorosły" : "Dziecko / młodzież"}</p>
         <p><strong>Wiek:</strong> ${validatedData.participantType === "adult" ? "Dorosły" : escapeHtml(validatedData.participantAge)}</p>
         <p><strong>Lokalizacja:</strong> ${escapeHtml(validatedData.selectedLocationId)}</p>
 
         <h3>Dane kontaktowe</h3>
-        <p><strong>Opiekun / kontakt:</strong> ${escapeHtml(validatedData.parentFullName)}</p>
+        <p><strong>Osoba kontaktowa:</strong> ${escapeHtml(validatedData.parentFullName)}</p>
         <p><strong>E-mail:</strong> ${escapeHtml(validatedData.email)}</p>
         <p><strong>Telefon:</strong> ${escapeHtml(validatedData.phone)}</p>
 

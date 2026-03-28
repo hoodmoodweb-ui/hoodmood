@@ -10,8 +10,11 @@ import { sanitizeNameInput } from "../utils";
 export default function StepContactDetails() {
   const {
     register,
+    setValue,
+    watch,
     formState: { errors, isSubmitting },
   } = useFormContext<EnrollmentFormData>();
+  const phoneValue = watch("phone");
 
   return (
     <div className="grid grid-cols-1  ">
@@ -48,9 +51,21 @@ export default function StepContactDetails() {
         type="tel"
         placeholder="Wpisz numer telefonu"
         icon={Phone}
-        registration={register("phone")}
+        registration={register("phone", {
+          onChange: (event) => {
+            const value = event.target.value.replace(/\D/g, "").slice(0, 9);
+            setValue("phone", value, {
+              shouldDirty: true,
+              shouldTouch: true,
+              shouldValidate: true,
+            });
+          },
+        })}
         error={errors.phone}
         disabled={isSubmitting}
+        inputMode="numeric"
+        pattern="[0-9]*"
+        value={phoneValue}
       />
 
       <FormTextareaField

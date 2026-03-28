@@ -14,6 +14,7 @@ export const selectedClassSchema = z.object({
 });
 
 const namePattern = /^[\p{L}\s-]+$/u;
+const phonePattern = /^\d{9}$/;
 
 export const enrollmentSchema = z
   .object({
@@ -42,7 +43,7 @@ export const enrollmentSchema = z
       )
       .min(2, "Imię i nazwisko opiekuna musi mieć co najmniej 2 znaki."),
     email: z.string().email("Podaj poprawny adres e-mail."),
-    phone: z.string().min(9, "Podaj poprawny numer telefonu."),
+    phone: z.string().regex(phonePattern, "Numer telefonu musi mieć 9 cyfr"),
     notes: z.string().optional(),
     consentsAccepted: z.boolean(),
   })

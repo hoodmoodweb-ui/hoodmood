@@ -7,6 +7,7 @@ import Navbar from "@/myComponents/navbar/Navbar";
 import Footer from "@/myComponents/footer/Footer";
 import { PricingFiltersProvider } from "@/myComponents/pages/pricing/PricingFiltersProvider";
 import NextTopLoader from "nextjs-toploader";
+import Toaster from "@/components/ui/sonner";
 
 const fontAnton = Anton({
   variable: "--anton",
@@ -108,6 +109,7 @@ export default function RootLayout({
               <Navbar />
               {children}
               <Footer />
+              <Toaster />
             </PricingFiltersProvider>
           </TooltipProvider>
         </ThemeProvider>

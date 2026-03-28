@@ -1,24 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, MessageSquareText, Phone, User } from "lucide-react";
+import { toast } from "sonner";
 
 import { buttonPrimaryStyes } from "@/myComponents/common/ButtonPrimary";
 import { contactFormSchema } from "@/lib/schemas/contactSchema";
 import type { ContactFormData } from "@/lib/schemas/contactSchema";
 import { submitContactForm } from "../actions";
-import FormStatusMessage from "@/myComponents/forms/shared/FormStatusMessage";
 import FormTextField from "@/myComponents/forms/fields/FormTextField";
 import FormCheckboxField from "@/myComponents/forms/fields/FormCheckboxField";
 import FormTextareaField from "@/myComponents/forms/fields/FormTextareaField";
-
-type SubmitStatus = {
-  type: "success" | "error" | null;
-  message: string;
-};
 
 const defaultValues: ContactFormData = {
   fullName: "",
@@ -29,11 +23,6 @@ const defaultValues: ContactFormData = {
 };
 
 export default function ContactForm() {
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({
-    type: null,
-    message: "",
-  });
-
   const {
     register,
     control,
@@ -46,48 +35,29 @@ export default function ContactForm() {
     mode: "onSubmit",
   });
 
-  const clearSubmitStatus = () => {
-    if (submitStatus.type) {
-      setSubmitStatus({ type: null, message: "" });
-    }
-  };
-
   const onSubmit = async (data: ContactFormData) => {
-    setSubmitStatus({ type: null, message: "" });
-
     try {
       const validatedData = contactFormSchema.parse(data);
       const response = await submitContactForm(validatedData);
 
       if (response.success) {
-        setSubmitStatus({
-          type: "success",
-          message:
-            "Wiadomość wysłana pomyślnie! Skontaktujemy się z Tobą wkrótce.",
-        });
+        toast.success(
+          "Wiadomość wysłana pomyślnie! Skontaktujemy się z Tobą wkrótce.",
+        );
         reset(defaultValues);
         return;
       }
 
-      setSubmitStatus({
-        type: "error",
-        message:
-          response.message ||
-          "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
-      });
+      toast.error(
+        response.message || "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+      );
     } catch (error) {
       if (error instanceof z.ZodError) {
-        setSubmitStatus({
-          type: "error",
-          message: "Formularz zawiera błędy. Popraw pola i spróbuj ponownie.",
-        });
+        toast.error("Formularz zawiera błędy. Popraw pola i spróbuj ponownie.");
         return;
       }
 
-      setSubmitStatus({
-        type: "error",
-        message: "Coś poszło nie tak. Spróbuj ponownie.",
-      });
+      toast.error("Coś poszło nie tak. Spróbuj ponownie.");
     }
   };
 
@@ -97,13 +67,6 @@ export default function ContactForm() {
       className="flex flex-col gap-2"
       noValidate
     >
-      {submitStatus.type && (
-        <FormStatusMessage
-          type={submitStatus.type}
-          message={submitStatus.message}
-        />
-      )}
-
       <FormTextField
         id="input-field-fullname"
         label="Imię i nazwisko"
@@ -111,9 +74,7 @@ export default function ContactForm() {
         icon={User}
         disabled={isSubmitting}
         error={errors.fullName}
-        registration={register("fullName", {
-          onChange: clearSubmitStatus,
-        })}
+        registration={register("fullName")}
       />
 
       <div className="flex flex-col gap-8 md:flex-row">
@@ -126,9 +87,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           error={errors.email}
           wrapperClassName="flex flex-1 flex-col gap-2.5"
-          registration={register("email", {
-            onChange: clearSubmitStatus,
-          })}
+          registration={register("email")}
         />
 
         <FormTextField
@@ -140,9 +99,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           error={errors.phone}
           wrapperClassName="flex flex-1 flex-col gap-2.5"
-          registration={register("phone", {
-            onChange: clearSubmitStatus,
-          })}
+          registration={register("phone")}
         />
       </div>
 
@@ -153,9 +110,7 @@ export default function ContactForm() {
         icon={MessageSquareText}
         disabled={isSubmitting}
         error={errors.message}
-        registration={register("message", {
-          onChange: clearSubmitStatus,
-        })}
+        registration={register("message")}
       />
 
       <FormCheckboxField<ContactFormData>

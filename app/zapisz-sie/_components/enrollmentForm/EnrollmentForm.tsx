@@ -1,16 +1,24 @@
 "use client";
 
+import Confetti from "react-confetti";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 import { submitEnrollmentForm } from "@/app/zapisz-sie/actions";
 import {
   enrollmentSchema,
   type EnrollmentFormData,
 } from "@/lib/schemas/enrollmentSchema";
-import FormStatusMessage from "@/myComponents/forms/shared/FormStatusMessage";
 
 import EnrollmentStepContent from "./EnrollmentStepContent";
 import EnrollmentStepHeader from "./EnrollmentStepHeader";
@@ -20,11 +28,6 @@ import StepClassesSelection from "./steps/StepClassesSelection";
 import StepContactDetails from "./steps/StepContactDetails";
 import StepParticipant from "./steps/StepParticipant";
 import StepSummary from "./steps/StepsSummary";
-
-type SubmitStatus = {
-  type: "success" | "error" | null;
-  message: string;
-};
 
 const defaultValues: EnrollmentFormData = {
   participantFullName: "",
@@ -76,10 +79,9 @@ const steps = [
 
 export default function EnrollmentForm() {
   const [currentStep, setCurrentStep] = useState(0);
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({
-    type: null,
-    message: "",
-  });
+  const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [viewport, setViewport] = useState({ width: 0, height: 0 });
 
   const methods = useForm<EnrollmentFormData>({
     resolver: zodResolver(enrollmentSchema),
@@ -93,6 +95,30 @@ export default function EnrollmentForm() {
     reset,
     formState: { isSubmitting },
   } = methods;
+
+  useEffect(() => {
+    const updateViewport = () => {
+      setViewport({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    updateViewport();
+    window.addEventListener("resize", updateViewport);
+
+    return () => window.removeEventListener("resize", updateViewport);
+  }, []);
+
+  useEffect(() => {
+    if (!showConfetti) return;
+
+    const timeout = window.setTimeout(() => {
+      setShowConfetti(false);
+    }, 3000);
+
+    return () => window.clearTimeout(timeout);
+  }, [showConfetti]);
 
   const validateCurrentStep = async () => {
     switch (currentStep) {
@@ -118,41 +144,28 @@ export default function EnrollmentForm() {
     const isValid = await validateCurrentStep();
     if (!isValid) return;
 
-    setSubmitStatus({ type: null, message: "" });
     setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
   };
 
   const handlePrev = () => {
-    setSubmitStatus({ type: null, message: "" });
     setCurrentStep((prev) => Math.max(prev - 1, 0));
   };
 
   const onSubmit = async (data: EnrollmentFormData) => {
-    setSubmitStatus({ type: null, message: "" });
-
     try {
       const result = await submitEnrollmentForm(data);
 
       if (!result.success) {
-        setSubmitStatus({
-          type: "error",
-          message: result.message,
-        });
+        toast.error(result.message);
         return;
       }
 
-      setSubmitStatus({
-        type: "success",
-        message: result.message,
-      });
-
       reset(defaultValues);
       setCurrentStep(0);
+      setIsSuccessDialogOpen(true);
+      setShowConfetti(true);
     } catch {
-      setSubmitStatus({
-        type: "error",
-        message: "Nie udało się wysłać zgłoszenia. Spróbuj ponownie.",
-      });
+      toast.error("Nie udało się wysłać zgłoszenia. Spróbuj ponownie.");
     }
   };
 
@@ -162,6 +175,67 @@ export default function EnrollmentForm() {
 
   return (
     <FormProvider {...methods}>
+      {showConfetti && viewport.width > 0 && viewport.height > 0 ? (
+        <Confetti
+          width={viewport.width}
+          height={viewport.height}
+          recycle={false}
+          numberOfPieces={260}
+          gravity={0.28}
+          className="pointer-events-none fixed inset-0 z-[100]"
+        />
+      ) : null}
+
+      <Dialog open={isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
+        <DialogContent
+          className="
+      relative max-w-md overflow-hidden rounded-lg
+      border border-white/8
+      bg-white/4
+      text-white
+      shadow-md
+      backdrop-blur-sm
+      before:pointer-events-none before:absolute before:inset-0 before:rounded-lg
+      before:bg-linear-to-br before:from-white/10 before:via-white/4 before:to-transparent
+      [&>button]:hidden
+    "
+        >
+          <div className="relative z-10 flex flex-col items-center gap-5 px-2 py-4 text-center">
+            <div className="relative h-36 w-full max-w-56">
+              <Image
+                src="/assets/images/enrollmentForm/celebrate.svg"
+                alt="Sukces zapisu"
+                fill
+                className="object-contain"
+                sizes="224px"
+              />
+            </div>
+
+            <DialogTitle className="text-2xl font-semibold leading-none text-white">
+              Sukces!
+            </DialogTitle>
+
+            <DialogDescription className="max-w-sm text-base leading-7 text-white/85">
+              Dziękujemy za zaufanie. Wysłaliśmy Ci mail z potwierdzeniem i
+              najważniejszymi informacjami. Do zobaczenia na sali!
+            </DialogDescription>
+
+            <Button
+              type="button"
+              onClick={() => setIsSuccessDialogOpen(false)}
+              className="
+          min-w-32 border border-white/10
+          bg-white/10 text-white
+          backdrop-blur-sm
+          hover:bg-white/15
+        "
+            >
+              Zamknij
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <EnrollmentStepLayout
         illustration={
           isClassesStep ? (
@@ -195,13 +269,6 @@ export default function EnrollmentForm() {
               className="flex flex-1 flex-col gap-4 md:gap-5"
               noValidate
             >
-              {submitStatus.type && (
-                <FormStatusMessage
-                  type={submitStatus.type}
-                  message={submitStatus.message}
-                />
-              )}
-
               <div className="flex-1">
                 {currentStep === 0 && <StepParticipant />}
                 {currentStep === 1 && <StepClassesSelection mode="summary" />}
