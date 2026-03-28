@@ -1,6 +1,9 @@
 "use server";
 
-import { ContactFormData, contactFormSchema } from "@/lib/schemas/contactSchema";
+import {
+  ContactFormData,
+  contactFormSchema,
+} from "@/lib/schemas/contactSchema";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -12,8 +15,8 @@ export async function submitContactForm(data: ContactFormData) {
 
     // Send email with Resend
     const result = await resend.emails.send({
-      from: "noreply@hoodmood.pl",
-      to: "contact@hoodmood.pl",
+      from: "onboarding@resend.dev",
+      to: "hoodmoodweb@gmail.com",
       subject: `Nowa wiadomość od ${validatedData.fullName}`,
       html: `
         <h2>Nowa wiadomość z formularza kontaktowego</h2>

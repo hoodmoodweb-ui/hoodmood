@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { submitEnrollmentForm } from "@/app/zapisz-sie/actions";
 import {
   enrollmentSchema,
   type EnrollmentFormData,
@@ -130,14 +131,19 @@ export default function EnrollmentForm() {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      console.log("FORM DATA", data);
+      const result = await submitEnrollmentForm(data);
 
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!result.success) {
+        setSubmitStatus({
+          type: "error",
+          message: result.message,
+        });
+        return;
+      }
 
       setSubmitStatus({
         type: "success",
-        message:
-          "Zgłoszenie zostało wysłane pomyślnie. Skontaktujemy się z Tobą wkrótce.",
+        message: result.message,
       });
 
       reset(defaultValues);
