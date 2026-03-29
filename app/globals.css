@@ -86,13 +86,13 @@
   --secondary: oklch(0.965 0.012 5);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.972 0.01 5);
-  --muted-foreground: oklch(0.48 0.01 5);
+  --muted-foreground: oklch(0.4 0.012 5);
   --accent: oklch(0.965 0.018 5);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.89 0.015 5);
   --input: oklch(0.89 0.015 5);
-  --ring: oklch(0.72 0.08 355);
+  --ring: oklch(0.66 0.11 355);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -224,7 +224,31 @@ h2 {
 
   .ui-field:focus-within {
     box-shadow: var(--surface-shadow-soft),
-      0 0 0 4px color-mix(in srgb, var(--ring) 26%, transparent);
+      0 0 0 4px color-mix(in srgb, var(--ring) 34%, transparent);
+  }
+
+  .ui-muted-label {
+    color: color-mix(in srgb, var(--foreground) 42%, var(--muted-foreground));
+  }
+
+  .ui-muted-copy {
+    color: color-mix(in srgb, var(--foreground) 22%, var(--muted-foreground));
+  }
+
+  .ui-focus-ring {
+    outline: none;
+  }
+
+  .ui-focus-ring:focus-visible {
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--background) 92%, transparent),
+      0 0 0 5px color-mix(in srgb, var(--ring) 44%, transparent);
+  }
+
+  .dark .ui-focus-ring:focus-visible {
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--background) 82%, transparent),
+      0 0 0 5px color-mix(in srgb, var(--ring) 62%, transparent);
   }
 
   .ui-overlay {

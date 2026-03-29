@@ -34,17 +34,17 @@ export default function EnrollmentStepHeader({
                 key={item.navLabel}
                 className={`flex min-h-11 min-w-0 items-center justify-center gap-2  px-2 py-2 text-center transition sm:px-3 ${
                   isActive
-                    ? " text-white"
+                    ? " text-foreground dark:text-white"
                     : isCompleted
-                      ? " text-white/75"
-                      : " text-white/40"
+                      ? " text-black/72 dark:text-white/75"
+                      : " text-black/48 dark:text-white/40"
                 }`}
               >
                 <span
                   className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[10px] font-semibold ${
                     isActive
                       ? "bg-[#ac4967] text-white"
-                      : "bg-white/10 text-white/55"
+                      : "bg-white/10 text-black/55 dark:text-white/55"
                   }`}
                 >
                   {index + 1}
@@ -67,7 +67,7 @@ export default function EnrollmentStepHeader({
 
       <div className="space-y-2">
         <h2 className=" text-xl leading-8  md:text-2xl">{step.title}</h2>
-        <p className="max-w-2xl text-sm leading-6 text-white/68 md:text-[15px]">
+        <p className="ui-muted-copy max-w-2xl text-sm leading-6 md:text-[15px] dark:text-white/68">
           {step.description}
         </p>
       </div>

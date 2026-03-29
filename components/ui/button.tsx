@@ -5,14 +5,14 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap uppercase rounded-full text-sm font-semibold tracking-[0.15em] transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-[4px] focus-visible:ring-ring/35 active:scale-[0.985]",
+  "ui-focus-ring inline-flex items-center justify-center gap-2 whitespace-nowrap uppercase rounded-full text-sm font-semibold tracking-[0.15em] transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 active:scale-[0.985]",
   {
     variants: {
       variant: {
         default:
-          "border border-white/[0.08] bg-[linear-gradient(180deg,var(--brand-600),var(--brand-800))] text-white ring-1 ring-inset ring-white/[0.10] shadow-md hover:-translate-y-[1px] hover:bg-[linear-gradient(180deg,var(--brand-500),var(--brand-700))] focus-visible:ring-white/40",
+          "border border-white/[0.08] bg-[linear-gradient(180deg,var(--brand-600),var(--brand-800))] text-white ring-1 ring-inset ring-white/[0.10] shadow-md hover:-translate-y-[1px] hover:bg-[linear-gradient(180deg,var(--brand-500),var(--brand-700))]",
         destructive:
-          "border border-red-500/30 bg-[linear-gradient(180deg,rgba(220,38,38,0.95),rgba(153,27,27,0.95))] text-white shadow-md hover:-translate-y-[1px] hover:brightness-105 focus-visible:ring-red-500/30",
+          "border border-red-500/30 bg-[linear-gradient(180deg,rgba(220,38,38,0.95),rgba(153,27,27,0.95))] text-white shadow-md hover:-translate-y-[1px] hover:brightness-105",
         outline:
           "ui-surface-soft ui-outline border border-black/[0.08] bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(245,241,243,0.92))] text-[#21191d] hover:-translate-y-[1px] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(240,234,237,0.98))] dark:border-white/[0.10] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.05))] dark:text-white/92 dark:hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.07))]",
         secondary:

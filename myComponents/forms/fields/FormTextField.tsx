@@ -18,7 +18,10 @@ type FormTextFieldProps = {
   error?: FieldError;
   disabled?: boolean;
   wrapperClassName?: string;
-};
+} & Omit<
+  React.ComponentProps<typeof InputGroupInput>,
+  "id" | "type" | "placeholder" | "disabled"
+>;
 
 export default function FormTextField({
   id,
@@ -30,6 +33,7 @@ export default function FormTextField({
   error,
   disabled = false,
   wrapperClassName = "flex flex-col gap-2.5 ",
+  ...inputProps
 }: FormTextFieldProps) {
   const errorId = error ? `${id}-error` : undefined;
 
@@ -37,7 +41,7 @@ export default function FormTextField({
     <Field className={wrapperClassName}>
       <FieldLabel
         htmlFor={id}
-        className="pl-1 text-xs font-semibold uppercase tracking-[0.16em] text-black/55 dark:text-white/55"
+        className="ui-muted-label pl-1 text-xs font-semibold uppercase tracking-[0.16em]"
       >
         {label}
       </FieldLabel>
@@ -50,10 +54,11 @@ export default function FormTextField({
           disabled={disabled}
           aria-invalid={!!error}
           aria-describedby={errorId}
+          {...inputProps}
           {...registration}
         />
         <InputGroupAddon>
-          <Icon className="text-black/35 dark:text-white/35" />
+          <Icon className="text-black/45 dark:text-white/35" />
         </InputGroupAddon>
       </InputGroup>
 

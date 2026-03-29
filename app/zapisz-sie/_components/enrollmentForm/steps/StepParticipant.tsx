@@ -69,8 +69,8 @@ export default function StepParticipant() {
     <div className="grid grid-cols-1 gap-0 md:gap-5 ">
       <FormTextField
         id="participant-full-name"
-        label="Imię i nazwisko uczestnika"
-        placeholder="Wpisz imię i nazwisko"
+        label="Imię i nazwisko "
+        placeholder="Podaj imię i nazwisko uczestnika"
         icon={User}
         registration={register("participantFullName", {
           onChange: (event) => {
@@ -82,7 +82,7 @@ export default function StepParticipant() {
       />
 
       <div className="flex flex-col gap-2.5">
-        <span className="pl-1 text-xs font-semibold uppercase tracking-[0.16em] text-black/55 dark:text-white/55">
+        <span className="ui-muted-label pl-1 text-xs font-semibold uppercase tracking-[0.16em]">
           Grupa uczestnika
         </span>
 
@@ -111,10 +111,10 @@ export default function StepParticipant() {
                   }
                 }}
                 disabled={isSubmitting}
-                className={`flex min-h-12 items-center justify-between rounded-2xl border px-4 py-3 text-left text-sm transition ${
+                className={`ui-focus-ring flex min-h-12 items-center justify-between rounded-2xl border px-4 py-3 text-left text-sm transition ${
                   isActive
-                    ? "border-[#ac4967] bg-[#ac4967]/14 text-white"
-                    : "border-white/10 bg-white/[0.04] text-white/75 hover:border-white/25"
+                    ? "border-[#ac4967] bg-[#ac4967]/14 text-foreground dark:text-white"
+                    : "border-white/10 bg-white/[0.04] text-black/78 hover:border-white/25 dark:text-white/75"
                 }`}
               >
                 <span className="font-medium">{option.label}</span>
@@ -122,7 +122,7 @@ export default function StepParticipant() {
                   className={`flex h-4 w-4 rounded-full border transition ${
                     isActive
                       ? "border-[#f07ea4] bg-[#f07ea4]"
-                      : "border-white/30 bg-transparent"
+                      : "border-black/20 bg-transparent dark:border-white/30"
                   }`}
                 />
               </button>
@@ -147,7 +147,7 @@ export default function StepParticipant() {
         >
           <FieldLabel
             htmlFor="participant-age"
-            className="pl-1 text-xs font-semibold uppercase tracking-[0.16em] text-black/55 dark:text-white/55"
+            className="ui-muted-label pl-1 text-xs font-semibold uppercase tracking-[0.16em]"
           >
             Wiek uczestnika
           </FieldLabel>
@@ -159,7 +159,7 @@ export default function StepParticipant() {
               inputMode="numeric"
               pattern="[0-9]*"
               placeholder={
-                isYouthParticipant ? "Np. 8" : "Tylko dla dzieci i młodzieży"
+                isYouthParticipant ? "Np. 8" : "Tylko dla dzieci i mĹ‚odzieĹĽy"
               }
               disabled={isSubmitting || !isYouthParticipant}
               aria-invalid={!!errors.participantAge}
@@ -180,7 +180,7 @@ export default function StepParticipant() {
               })}
             />
             <InputGroupAddon>
-              <User className="text-black/35 dark:text-white/35" />
+              <User className="text-black/45 dark:text-white/35" />
             </InputGroupAddon>
           </InputGroup>
 
@@ -197,7 +197,7 @@ export default function StepParticipant() {
         <Field className="flex flex-col gap-2.5">
           <FieldLabel
             htmlFor="participant-location"
-            className="pl-1 text-xs font-semibold uppercase tracking-[0.16em] text-black/55 dark:text-white/55"
+            className="ui-muted-label pl-1 text-xs font-semibold uppercase tracking-[0.16em]"
           >
             Lokalizacja
           </FieldLabel>
@@ -224,7 +224,7 @@ export default function StepParticipant() {
               aria-describedby={locationErrorId}
               className={`${selectTriggerStyles} w-full`}
             >
-              <SelectValue placeholder="Wybierz lokalizację" />
+              <SelectValue placeholder="Wybierz lokalizacjÄ™" />
             </SelectTrigger>
             <SelectContent className={selectContentStyles}>
               <SelectGroup>

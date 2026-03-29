@@ -35,7 +35,7 @@ export default function FormTextareaField({
     <Field className="flex flex-col gap-2.5">
       <FieldLabel
         htmlFor={id}
-        className="pl-1 text-xs font-semibold uppercase tracking-[0.16em] text-black/55 dark:text-white/55"
+        className="ui-muted-label pl-1 text-xs font-semibold uppercase tracking-[0.16em]"
       >
         {label}
       </FieldLabel>
@@ -52,7 +52,7 @@ export default function FormTextareaField({
         />
         {Icon ? (
           <InputGroupAddon align="block-start" className="border-b">
-            <Icon className="text-black/35 dark:text-white/35" />
+            <Icon className="text-black/45 dark:text-white/35" />
           </InputGroupAddon>
         ) : null}
       </InputGroup>

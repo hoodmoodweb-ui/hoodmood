@@ -22,59 +22,72 @@ export default function StepSummary({
     values.participantType === "adult" ? "Dorośli" : "Dzieci i młodzież";
 
   return (
-    <div className="flex h-full flex-col gap-4  overflow-y-scroll xl:max-h-90 xl:pr-2">
+    <div className="flex h-full flex-col gap-4 overflow-y-scroll xl:max-h-90 xl:pr-2">
       <section className="rounded-xl border border-white/10 bg-white/4 p-4 ">
-        <h3 className="mb-3 text-base font-semibold text-white/95 ">
+        <h3 className="mb-3 text-base font-semibold text-foreground dark:text-white/95 ">
           Uczestnik
         </h3>
-        <div className="grid grid-cols-1 gap-3 text-sm leading-6 text-white/75 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 text-sm leading-6 text-black/72 md:grid-cols-3 dark:text-white/75">
           <div className="flex flex-col">
-            <span className="text-white/45 text-xs">Imię i nazwisko:</span>{" "}
+            <span className="ui-muted-label text-xs dark:text-white/45">
+              Imię i nazwisko:
+            </span>{" "}
             {values.participantFullName}
           </div>
           <div className="flex flex-col">
-            <span className="text-white/45 text-xs">Grupa:</span>{" "}
+            <span className="ui-muted-label text-xs dark:text-white/45">
+              Grupa:
+            </span>{" "}
             {participantTypeLabel}
           </div>
           <div className="flex flex-col">
-            <span className="text-white/45 text-xs">Wiek:</span>{" "}
+            <span className="ui-muted-label text-xs dark:text-white/45">
+              Wiek:
+            </span>{" "}
             {values.participantType === "adult"
-              ? "Dorosły"
+              ? "DorosĹ‚y"
               : values.participantAge}
           </div>
         </div>
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/4 p-4 ">
-        <h3 className="mb-3 text-base font-semibold text-white/95 ">
+        <h3 className="mb-3 text-base font-semibold text-foreground dark:text-white/95 ">
           Dane kontaktowe
         </h3>
-        <div className="grid grid-cols-1 gap-3 text-sm leading-6 text-white/75 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 text-sm leading-6 text-black/72 md:grid-cols-3 dark:text-white/75">
           <div className="flex flex-col">
-            <span className="text-white/45 text-wrap text-xs">
+            <span className="ui-muted-label text-wrap text-xs dark:text-white/45">
               Osoba kontaktowa:
             </span>{" "}
             {values.parentFullName} lorem32
           </div>
           <div className="flex flex-col">
-            <span className="text-white/45 text-xs">E-mail:</span>{" "}
+            <span className="ui-muted-label text-xs dark:text-white/45">
+              E-mail:
+            </span>{" "}
             {values.email}
           </div>
           <div className="flex flex-col">
-            <span className="text-white/45 text-xs">Telefon:</span>{" "}
+            <span className="ui-muted-label text-xs dark:text-white/45">
+              Telefon:
+            </span>{" "}
             {values.phone}
           </div>
         </div>
 
         {values.notes ? (
-          <div className="mt-3 text-sm leading-6 text-white/75 flex flex-col">
-            <span className="text-white/45 text-xs">Uwagi:</span> {values.notes}
+          <div className="mt-3 text-sm leading-6 text-black/72 flex flex-col dark:text-white/75">
+            <span className="ui-muted-label text-xs dark:text-white/45">
+              Uwagi:
+            </span>{" "}
+            {values.notes}
           </div>
         ) : null}
       </section>
 
-      <section className="rounded-xl border border-white/10 bg-white/[0.04] p-4 md:p-5">
-        <h3 className="mb-3 text-base font-semibold text-white/95">
+      <section className="rounded-xl border border-white/10 bg-white/4 p-4 md:p-5">
+        <h3 className="mb-3 text-base font-semibold text-foreground dark:text-white/95">
           Wybrane zajęcia
         </h3>
 
@@ -85,13 +98,15 @@ export default function StepSummary({
               className="flex flex-col justify-between gap-2   md:flex-row md:items-center"
             >
               <div>
-                <div className="text-sm  text-white">{item.classTypeName}</div>
-                <div className="text-xs leading-5 text-white/55">
-                  {item.locationName} • {item.timeLabel}
+                <div className="text-sm text-foreground dark:text-white">
+                  {item.classTypeName}
+                </div>
+                <div className="ui-muted-label text-xs leading-5 dark:text-white/55">
+                  {item.locationName} {item.timeLabel}
                 </div>
               </div>
 
-              <div className="text-sm font-semibold text-[#f07ea4]">
+              <div className="text-sm font-semibold text-[#83394f] dark:text-[#c4587b]">
                 {item.price.toFixed(2).replace(".", ",")} zł
               </div>
             </div>
@@ -99,10 +114,12 @@ export default function StepSummary({
         </div>
 
         <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
-          <span className="text-sm text-white/60">Razem:</span>
-          <span className="text-base font-semibold text-white">
+          <span className="ui-muted-label text-sm dark:text-white/60">
+            Razem:
+          </span>
+          <span className="text-base font-semibold text-foreground dark:text-white">
             {total.toFixed(2).replace(".", ",")} zł{" "}
-            <span className="text-xs font-normal text-white/45">
+            <span className="ui-muted-label text-xs font-normal text-black/55 dark:text-white/45">
               / miesięcznie
             </span>
           </span>

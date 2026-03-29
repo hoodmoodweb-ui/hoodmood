@@ -43,7 +43,7 @@ export default function PricingFilterBar() {
         {/* <FieldLabel htmlFor="searchInput">Wyszukaj zajęć</FieldLabel> */}
         <FieldLabel
           htmlFor="searchInput"
-          className="text-[11px] uppercase tracking-[0.16em] text-black/55 dark:text-white/55 font-semibold    pl-1  "
+          className="ui-muted-label pl-1 text-[11px] font-semibold uppercase tracking-[0.16em]"
         >
           Wyszukaj zajęć
         </FieldLabel>
@@ -55,7 +55,7 @@ export default function PricingFilterBar() {
             onChange={(e) => setSearchInput(e.currentTarget.value)}
           />
           <InputGroupAddon>
-            <SearchIcon className="text-black/35 dark:text-white/35" />
+            <SearchIcon className="text-black/45 dark:text-white/35" />
           </InputGroupAddon>
 
           {searchInput !== "" && (
@@ -63,7 +63,7 @@ export default function PricingFilterBar() {
               <button
                 type="button"
                 onClick={() => setSearchInput("")}
-                className="px-2 hover:cursor-pointer text-black dark:invert dark:opacity-50 inline-flex items-center gap-1 text-xs hover:text-black/70 dark:hover:opacity-100"
+                className="inline-flex items-center gap-1 px-2 text-xs text-black/68 hover:cursor-pointer hover:text-black/85 dark:invert dark:opacity-50 dark:hover:opacity-100"
               >
                 <CircleX className="w-4" />
               </button>
@@ -77,7 +77,7 @@ export default function PricingFilterBar() {
         {/* <FieldLabel htmlFor="age">Wiek uczestnika</FieldLabel> */}
         <FieldLabel
           htmlFor="age"
-          className="text-[11px] uppercase tracking-[0.16em] text-black/55 dark:text-white/55 font-semibold    pl-1  "
+          className="ui-muted-label pl-1 text-[11px] font-semibold uppercase tracking-[0.16em]"
         >
           Wiek uczestnika
         </FieldLabel>
@@ -94,18 +94,18 @@ export default function PricingFilterBar() {
             }}
           />
           <InputGroupAddon>
-            <User className="text-black/35 dark:text-white/35" />
+            <User className="text-black/45 dark:text-white/35" />
           </InputGroupAddon>
 
           {searchAge !== "" && (
             <InputGroupAddon
               align="inline-end"
-              className="text-black/35 dark:text-white/35"
+              className="text-black/45 dark:text-white/35"
             >
               <button
                 type="button"
                 onClick={() => setSearchAge("")}
-                className="px-2 hover:cursor-pointer   inline-flex items-center gap-1 text-xs hover:text-black/15 dark:hover:text-white/60"
+                className="inline-flex items-center gap-1 px-2 text-xs text-black/68 hover:cursor-pointer hover:text-black/85 dark:hover:text-white/60"
               >
                 <CircleX className="w-4" />
               </button>
@@ -117,7 +117,7 @@ export default function PricingFilterBar() {
       {/* <Field className="flex-1"> */}
       <Field className="flex flex-col gap-2.5">
         {/* <FieldLabel>Sortowanie</FieldLabel> */}
-        <FieldLabel className="text-[11px] uppercase tracking-[0.16em] text-black/55 dark:text-white/55 font-semibold    pl-1  ">
+        <FieldLabel className="ui-muted-label pl-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
           Sortowanie
         </FieldLabel>
         <Select
@@ -163,4 +163,4 @@ export const selectItemStyles =
   "rounded-md text-foreground focus:bg-accent";
 
 export const clearButtonStyles =
-  "ui-field ui-outline inline-flex size-8 h-10 items-center justify-center rounded-md text-black/40 transition-colors duration-200 hover:bg-accent hover:text-black/65 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/35 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60 dark:text-white/80 dark:hover:text-white/90";
+  "ui-focus-ring ui-field ui-outline inline-flex size-8 h-10 items-center justify-center rounded-md text-black/55 transition-colors duration-200 hover:bg-accent hover:text-black/75 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-60 dark:text-white/80 dark:hover:text-white/90";

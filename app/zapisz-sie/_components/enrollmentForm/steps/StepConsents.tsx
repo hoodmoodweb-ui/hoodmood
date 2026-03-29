@@ -18,7 +18,7 @@ export default function StepConsents() {
         error={errors.consentsAccepted}
         disabled={isSubmitting}
         label={
-          <p className="text-xs leading-6 text-white/80">
+          <p className="ui-muted-copy text-xs leading-6 dark:text-white/80">
             Akceptuję{" "}
             <a
               href="/regulamin"

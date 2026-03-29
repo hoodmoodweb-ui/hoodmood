@@ -1,4 +1,5 @@
 import { buttonPrimaryStyes } from "@/myComponents/common/ButtonPrimary";
+import { buttonSecondaryStyles } from "@/myComponents/common/ButtonSecondary";
 
 type EnrollmentStepNavigationProps = {
   currentStep: number;
@@ -23,12 +24,12 @@ export default function EnrollmentStepNavigation({
         type="button"
         onClick={onPrev}
         disabled={currentStep === 0 || isSubmitting}
-        className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-white/85 transition hover:border-white/30 hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-40"
+        className={buttonSecondaryStyles}
       >
         Wstecz
       </button>
 
-      <div className="order-first text-center text-xs font-medium uppercase tracking-[0.14em] text-white/45 sm:order-0 sm:text-sm sm:tracking-normal">
+      <div className="ui-muted-label order-first text-center text-xs font-medium uppercase tracking-[0.14em] sm:order-0 sm:text-sm sm:tracking-normal dark:text-white/45">
         Krok {currentStep + 1} z {totalSteps}
       </div>
 
