@@ -163,7 +163,7 @@ export default function EnrollmentForm() {
       reset(defaultValues);
       setCurrentStep(0);
       setShowConfetti(true);
-      window.setTimeout(() => setIsSuccessDialogOpen(true), 0);
+      setIsSuccessDialogOpen(true);
     } catch {
       toast.error("Nie udało się wysłać zgłoszenia. Spróbuj ponownie.");
     }
@@ -187,7 +187,7 @@ export default function EnrollmentForm() {
       ) : null}
 
       <Dialog open={isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
-        <DialogContent className="relative max-w-md overflow-hidden text-white [&>button]:hidden">
+        <DialogContent className="relative max-w-md overflow-hidden text-foreground ring-1 ring-black/8 [&>button]:hidden dark:text-white dark:ring-white/10">
           <div className="relative z-10 flex flex-col items-center gap-5 px-2 py-4 text-center">
             <div className="relative h-36 w-full max-w-56">
               <Image
@@ -199,11 +199,11 @@ export default function EnrollmentForm() {
               />
             </div>
 
-            <DialogTitle className="text-2xl font-semibold leading-none text-white">
+            <DialogTitle className="text-2xl font-semibold leading-none text-foreground dark:text-white">
               Sukces!
             </DialogTitle>
 
-            <DialogDescription className="max-w-sm text-base leading-7 text-white/85">
+            <DialogDescription className="max-w-sm text-base leading-7 text-muted-foreground dark:text-white/85">
               Dziękujemy za zapis na zajęcia. Wysłaliśmy Ci mail z
               potwierdzeniem i najważniejszymi informacjami. Do zobaczenia
             </DialogDescription>
@@ -211,7 +211,8 @@ export default function EnrollmentForm() {
             <Button
               type="button"
               onClick={() => setIsSuccessDialogOpen(false)}
-              className="min-w-32 border border-white/10 bg-white/10 text-white backdrop-blur-sm hover:bg-white/15"
+              variant="outline"
+              className="min-w-32"
             >
               Zamknij
             </Button>

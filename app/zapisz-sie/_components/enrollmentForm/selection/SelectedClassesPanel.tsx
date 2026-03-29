@@ -36,7 +36,7 @@ export default function SelectedClassesPanel({
                 <button
                   type="button"
                   onClick={() => onRemove(index)}
-                  className="inline-flex min-h-8 items-center justify-center rounded-md border border-black/30 font-semibold px-2.5 py-1 text-[11px] bg-black/5 text-black/55 transition hover:bg-black/10 dark:bg-white/10 dark:text-white/65 dark:hover:bg-white/15"
+                  className="inline-flex w-fit min-h-8 items-center justify-center rounded-md border border-black/30 font-semibold px-2.5 py-1 text-[11px] bg-black/5 text-black/55 transition hover:bg-black/10 dark:bg-white/10 dark:text-white/65 dark:hover:bg-white/15"
                 >
                   Usuń
                 </button>
@@ -59,12 +59,12 @@ export default function SelectedClassesPanel({
       )}
 
       <div className="mt-5 border-t border-white/15 pt-4">
-        <div className="flex flex-col gap-1.5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex gap-1.5 justify-between items-center">
           <p className="ui-muted-label text-sm uppercase tracking-[0.12em] dark:text-white/45">
             Razem
           </p>
 
-          <div className="sm:text-right">
+          <div className="text-right">
             <p className="text-lg font-semibold text-foreground md:text-xl dark:text-white">
               {total.toFixed(2).replace(".", ",")} zł
             </p>

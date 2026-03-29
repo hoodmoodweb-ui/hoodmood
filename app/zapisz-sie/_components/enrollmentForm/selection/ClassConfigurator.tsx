@@ -1,3 +1,5 @@
+"use client";
+
 import { Calendar, SearchIcon, User } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
@@ -53,40 +55,22 @@ export default function ClassConfigurator({
 
   const filteredClasses = useMemo(() => {
     return enrollmentClasses.filter((item) => {
-      if (item.locationId !== selectedLocationId) {
-        return false;
-      }
-
-      if (item.type !== selectionMode) {
-        return false;
-      }
+      if (item.locationId !== selectedLocationId) return false;
+      if (item.type !== selectionMode) return false;
 
       if (normalizedSearch.length > 0) {
         const normalizedName = normalizeText(item.name);
-        if (!normalizedName.includes(normalizedSearch)) {
-          return false;
-        }
+        if (!normalizedName.includes(normalizedSearch)) return false;
       }
 
       if (participantType === "adult") {
         return isAdultClass(item);
       }
 
-      if (isAdultClass(item)) {
-        return false;
-      }
-
-      if (!Number.isFinite(numericAge)) {
-        return true;
-      }
-
-      if (item.minAge !== null && numericAge < item.minAge) {
-        return false;
-      }
-
-      if (item.maxAge !== null && numericAge > item.maxAge) {
-        return false;
-      }
+      if (isAdultClass(item)) return false;
+      if (!Number.isFinite(numericAge)) return true;
+      if (item.minAge !== null && numericAge < item.minAge) return false;
+      if (item.maxAge !== null && numericAge > item.maxAge) return false;
 
       return true;
     });
@@ -99,27 +83,28 @@ export default function ClassConfigurator({
   ]);
 
   return (
-    <div className="space-y-4 max-h-full">
-      <div className="grid grid-cols-2 gap-4">
+    <div className="flex h-full min-h-0 flex-col gap-4">
+      <div className="grid grid-cols-2 gap-3">
         <button
           type="button"
           onClick={() => setSelectionMode("class")}
-          className={` rounded-xl border px-4 py-2 text-sm font-semibold transition ${
+          className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
             selectionMode === "class"
               ? "border-[#ac4967] bg-[#ac4967] text-white"
-              : "dark:border-white/10 border-black/10 bg-black/5 dark:bg-white/3 dark:text-white/70 hover:bg-white/6"
+              : "border-black/10 bg-black/5 text-black/70 hover:bg-black/7 dark:border-white/10 dark:bg-white/3 dark:text-white/70 dark:hover:bg-white/6"
           }`}
         >
           Zajęcia
         </button>
+
         <button
           type="button"
           onClick={() => packageModeAvailable && setSelectionMode("package")}
           disabled={!packageModeAvailable}
-          className={` rounded-xl border px-4  py-2 text-sm font-semibold transition ${
+          className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
             selectionMode === "package"
               ? "border-[#ac4967] bg-[#ac4967] text-white"
-              : "dark:border-white/10 border-black/10 bg-black/5 dark:bg-white/3 dark:text-white/70 hover:bg-white/6"
+              : "border-black/10 bg-black/5 text-black/70 hover:bg-black/7 dark:border-white/10 dark:bg-white/3 dark:text-white/70 dark:hover:bg-white/6"
           } ${!packageModeAvailable ? "cursor-not-allowed opacity-45" : ""}`}
         >
           Pakiety
@@ -153,9 +138,9 @@ export default function ClassConfigurator({
         </InputGroup>
       </Field>
 
-      <div className="space-y-3 pr-1 md:max-h-123 md:overflow-y-auto md:pr-2">
+      <div className="min-h-0 space-y-3 overflow-y-auto pr-1 md:pr-2">
         {filteredClasses.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-white/10 bg-white/3 px-5 py-7 text-sm leading-7 text-black/58 dark:text-white/55">
+          <div className="rounded-2xl border border-dashed border-black/10 bg-black/5 px-4 py-6 text-sm leading-6 text-black/60 dark:border-white/10 dark:bg-white/3 dark:text-white/55">
             Brak {selectionMode === "package" ? "pakietów" : "zajęć"} dla
             wybranej lokalizacji i filtrów. Zmień miasto, nazwę zajęć albo grupę
             wiekową uczestnika.
@@ -172,35 +157,35 @@ export default function ClassConfigurator({
             return (
               <article
                 key={item.id}
-                className="rounded-2xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/3 p-4 md:p-5"
+                className="rounded-2xl border border-black/10 bg-black/5 p-4 dark:border-white/10 dark:bg-white/3 md:p-5"
               >
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div className="flex flex-col gap-4">
                   <div className="min-w-0 space-y-2">
-                    <p className="text-base font-semibold leading-6  md:text-lg">
+                    <p className="break-words text-base font-semibold leading-6 text-black dark:text-white md:text-lg">
                       {item.name}
                     </p>
-                    <div className="ui-muted-label flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-black/55 dark:text-white/55">
-                      <p className="inline-flex items-center gap-1">
-                        <User className="w-4" />
-                        {ageLabel}
+
+                    <div className="ui-muted-label flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-black/60 dark:text-white/55">
+                      <p className="inline-flex items-center gap-1.5">
+                        <User className="h-4 w-4 shrink-0" />
+                        <span>{ageLabel}</span>
                       </p>
-                      <p className="inline-flex items-center gap-1">
-                        <Calendar className="w-4" />
-                        {item.frequency}
+                      <p className="inline-flex items-center gap-1.5">
+                        <Calendar className="h-4 w-4 shrink-0" />
+                        <span>{item.frequency}</span>
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-end justify-between gap-3 sm:min-w-47.5 sm:justify-end">
-                    <div className="sm:text-right">
-                      <p className="text-base font-semibold  md:text-lg">
+                  <div className="flex justify-between gap-3 items-end ">
+                    <div className="space-y-0.5">
+                      <p className="text-base font-semibold text-black dark:text-white md:text-lg">
                         {item.price.toFixed(2).replace(".", ",")} zł
                       </p>
-                      <p className="ui-muted-label text-xs text-black/45 dark:text-white/45">
+                      <p className="ui-muted-label text-xs text-black/50 dark:text-white/45">
                         miesięcznie
                       </p>
                     </div>
-
                     <button
                       type="button"
                       onClick={() =>
@@ -218,9 +203,9 @@ export default function ClassConfigurator({
                         })
                       }
                       disabled={isAdded}
-                      className={`inline-flex min-h-10 items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition ${
+                      className={`inline-flex min-h-11 w-fit items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition  ${
                         isAdded
-                          ? "cursor-not-allowed bg-black/10 dark:bg-white/10 text-black/45 dark:text-white/45"
+                          ? "cursor-not-allowed bg-black/10 text-black/45 dark:bg-white/10 dark:text-white/45"
                           : "bg-[#ac4967] text-white hover:opacity-90"
                       }`}
                     >
