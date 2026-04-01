@@ -110,11 +110,11 @@ export const scheduleContentData = {
         info: "Akrobatyka dla starszych: trudniejsze elementy, siła i stabilizacja, łączenie ruchów w sekwencje. Nacisk na technikę i bezpieczeństwo.",
       },
       {
-        name: "Partnerowanie Akro",
+        name: "Lekcje indywidualne",
         time: "19:00–20:00",
         instructor: "Anna Kowalska",
         age: "brak",
-        info: "Ćwiczenia w parach: podnoszenia, stabilizacja, zaufanie i komunikacja. Progresje od podstaw z bezpiecznymi wejściami/zejściami.",
+        info: "Trening 1:1 dopasowany do celu: technika, choreografia, przygotowanie do występu lub poprawa konkretnych elementów.",
       },
       {
         name: "Formacja dla dorosłych",
@@ -147,6 +147,13 @@ export const scheduleContentData = {
         age: "13–18",
         info: "Taniec współczesny dla młodzieży: technika, floorwork, dynamika i interpretacja muzyki. Praca nad jakością ruchu.",
       },
+      {
+        name: "Feminine flow",
+        time: "19:30–20:30",
+        instructor: "Anna Kowalska",
+        age: "18+",
+        info: "Zajęcia dla dorosłych: płynny, kobiecy styl, świadomość ciała i pewność siebie. Praca z choreografią w komfortowej atmosferze.",
+      },
     ],
 
     piątek: [
@@ -158,11 +165,11 @@ export const scheduleContentData = {
         info: "Trening 1:1 dopasowany do celu: technika, choreografia, przygotowanie do występu lub poprawa konkretnych elementów.",
       },
       {
-        name: "Feminine Flow 18+",
+        name: "Lekcje indywidualne",
         time: "17:00–18:00",
         instructor: "Anna Kowalska",
-        age: "18+",
-        info: "Zajęcia dla dorosłych: płynny, kobiecy styl, świadomość ciała i pewność siebie. Praca z choreografią w komfortowej atmosferze.",
+        age: "brak",
+        info: "Trening 1:1 dopasowany do celu: technika, choreografia, przygotowanie do występu lub poprawa konkretnych elementów.",
       },
       {
         name: "Lekcje indywidualne",
@@ -193,16 +200,23 @@ export const scheduleContentData = {
     środa: [
       {
         name: "Taniec dla 4–6 latków",
-        time: "16:00–17:00",
-        instructor: "brak",
+        time: "16:00–16:45",
+        instructor: "Talita Jarzęcka",
         age: "4–6",
         info: "Zajęcia ogólnorozwojowe z tańcem: rytm, koordynacja, proste kroki i zabawy ruchowe. Nauka pracy w grupie.",
       },
       {
-        name: "Hiphop 7–14 lat",
-        time: "17:00–18:30",
-        instructor: "brak",
-        age: "7–14",
+        name: "Hiphop ",
+        time: "16:45–17:45",
+        instructor: "Talita Jarzęcka",
+        age: "7–9",
+        info: "Hip-hop dla dzieci i młodzieży: groove, podstawowe kroki i technika, krótkie choreografie oraz praca w grupie. Rozwój muzykalności i pewności siebie.",
+      },
+      {
+        name: "Hiphop 10–15 lat",
+        time: "17:45–19:15",
+        instructor: "Talita Jarzęcka",
+        age: "10-15",
         info: "Hip-hop dla dzieci i młodzieży: groove, podstawowe kroki i technika, krótkie choreografie oraz praca w grupie. Rozwój muzykalności i pewności siebie.",
       },
     ],

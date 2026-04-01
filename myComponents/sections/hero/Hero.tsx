@@ -14,7 +14,7 @@ export default function Hero({
   videoSrc = "/assets/videos/lightHeroVid.mp4",
   posterSrc = "/assets/videos/vidPoster.png",
   title = "Hoodmood",
-  description = "Zajęcia dla dzieci, młodzieży i dorosłych, w tym hip-hop, breakdance, balet, taniec współczesny, high heels, KPOP, akrobatykę i lekcje indywidualne.",
+  description = "Zajęcia dla dzieci, młodzieży i dorosłych, w tym hip-hop, breakdance, balet, taniec współczesny, KPOP, akrobatyka i lekcje indywidualne.",
 }: HeroProps) {
   return (
     <div className="relative min-h-screen   isolate  overflow-hidden  text-white ">

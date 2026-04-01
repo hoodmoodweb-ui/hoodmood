@@ -19,7 +19,7 @@ export const faq: FaqItem[] = [
   {
     question: "Czy mogę przyjść na zajęcia próbne?",
     answer:
-      "Tak. Zajęcia próbne pozwalają sprawdzić poziom grupy, styl i prowadzenie. Daj znać wcześniej, żebyśmy mogli zarezerwować miejsce i dopasować Cię do odpowiedniej grupy wiekowej/poziomu.",
+      "Tak. Zajęcia próbne pozwalają sprawdzić poziom grupy, styl i prowadzenie. Jednorazowe wejście kosztuje 40zł. Co roku we wrześniu organizujemy  tydzień Dni Otwartych z darmowymi zajęciami próbnymi dla wszystkich grup.",
   },
   {
     question: "Czy trzeba mieć doświadczenie, żeby zacząć?",

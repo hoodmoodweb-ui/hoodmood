@@ -31,13 +31,17 @@ export const instructors: Trainer[] = [
       "/assets/images/team/talitaJarzecka.jpg",
     ],
     localizations: ["Koszalin", "Polanów", "Biały Bór"],
-    instagram: "https://www.instagram.com",
+    instagram: "https://www.instagram.com/talita_jarzecka/",
   },
   {
     id: "wiktoria-butwicka",
     name: "Wiktoria Butwicka",
     role: "Breakdance",
-    styles: ["Breakdance", "Hip-hop", "Freestyle", "Ladies dance"],
+    styles: [
+      "Taniec dla 4-6 latków",
+      "Feminine flow",
+      "Formacja dla dorosłych",
+    ],
 
     description:
       "Wiktoria Butwicka to tancerka i trenerka specjalizująca się w breakdance. Taniec towarzyszy jej od 2009 roku. Szkoliła się m.in. u instruktorów takich jak Klesia, Nikita czy Pumba. Brała udział w licznych turniejach w Polsce i za granicą (m.in. 2. miejsce w Wielkiej Brytanii, Top 8 breakdance na Tancbudzie). Korzystała też z prywatnych lekcji i warsztatów w różnych stylach. Jako trenerka uczy od trzech lat – prowadzi zajęcia breakdance dla dzieci 3–6 lat, grupy hip-hopowe oraz warsztaty dla młodzieży i dorosłych.",
@@ -47,7 +51,8 @@ export const instructors: Trainer[] = [
       "/assets/images/team/wiktoriaButwicka.jpg",
     ],
     localizations: ["Koszalin"],
-    instagram: "https://www.instagram.com",
+    instagram:
+      "https://www.instagram.com/_._._._wika_._._._?igsh=NWc5Z2w5dW5uNHlu",
   },
   {
     id: "paulina-walikowska",
@@ -63,7 +68,8 @@ export const instructors: Trainer[] = [
       "/assets/images/team/paulinaWalikowska.jpg",
     ],
     localizations: ["Koszalin"],
-    instagram: "https://www.instagram.com",
+    instagram:
+      "https://www.instagram.com/walikowska?igsh=MWJsazhrcHUxN2k5dA%3D%3D",
   },
   {
     id: "alina-lemanska",
@@ -79,7 +85,8 @@ export const instructors: Trainer[] = [
       "/assets/images/team/alinaLemanska.jpg",
     ],
     localizations: ["Koszalin"],
-    instagram: "https://www.instagram.com",
+    instagram:
+      "https://www.instagram.com/alinka_lem?igsh=MXU3bHE5ZmkwMTMxaQ%3D%3D",
   },
   {
     id: "magdalena-sokolowska-japona",
@@ -95,7 +102,8 @@ export const instructors: Trainer[] = [
       "/assets/images/team/magdalenaSokolowska.jpg",
     ],
     localizations: ["Koszalin"],
-    instagram: "https://www.instagram.com",
+    instagram:
+      "https://www.instagram.com/japona_sokolowska?igsh=Yzg3aWM1amVleHB0",
   },
   {
     id: "maria-kober",
@@ -111,13 +119,13 @@ export const instructors: Trainer[] = [
       "/assets/images/team/mariaKober.jpg",
     ],
     localizations: ["Koszalin"],
-    instagram: "https://www.instagram.com",
+    instagram: "https://www.instagram.com/marysiakober",
   },
   {
     id: "oliwia-piec",
     name: "Oliwia Piec",
-    role: "Formacje dla dorosłych",
-    styles: ["Formacje dla dorosłych", "Zajęcia dla dzieci 4–6"],
+    role: "Formacja dla dorosłych",
+    styles: ["Formacja dla dorosłych"],
 
     description:
       "Oliwia Piec od lat rozwija się tanecznie w ekipie Quality Crew, gdzie zdobywa doświadczenie jako tancerka sceniczna i instruktorka. Ma doświadczenie warsztatowe u wielu trenerów, współtworzyła projekty filmowe (w tym produkcję nominowaną na International Cyprus Dance Film Festival) oraz występowała w spektaklach „Halucynacje” i „Gen Z”. W studiu prowadzi formację dla dorosłych oraz zajęcia dla dzieci w wieku 4–6 lat.",
@@ -127,22 +135,40 @@ export const instructors: Trainer[] = [
       "/assets/images/team/oliwiaPiec.jpg",
     ],
     localizations: ["Koszalin"],
-    instagram: "https://www.instagram.com",
+    instagram:
+      "https://www.instagram.com/liwkaaa._?igsh=MWY2MndtN3psMXd5ZQ%3D%3D",
   },
   {
-    id: "robin-williams",
-    name: "Robin Williams",
+    id: "aleks-kultys",
+    name: "Aleks Kultys",
     role: "Formacje dla dorosłych",
     styles: ["Formacje dla dorosłych", "Zajęcia dla dzieci 4–6"],
 
     description:
-      "Robin Williams od lat rozwija się tanecznie w ekipie Quality Crew, gdzie zdobywa doświadczenie jako tancerka sceniczna i instruktorka. Ma doświadczenie warsztatowe u wielu trenerów, współtworzyła projekty filmowe (w tym produkcję nominowaną na International Cyprus Dance Film Festival) oraz występowała w spektaklach „Halucynacje” i „Gen Z”. W studiu prowadzi formację dla dorosłych oraz zajęcia dla dzieci w wieku 4–6 lat.",
+      "Poznajcie naszego trenera,akrobatyka to jego pasja i ogromna część naszych treningów. Aleks ukończył dwuczęściowe szkolenie z zakresu metodyki nauczania oraz techniki wykonywania elementów w skokach na ścieżce. Szczególną uwagę poświęca również bezpieczeństwu, posiada wiedzę i umiejętności z zakresu prawidłowego asekurowania oraz podtrzymywania dzieci podczas nauki nowych elementów, dzięki czemu treningi są nie tylko efektywne, ale przede wszystkim bezpieczne i dostosowane do poziomu każdego uczestnika. Swoje doświadczenie zdobywał, pracując z dziećmi na półkoloniach, w playparku oraz prowadząc regularne zajęcia z akrobatyki dla dzieci i młodzieży.",
     images: [
-      "/assets/images/team/robin_williams.jpeg",
-      "/assets/images/team/robin_williams.jpeg",
-      "/assets/images/team/robin_williams.jpeg",
+      "/assets/images/team/aleksKultys.jpeg",
+      "/assets/images/team/aleksKultys.jpeg",
+      "/assets/images/team/aleksKultys.jpeg",
     ],
     localizations: ["Koszalin"],
-    instagram: "https://www.instagram.com",
+    instagram:
+      "https://www.instagram.com/aleks_pk77?igsh=MXU1enAwODQ1ODRzMQ%3D%3D",
+  },
+  {
+    id: "milena-jasinska",
+    name: "Milena Jasińska",
+    role: "Taniec współczesny",
+    styles: ["Taniec współczesny"],
+
+    description:
+      "Milena jest absolwentką szkoły muzycznej na wydziale rytmiki, gdzie przez 12 lat zdobywała solidne wykształcenie muzyczno-ruchowe. Doskonałe wyczucie rytmu, świadomość ciała oraz umiejętność łączenia ruchu z muzyką stanowią fundament jej pracy. Dodatkowo gra na fortepianie, co przekłada się na wyjątkową muzykalność i wrażliwość artystyczną. Przez lata rozwijała się w różnych stylach tanecznych, a obecnie specjalizuje się w tańcu współczesnym oraz pole dance. Regularnie uczestniczy w warsztatach tanecznych, nieustannie podnosząc swoje kwalifikacje i poszerzając warsztat instruktorski. Jej doświadczenie, wykształcenie muzyczno-taneczne oraz wszechstronne podejście do pracy z ruchem doskonale wpisują się w kierunek, w którym chcemy się rozwijać. Jesteśmy przekonani, że wniesie do naszych zajęć nową jakość, świeżą energię i profesjonalizm.",
+    images: [
+      "/assets/images/team/milenaJasinska.jpg",
+      "/assets/images/team/milenaJasinska2.jpg",
+      "/assets/images/team/milenaJasinska.jpg",
+    ],
+    localizations: ["Koszalin"],
+    instagram: "https://www.instagram.com/_m_jasinska?igsh=dDNxamd3N3kyYjN6",
   },
 ];
