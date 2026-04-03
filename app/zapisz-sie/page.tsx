@@ -22,6 +22,7 @@ export default function TermsAndConditions() {
               className="aspect-square max-w-[60%]   object-contain "
             />
           </div> */}
+
         <EnrollmentForm />
 
         <AnyQuestionsContact />

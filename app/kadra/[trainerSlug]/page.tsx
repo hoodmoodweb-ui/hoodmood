@@ -114,17 +114,17 @@ export default async function TrainerPage({ params }: PageProps) {
               <div>
                 <h1 className=" text-3xl font-anton">{trainer.name}</h1>
 
-                <p className="mt-3 text-base  sm:text-lg">{trainer.role}</p>
+                {/* <p className="mt-3 text-base  sm:text-lg">{trainer.role}</p> */}
 
                 <div className="flex gap-2 ">
                   {trainer.localizations.map((localization, id) => (
-                    <p className="mt-2 text-sm " key={id}>
+                    <p className="mt-2 text-lg " key={id}>
                       {localization}
                     </p>
                   ))}
                 </div>
 
-                <p className="mt-8 max-w-2xl text-base leading-8 opacity-70 sm:text-lg">
+                <p className="mt-4 max-w-2xl text-base leading-8 opacity-70 sm:text-lg">
                   {trainer.description}
                 </p>
               </div>

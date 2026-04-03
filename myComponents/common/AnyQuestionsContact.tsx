@@ -19,7 +19,7 @@ export default function AnyQuestionsContact() {
           <Mail /> Napisz do nas
         </ButtonSecondary>
         <ButtonSecondary href="/kontakt">
-          <Phone /> 123 456 789
+          <Phone /> 577 198 599
         </ButtonSecondary>
       </div>
     </div>

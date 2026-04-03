@@ -30,7 +30,7 @@ export default function Localizations() {
             </CardHeader>
             <CardContent className="pt-2 text-muted-foreground">
               <p>{item.description}</p>
-              <div className="w-full flex justify-end">
+              <div className="w-full flex justify-end mt-4">
                 <ButtonSecondary href={`/grafik/${item.slug}`}>
                   Sprawdź grafik
                 </ButtonSecondary>

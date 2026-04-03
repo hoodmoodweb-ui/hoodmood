@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { a11y } from "@/public/styles";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -211,6 +212,7 @@ const CarouselPrevious = React.forwardRef<
       className={cn(
         "absolute h-10 w-10 rounded-full",
         carouselControlStyles,
+        a11y,
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2 hover:-translate-y-1/2 active:-translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90 hover:-translate-x-1/2 active:-translate-x-1/2",
@@ -220,7 +222,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="w-6 h-6" />
+      <ArrowLeft className="w-6 h-6 text-black " />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -239,18 +241,19 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-10 w-10 rounded-full",
+        "absolute h-10 w-10 rounded-full ",
         carouselControlStyles,
+        a11y,
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2 hover:-translate-y-1/2 active:-translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 hover:-translate-x-1/2 active:-translate-x-1/2",
+          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 hover:-translate-x-1/2 active:-translate-x-1/2 ",
         className,
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="h-6 w-6" />
+      <ArrowRight className="h-6 w-6 text-black" />
       <span className="sr-only">Next slide</span>
     </Button>
   );
