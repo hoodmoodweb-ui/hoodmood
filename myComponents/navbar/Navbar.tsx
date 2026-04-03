@@ -18,9 +18,9 @@ export default function Navbar() {
     <nav
       className={cn(
         isOpen
-          ? "bg-white dark:bg-[#1c1c1c] "
-          : "bg-white/50 dark:bg-black/42 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.20)] ",
-        "fixed inset-x-0 top-0 z-50   backdrop-blur-xl   ",
+          ? "bg-white/94 shadow-[0_10px_32px_rgba(0,0,0,0.08)] dark:bg-[#1c1c1c]/96 dark:shadow-[0_10px_32px_rgba(0,0,0,0.26)] "
+          : "bg-white/58 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:bg-black/42 dark:shadow-[0_8px_30px_rgba(0,0,0,0.20)] ",
+        "ui-interactive fixed inset-x-0 top-0 z-50 backdrop-blur-xl",
       )}
     >
       <Container>
@@ -30,9 +30,8 @@ export default function Navbar() {
             <Link
               href="/"
               className="
-                inline-flex items-center rounded-2xl
-                outline-none transition-transform duration-200
-                hover:scale-[0.98]
+                ui-focus-ring ui-interactive inline-flex items-center rounded-2xl
+                motion-safe:hover:scale-[0.985] motion-safe:hover:opacity-92
                 focus-visible:outline-none
                 focus-visible:ring-2 focus-visible:ring-[#21191d]/20
                 focus-visible:ring-offset-2 focus-visible:ring-offset-white

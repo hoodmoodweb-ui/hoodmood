@@ -14,16 +14,15 @@ import { NAV as navLinks } from "../navbar/data";
 const desktopNavListStyles = "flex items-center gap-1";
 
 const desktopNavTriggerStyles =
-  "group inline-flex py-2 items-center text-[14px] justify-center  rounded-lg px-4  font-bold uppercase tracking-[0.14em] text-[#1c1c1c]/98 transition-all duration-200 hover:bg-black/[0.04] hover:text-[#1c1c1c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1c1c1c]/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:text-white/78 dark:hover:bg-white/[0.06] dark:hover:text-white dark:focus-visible:ring-white/80 dark:focus-visible:ring-offset-[#1c1c1c] data-[state=open]:bg-black/[0.05] data-[state=open]:text-[#1c1c1c] dark:data-[state=open]:bg-white/[0.08] dark:data-[state=open]:text-white";
+  "ui-nav-link group rounded-lg font-bold text-[#1c1c1c]/98 data-[state=open]:text-[#1c1c1c] dark:text-white dark:data-[state=open]:text-white";
 
-const desktopNavLinkStyles =
-  "inline-flex py-2 items-center justify-center rounded-full px-4  text-[14px] font-semibold uppercase tracking-[0.14em] text-[#1c1c1c]/98 transition-all duration-200 hover:bg-black/[0.04] hover:text-[#1c1c1c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1c1c1c]/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:text-white/78 dark:hover:bg-white/[0.06] dark:hover:text-white dark:focus-visible:ring-white/80 dark:focus-visible:ring-offset-[#1c1c1c]";
+const desktopNavLinkStyles = "ui-nav-link text-[#1c1c1c]/98 dark:text-white";
 
 const desktopDropdownContentStyles =
   "min-w-[220px] rounded-xs  border border-black/[0.08] bg-white/92 p-2 dark:bg-[#1c1c1c]/98  shadow-[0_18px_48px_rgba(0,0,0,0.16)] backdrop-blur-xl dark:border-white/[0.10]  dark:shadow-[0_18px_48px_rgba(0,0,0,0.32)]";
 
 const desktopDropdownItemStyles =
-  "flex w-full items-center rounded-2xl px-4 py-3  font-semibold text-[12px] uppercase tracking-[0.12em] text-[#1c1c1c]/98 transition-colors duration-200 hover:bg-black/[0.04] hover:text-[#1c1c1c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1c1c1c]/20 dark:text-white/82 dark:hover:bg-white/[0.08] dark:hover:text-white dark:focus-visible:ring-white/80";
+  "ui-interactive ui-focus-ring flex w-full items-center rounded-2xl px-4 py-3 font-semibold text-[12px] uppercase tracking-[0.12em] text-[#1c1c1c]/98 motion-safe:hover:bg-black/[0.04] motion-safe:hover:pl-[1.125rem] focus-visible:ring-2 focus-visible:ring-[#1c1c1c]/20 dark:text-white/82 dark:motion-safe:hover:bg-white/[0.08] dark:motion-safe:hover:text-white dark:focus-visible:ring-white/80";
 
 export default function NavMenuDesktop() {
   return (
@@ -45,7 +44,7 @@ export default function NavMenuDesktop() {
                       <NavigationMenuLink key={link.label} asChild>
                         <Link
                           href={link.href}
-                          className={desktopDropdownItemStyles}
+                          className="hover:bg-black/3 dark:hover:bg-white/8"
                         >
                           {link.label}
                         </Link>

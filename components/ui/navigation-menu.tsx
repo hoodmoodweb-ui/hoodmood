@@ -59,7 +59,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-fit items-center justify-center rounded-full px-4 py-2 text-sm font-medium uppercase text-foreground/80 transition-[color,box-shadow,background-color] hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/60 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/35",
+  "group inline-flex h-fit items-center justify-center rounded-full px-4 py-2 text-sm font-medium uppercase text-foreground/80 transition-[color,box-shadow,background-color]  hover:text-accent-foreground focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50  data-[state=open]:text-accent-foreground  focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/35",
 );
 
 function NavigationMenuTrigger({
@@ -131,8 +131,8 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "text-nowrap  w-full  ",
-        "data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/60 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-lg p-3 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/35 [&_svg:not([class*='size-'])]:size-4",
+        "text-nowrap  w-full   ",
+        "   data-[active=true]:text-accent-foreground  hover:text-accent-foreground  focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-lg px-4 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/35 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}

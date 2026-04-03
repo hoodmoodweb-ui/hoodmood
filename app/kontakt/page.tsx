@@ -168,4 +168,4 @@ const fieldLabelStyles =
   "pl-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-black/55 dark:text-white/55";
 const infoCardStyles = "";
 const sectionSurfaceStyles =
-  "order-1 lg:order-2 rounded-lg border border-black/[0.06] bg-white/[0.72] p-5 shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-inset ring-white/50 backdrop-blur-xl dark:border-white/[0.08] dark:bg-white/[0.04] dark:shadow-[0_12px_40px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.06)] dark:ring-white/[0.05] md:p-6 xl:p-8";
+  " order-1 lg:order-2 rounded-lg border border-black/[0.06] bg-white/[0.72] p-5 shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-inset ring-white/50 backdrop-blur-xl dark:border-white/[0.08] dark:bg-white/[0.04] dark:shadow-[0_12px_40px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.06)] dark:ring-white/[0.05] md:p-6 xl:p-8";

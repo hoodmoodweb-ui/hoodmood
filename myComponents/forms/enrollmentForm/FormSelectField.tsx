@@ -43,7 +43,7 @@ export default function FormSelectField({
         disabled={disabled}
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
-        className="h-12 rounded-2xl border border-black/[0.08] bg-white/80 px-4 text-[#21191d] shadow-[0_8px_20px_rgba(0,0,0,0.06)] backdrop-blur-lg ring-1 ring-inset ring-black/[0.03] transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#21191d]/20 dark:border-white/[0.10] dark:bg-white/[0.06] dark:text-white/92 dark:ring-white/[0.05] dark:shadow-[0_8px_20px_rgba(0,0,0,0.18)] dark:focus-visible:ring-white/85"
+        className="ui-focus-ring ui-interactive h-12 rounded-2xl border border-black/[0.08] bg-white/80 px-4 text-[#21191d] shadow-[0_8px_20px_rgba(0,0,0,0.06)] backdrop-blur-lg ring-1 ring-inset ring-black/[0.03] motion-safe:hover:border-black/[0.12] motion-safe:hover:bg-white/92 focus-visible:ring-4 focus-visible:ring-[#21191d]/20 dark:border-white/[0.10] dark:bg-white/[0.06] dark:text-white/92 dark:ring-white/[0.05] dark:shadow-[0_8px_20px_rgba(0,0,0,0.18)] dark:motion-safe:hover:border-white/[0.16] dark:motion-safe:hover:bg-white/[0.09] dark:focus-visible:ring-white/85"
         {...registration}
       >
         <option value="">{placeholder}</option>

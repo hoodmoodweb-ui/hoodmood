@@ -96,7 +96,7 @@ export default function OfferFilterBar({
               <button
                 type="button"
                 onClick={() => setSearchName("")}
-                className="px-2 hover:cursor-pointer   inline-flex items-center gap-1 text-xs hover:text-black/15 dark:hover:text-white/60"
+                className="ui-focus-ring ui-interactive inline-flex items-center gap-1 rounded-full px-2 text-xs text-black/45 hover:cursor-pointer motion-safe:hover:text-black/75 focus-visible:ring-2 focus-visible:ring-ring/35 dark:text-white/45 dark:motion-safe:hover:text-white/70"
                 aria-label="Wyczyść wyszukiwanie zajęć"
               >
                 <CircleX className="size-4" />
@@ -133,7 +133,7 @@ export default function OfferFilterBar({
               <button
                 type="button"
                 onClick={() => setSearchAge("")}
-                className="px-2 hover:cursor-pointer   inline-flex items-center gap-1 text-xs hover:text-black/15 dark:hover:text-white/60"
+                className="ui-focus-ring ui-interactive inline-flex items-center gap-1 rounded-full px-2 text-xs text-black/45 hover:cursor-pointer motion-safe:hover:text-black/75 focus-visible:ring-2 focus-visible:ring-ring/35 dark:text-white/45 dark:motion-safe:hover:text-white/70"
                 aria-label="Wyczyść wiek uczestnika"
               >
                 <CircleX className="size-4" />

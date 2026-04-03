@@ -19,14 +19,14 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "ui-focus-ring ui-field flex h-10 w-full items-center justify-between whitespace-nowrap rounded-lg px-4 py-2 text-sm text-foreground data-[placeholder]:text-black/48 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:data-[placeholder]:text-white/32 [&>span]:line-clamp-1",
+      "ui-focus-ring ui-field ui-interactive group flex h-10 w-full items-center justify-between whitespace-nowrap rounded-lg px-4 py-2 text-sm text-foreground data-[placeholder]:text-black/48 motion-safe:hover:border-black/[0.12] motion-safe:hover:bg-white/90 dark:motion-safe:hover:border-white/[0.16] dark:motion-safe:hover:bg-white/[0.09] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:data-[placeholder]:text-white/32 [&>span]:line-clamp-1",
       className
     )}
     {...props}
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <ChevronDown className="h-4 w-4 opacity-50 transition-transform duration-250 ease-out group-data-[state=open]:rotate-180" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))
@@ -117,8 +117,8 @@ const SelectItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
     ref={ref}
-    className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-md py-2 pl-3 pr-8 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className={cn(
+      "ui-interactive relative flex w-full cursor-default select-none items-center rounded-md py-2 pl-3 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground motion-safe:hover:bg-accent/80 motion-safe:hover:pl-3.5 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}

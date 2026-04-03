@@ -46,13 +46,14 @@ export default function Footer() {
                   key={icon.name}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="group ui-icon-button size-10 border border-black/8 bg-white/50 shadow-[0_8px_20px_rgba(0,0,0,0.06)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.05]"
                 >
                   <img
                     width={24}
                     height={24}
                     alt={`${icon.name} logo`}
                     src={`/icons/${icon.name}.svg`}
-                    className={cn("dark:invert", a11y)}
+                    className={cn("dark:invert transition-transform duration-300 ease-out group-hover:scale-105", a11y)}
                   />
                 </Link>
               ))}
@@ -68,7 +69,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/oferta/koszalin"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                     >
                       Oferta
                     </Link>
@@ -76,7 +77,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/grafik/koszalin"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                     >
                       Grafik
                     </Link>
@@ -84,7 +85,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/cennik/koszalin"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                     >
                       Cennik
                     </Link>
@@ -92,7 +93,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/kadra"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                     >
                       Kadra
                     </Link>
@@ -100,7 +101,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/kolonie"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                     >
                       Kolonie
                     </Link>
@@ -108,7 +109,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/aktualnosci"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                     >
                       Aktualności
                     </Link>
@@ -122,7 +123,7 @@ export default function Footer() {
                     <a
                       href="/assets/pdf/standardy-ochrony-dzieci-przed-krzywdzeniem.pdf"
                       download={true}
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                     >
                       Standardy ochrony dzieci przed krzywdzeniem
                     </a>
@@ -130,7 +131,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="/assets/pdf/potwierdzenie-uczestnictwa-w-zajeciach.pdf"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                       download={true}
                     >
                       Potwierdzenie uczestnictwa w zajęciach
@@ -139,7 +140,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="/assets/pdf/umowa-uczestnictwa.pdf"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                       download={true}
                     >
                       Umowa uczestnictwa
@@ -148,7 +149,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="/assets/pdf/regulamin-studia-tanca-hoodmood.pdf"
-                      className={cn(a11y, "hover:underline opacity-80")}
+                      className={cn(a11y, "ui-link-subtle opacity-80")}
                       download={true}
                     >
                       Regulamin studia tańca Hoodmood
@@ -159,7 +160,7 @@ export default function Footer() {
             </div>
             <Link
               href={"/dofinansowanie"}
-              className={cn(a11y, "hover:underline text-xs")}
+              className={cn(a11y, "ui-link-subtle text-xs")}
             >
               Dofinansowano ze środków Funduszu rozwoju Kultury fizycznej
             </Link>
@@ -168,15 +169,15 @@ export default function Footer() {
         <div className="flex  justify-between  md:justify-between lg:items-center py-4 lg:py-8 text-xs">
           <p>Hoodmood&copy; {date.getFullYear()}</p>
           <div className="flex  md:flex-row gap-4 xl:flex-row xl:gap-8">
-            <Link href={"/faq"} className={cn(a11y, "hover:underline")}>
+            <Link href={"/faq"} className={cn(a11y, "ui-link-subtle")}>
               F.A.Q.
             </Link>
-            <Link href={"/regulamin"} className={cn(a11y, "hover:underline")}>
+            <Link href={"/regulamin"} className={cn(a11y, "ui-link-subtle")}>
               Regulamin
             </Link>
             <Link
               href="/polityka-prywatnosci"
-              className={cn(a11y, "hover:underline")}
+              className={cn(a11y, "ui-link-subtle")}
             >
               Polityka prywatności
             </Link>
