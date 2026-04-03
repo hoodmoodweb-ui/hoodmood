@@ -1,5 +1,3 @@
-import { sl } from "zod/v4/locales";
-
 export const data = {
   badge: "lokalizacje",
   title: "Nasze lokalizacje – Koszalin, Polanów i Biały Bór",

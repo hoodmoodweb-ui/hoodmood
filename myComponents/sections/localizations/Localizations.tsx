@@ -2,9 +2,7 @@ import SectionContent from "@/myComponents/common/SectionContent";
 import { data, localizations } from "./data";
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import { HoverCard } from "@/myComponents/common/HoverCard";
-import ButtonPrimary from "@/myComponents/common/ButtonPrimary";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import ButtonSecondary from "@/myComponents/common/ButtonSecondary";
 export default function Localizations() {
   return (

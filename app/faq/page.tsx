@@ -1,4 +1,3 @@
-import AnyQuestionsContact from "@/myComponents/common/AnyQuestionsContact";
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
 import { data, faq } from "./data";

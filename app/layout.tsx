@@ -67,25 +67,6 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-40 overflow-hidden ">
           <div className="absolute inset-0 bg-[url('/assets/images/static_bg.jpg')] dark:bg-[url('/assets/images/static_bg_dark.jpg')] bg-cover bg-center bg-no-repeat " />
 
-          {/* <video
-            src="/assets/images/bgVideo.mp4"
-            className="absolute inset-0 h-full w-full object-cover hidden dark:block"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          />
-          <video
-            src="/assets/images/bgVideoWhite.mp4"
-            className="absolute inset-0 h-full w-full object-cover dark:hidden"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          /> */}
-
           <div className="absolute inset-0 bg-white/50 dark:bg-black/80" />
         </div>
         <NextTopLoader

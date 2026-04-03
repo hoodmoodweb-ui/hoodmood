@@ -14,6 +14,7 @@ export type EnrollmentClassItem = {
   name: string;
   price: number;
   frequency: string;
+  frequencyDescription?: string;
   minAge: number | null;
   maxAge: number | null;
   category: string;
@@ -51,6 +52,7 @@ const koszalinClasses = koszalinPricingContent.zajecia.tableData.map(
     name: item.name,
     price: parsePrice(item.price),
     frequency: item.frequency,
+    frequencyDescription: item.frequencyDescription,
     minAge: parseAge(item.minAge),
     maxAge: parseAge(item.maxAge),
     category: item.category,
@@ -66,6 +68,7 @@ const koszalinPackages = koszalinPricingContent["pakiety-zajec"].tableData.map(
     name: item.name,
     price: parsePrice(item.price),
     frequency: item.frequency,
+    frequencyDescription: item.frequencyDescription,
     minAge: parseAge(item.minAge),
     maxAge: parseAge(item.maxAge),
     category: item.category,
@@ -80,6 +83,7 @@ const polanowClasses = polanowPricingTableData.map((item, index) => ({
   name: item.name,
   price: parsePrice(item.price),
   frequency: item.frequency,
+  frequencyDescription: item.frequencyDescription,
   minAge: parseAge(item.minAge),
   maxAge: parseAge(item.maxAge),
   category: item.category,
@@ -93,6 +97,7 @@ const bialyBorClasses = bialyBorPricingTableData.map((item, index) => ({
   name: item.name,
   price: parsePrice(item.price),
   frequency: item.frequency,
+  frequencyDescription: item.frequencyDescription,
   minAge: parseAge(item.minAge),
   maxAge: parseAge(item.maxAge),
   category: item.category,

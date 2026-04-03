@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   HoverCard,
@@ -165,7 +163,7 @@ export default function PricingTable({
                     : `${item.price} zł`}
                 </div>
 
-                <div className="flex justify-self-end md:justify-self-end  ">
+                <div className="flex justify-self-end">
                   <ButtonSecondary href={ctaHref}>Zapisz się</ButtonSecondary>
                 </div>
               </article>

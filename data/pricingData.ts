@@ -205,7 +205,7 @@ export const koszalinPricingContent: Record<
       {
         name: "Balet + akrobatyka",
         price: "240",
-        frequency: "1",
+        frequency: "2",
         frequencyDescription:
           "Balet: 1 raz w tygodniu. Akrobatyka: 1 raz w tygodniu.",
         trending: false,
@@ -216,7 +216,7 @@ export const koszalinPricingContent: Record<
       {
         name: "Young Generation + akrobatyka",
         price: "270",
-        frequency: "1",
+        frequency: "2",
         frequencyDescription:
           "Young Generation: 1 raz w tygodniu. Akrobatyka: 1 raz w tygodniu.",
         trending: false,
@@ -227,7 +227,7 @@ export const koszalinPricingContent: Record<
       {
         name: "Podstawa + K-POP/akrobatyka",
         price: "320",
-        frequency: "1",
+        frequency: "2",
         frequencyDescription:
           "Podstawa: 1 raz w tygodniu. K-POP lub akrobatyka: 1 raz w tygodniu.",
         trending: false,
@@ -238,7 +238,7 @@ export const koszalinPricingContent: Record<
       {
         name: "Podstawa + choreo",
         price: "320",
-        frequency: "1",
+        frequency: "2",
         frequencyDescription:
           "Podstawa: 1 raz w tygodniu. Choreo: 1 raz w tygodniu.",
         trending: false,
@@ -249,7 +249,7 @@ export const koszalinPricingContent: Record<
       {
         name: "Podstawa + choreo + taniec współczesny",
         price: "380",
-        frequency: "1",
+        frequency: "3",
         frequencyDescription:
           "Podstawa: 1 raz w tygodniu. Choreo: 1 raz w tygodniu. Taniec współczesny: 1 raz w tygodniu.",
         trending: false,

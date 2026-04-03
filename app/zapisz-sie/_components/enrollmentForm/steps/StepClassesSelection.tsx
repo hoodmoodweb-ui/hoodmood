@@ -1,6 +1,5 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
 
-import { enrollmentLocationOptions } from "@/lib/data/enrollment-classes";
 import type {
   EnrollmentFormData,
   SelectedClassItem,
@@ -8,7 +7,6 @@ import type {
 
 import ClassConfigurator from "../selection/ClassConfigurator";
 import SelectedClassesPanel from "../selection/SelectedClassesPanel";
-import { MapPin, User } from "lucide-react";
 
 type StepClassesSelectionProps = {
   mode?: "default" | "configurator" | "summary";
@@ -33,27 +31,8 @@ export default function StepClassesSelection({
   const participantAge = watch("participantAge");
   const selectedLocationId = watch("selectedLocationId");
 
-  const selectedLocation =
-    enrollmentLocationOptions.find(
-      (location) => location.id === selectedLocationId,
-    ) ?? null;
-
-  const selectedLocationLocativeLabel =
-    selectedLocation?.locativeLabel ?? "wybranej lokalizacji";
-
   const configuratorContent = (
     <div className="space-y-4 h-150">
-      {/* <div className=" flex  gap-4">
-        <p className="font-semibold  opacity-95 md:text-md tracking-wider inline-flex text-sm items-end gap-1 rounded-xl border border-white/10 bg-white/3 px-4 py-2 w-full justify-center md:items-center">
-          <User className="w-4 md:w-5 opacity-60" />{" "}
-          {participantAge !== "" ? `${participantAge} lat` : "Dorosły"}
-        </p>
-        <p className="font-semibold  opacity-95 md:text-md tracking-wider inline-flex text-sm items-end gap-1 rounded-xl border border-white/10 bg-white/3 px-4 py-2 w-full justify-center md:items-center">
-          <MapPin className="w-4 md:w-5 opacity-60" />
-          {selectedLocationLocativeLabel}
-        </p>
-      </div> */}
-
       <ClassConfigurator
         items={items}
         participantType={participantType}

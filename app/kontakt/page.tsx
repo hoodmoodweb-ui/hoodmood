@@ -3,9 +3,9 @@ import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
 import { data } from "./data";
 import MainWrapper from "@/myComponents/common/MainWrapper";
-
 import LocalizationsMapTabs from "./_components/LocalizationsMapTabs";
 import Form from "./_components/Form";
+
 export default function TermsAndConditions() {
   return (
     <MainWrapper>
@@ -17,15 +17,6 @@ export default function TermsAndConditions() {
         ></SectionContent>
 
         <div className=" grid grid-cols-1  gap-36 xl:grid-cols-[1fr_0.8fr] items-center">
-          {/* <img src={"/assets/svg/contact/black_paperplane.svg"} /> */}
-          {/* <img
-              src={"/assets/svg/contact/white_paperplane.svg"}
-              className="max-w-88 hidden dark:block"
-            />
-            <img
-              src={"/assets/svg/contact/black_paperplane.svg"}
-              className="max-w-88 dark:hidden"
-            /> */}
           <LocalizationsMapTabs />
 
           <div className={sectionSurfaceStyles}>
@@ -33,139 +24,11 @@ export default function TermsAndConditions() {
           </div>
         </div>
 
-        {/* <div className="mt-6 flex flex-col md:flex-row justify-evenly">
-          <div className={infoCardStyles}>
-            <h3 className="mb-4">Dane kontaktowe</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <Phone /> 123 456 789
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail /> hoodmood.recepcja@gmail.com
-              </li>
-            </ul>
-          </div>
-          <div className={infoCardStyles}>
-            <h3 className="mb-4">Lokalizacje</h3>
-            <ul className="space-y-3 ">
-              <li className="flex items-center gap-2">
-                <MapPin />
-                Koszalin, ul. Zwycięstwa 115 (siedziba)
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin />
-                Polanów, ul. Grabowe Wzgórze 5
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin />
-                Biały Bór, ul. Tamka 3{" "}
-              </li>
-            </ul>
-          </div>
-          <div className={infoCardStyles}>
-            <h3 className="mb-4">Socialmedia</h3>
-            <ul className="space-y-3 ">
-              <li className="flex items-center gap-2">
-                <img
-                  width={24}
-                  height={24}
-                  alt={`instagram logo`}
-                  src={`/icons/instagram.svg`}
-                  className="dark:invert"
-                />
-                <a
-                  href="http://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(a11y, "hover:underline")}
-                >
-                  @hoodmood
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <img
-                  width={24}
-                  height={24}
-                  alt={`facebook logo`}
-                  src={`/icons/facebook.svg`}
-                  className="dark:invert"
-                />
-                <a
-                  href="http://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(a11y, "hover:underline")}
-                >
-                  facebook.com/hoodmood
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <img
-                  width={24}
-                  height={24}
-                  alt={`tik-tok logo`}
-                  src={`/icons/tiktok.svg`}
-                  className="dark:invert"
-                />
-                <a
-                  href="http://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(a11y, "hover:underline")}
-                >
-                  @hoodmood
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <img
-                  width={24}
-                  height={24}
-                  alt={`youtube logo`}
-                  src={`/icons/youtube.svg`}
-                  className="dark:invert"
-                />
-                <a
-                  href="http://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(a11y, "hover:underline")}
-                >
-                  hoodmood
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <img
-                  width={24}
-                  height={24}
-                  alt={`spotify logo`}
-                  src={`/icons/spotify.svg`}
-                  className="dark:invert"
-                />
-                <a
-                  href="http://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(a11y, "hover:underline")}
-                >
-                  Hoodmood
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div> */}
-        {/* <LocalizationsMapTabs /> */}
-
         <AnyQuestionsContact />
       </SectionContainer>
     </MainWrapper>
   );
 }
-const contactTextareaStyles =
-  "min-h-[160px] rounded-2xl border border-black/[0.08] dark:border-white/[0.10] bg-white/80 dark:bg-white/[0.06] px-4 py-3 text-[#21191d] dark:text-white/92 placeholder:text-black/35 dark:placeholder:text-white/32 shadow-[0_8px_20px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.65)] dark:shadow-[0_8px_20px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-lg ring-1 ring-inset ring-black/[0.03] dark:ring-white/[0.05] transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#21191d]/20 dark:focus-visible:ring-white/85 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#21191d]";
-const contactInputStyles =
-  "h-12 rounded-2xl border border-black/[0.08] dark:border-white/[0.10] bg-white/80 dark:bg-white/[0.06] px-4 text-[#21191d] dark:text-white/92 placeholder:text-black/35 dark:placeholder:text-white/32 shadow-[0_8px_20px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.65)] dark:shadow-[0_8px_20px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-lg ring-1 ring-inset ring-black/[0.03] dark:ring-white/[0.05] transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#21191d]/20 dark:focus-visible:ring-white/85 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#21191d]";
-const fieldLabelStyles =
-  "pl-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-black/55 dark:text-white/55";
-const infoCardStyles = "";
+
 const sectionSurfaceStyles =
   " order-1 lg:order-2 rounded-lg border border-black/[0.06] bg-white/[0.72] p-5 shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-inset ring-white/50 backdrop-blur-xl dark:border-white/[0.08] dark:bg-white/[0.04] dark:shadow-[0_12px_40px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.06)] dark:ring-white/[0.05] md:p-6 xl:p-8";

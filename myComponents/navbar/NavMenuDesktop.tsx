@@ -21,9 +21,6 @@ const desktopNavLinkStyles = "ui-nav-link text-[#1c1c1c]/98 dark:text-white";
 const desktopDropdownContentStyles =
   "min-w-[220px] rounded-xs  border border-black/[0.08] bg-white/92 p-2 dark:bg-[#1c1c1c]/98  shadow-[0_18px_48px_rgba(0,0,0,0.16)] backdrop-blur-xl dark:border-white/[0.10]  dark:shadow-[0_18px_48px_rgba(0,0,0,0.32)]";
 
-const desktopDropdownItemStyles =
-  "ui-interactive ui-focus-ring flex w-full items-center rounded-2xl px-4 py-3 font-semibold text-[12px] uppercase tracking-[0.12em] text-[#1c1c1c]/98 motion-safe:hover:bg-black/[0.04] motion-safe:hover:pl-[1.125rem] focus-visible:ring-2 focus-visible:ring-[#1c1c1c]/20 dark:text-white/82 dark:motion-safe:hover:bg-white/[0.08] dark:motion-safe:hover:text-white dark:focus-visible:ring-white/80";
-
 export default function NavMenuDesktop() {
   return (
     <div className="hidden xl:flex justify-center ">
@@ -67,104 +64,4 @@ export default function NavMenuDesktop() {
       </NavigationMenu>
     </div>
   );
-}
-
-{
-  /* <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Oferta</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/oferta">Koszalin</Link>
-              </NavigationMenuLink>{" "}
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/oferta">Polanów</Link>
-              </NavigationMenuLink>{" "}
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/oferta">Biały Bór</Link>
-              </NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Grafik</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/oferta">Koszalin</Link>
-              </NavigationMenuLink>{" "}
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/docs">Polanów</Link>
-              </NavigationMenuLink>{" "}
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/docs">Biały Bór</Link>
-              </NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Cennik</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/docs">Koszalin</Link>
-              </NavigationMenuLink>{" "}
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/docs">Polanów</Link>
-              </NavigationMenuLink>{" "}
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <Link href="/docs">Biały Bór</Link>
-              </NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/docs">Kadra</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/docs">Kolonie</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/docs">Aktualności</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu> */
 }

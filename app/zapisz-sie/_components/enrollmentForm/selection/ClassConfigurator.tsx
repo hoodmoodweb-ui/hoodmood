@@ -1,9 +1,14 @@
 "use client";
 
-import { Calendar, SearchIcon, User } from "lucide-react";
+import { Calendar, Info, SearchIcon, User } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { Field, FieldLabel } from "@/components/ui/field";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import {
   InputGroup,
   InputGroupAddon,
@@ -81,6 +86,13 @@ export default function ClassConfigurator({
     numericAge,
     participantType,
   ]);
+
+  const getFrequencyLabel = (frequency: string) =>
+    frequency.includes("wej")
+      ? frequency
+      : frequency.includes("x/tyg")
+        ? frequency
+        : `${frequency}x/tyg`;
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-4">
@@ -161,7 +173,7 @@ export default function ClassConfigurator({
               >
                 <div className="flex flex-col gap-4">
                   <div className="min-w-0 space-y-2">
-                    <p className="break-words text-base font-semibold leading-6 text-black dark:text-white md:text-lg">
+                    <p className="wrap-break-word text-base font-semibold leading-6 text-black dark:text-white md:text-lg">
                       {item.name}
                     </p>
 
@@ -172,17 +184,33 @@ export default function ClassConfigurator({
                       </p>
                       <p className="inline-flex items-center gap-1.5">
                         <Calendar className="h-4 w-4 shrink-0" />
-                        <span>{item.frequency}</span>
+                        <span>{getFrequencyLabel(item.frequency)}</span>
+                        {(item.frequencyDescription || item.frequency !== "-") && (
+                          <HoverCard openDelay={20} closeDelay={20}>
+                            <HoverCardTrigger asChild>
+                              <button type="button" className="px-1">
+                                <Info className="h-4 w-4 text-muted-foreground" />
+                              </button>
+                            </HoverCardTrigger>
+                            <HoverCardContent className="text-sm" align="center">
+                              {item.frequencyDescription ??
+                                `Na wybrane zajęcia można wejść maksymalnie ${item.frequency} raz(y) w tygodniu.`}
+                            </HoverCardContent>
+                          </HoverCard>
+                        )}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex justify-between gap-3 items-end ">
-                    <div className="space-y-0.5">
+                  <div className="flex justify-between gap-3 items-end">
+                    <div className="space-y-0.5 md:flex md:items-center ">
                       <p className="text-base font-semibold text-black dark:text-white md:text-lg">
                         {item.price.toFixed(2).replace(".", ",")} zł
                       </p>
-                      <p className="ui-muted-label text-xs text-black/50 dark:text-white/45">
+                      <span className="hidden md:block ml-1 mt-1 text-xs ui-muted-label text-black/50 dark:text-white/45">
+                        /
+                      </span>
+                      <p className="ui-muted-label text-xs text-black/50 dark:text-white/45 md:mt-1">
                         miesięcznie
                       </p>
                     </div>
@@ -203,7 +231,7 @@ export default function ClassConfigurator({
                         })
                       }
                       disabled={isAdded}
-                      className={`inline-flex min-h-11 w-fit items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition  ${
+                      className={`inline-flex  w-fit items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition  ${
                         isAdded
                           ? "cursor-not-allowed bg-black/10 text-black/45 dark:bg-white/10 dark:text-white/45"
                           : "bg-[#ac4967] text-white hover:opacity-90"

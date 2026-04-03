@@ -93,12 +93,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  //   const postPages: MetadataRoute.Sitemap = posts.map((post) => ({
-  //     url: `${baseUrl}/aktualnosci/${post.slug}`,
-  //     lastModified: post.updatedAt ?? post.publishedAt ?? now,
-  //     changeFrequency: "monthly",
-  //     priority: 0.6,
-  //   }));
-
   return [...staticPages, ...cityPages, ...trainerPages];
 }

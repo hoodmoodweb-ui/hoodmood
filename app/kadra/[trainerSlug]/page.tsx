@@ -16,7 +16,7 @@ import AnyQuestionsContact from "@/myComponents/common/AnyQuestionsContact";
 import MainWrapper from "@/myComponents/common/MainWrapper";
 import { Badge } from "@/components/ui/badge";
 import ButtonSecondary from "@/myComponents/common/ButtonSecondary";
-import { ChevronRight, Instagram } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { a11y } from "@/public/styles";
 import { cn } from "@/lib/utils";
 
@@ -113,8 +113,6 @@ export default async function TrainerPage({ params }: PageProps) {
             <div className="flex flex-col justify-between ">
               <div>
                 <h1 className=" text-3xl font-anton">{trainer.name}</h1>
-
-                {/* <p className="mt-3 text-base  sm:text-lg">{trainer.role}</p> */}
 
                 <div className="flex gap-2 ">
                   {trainer.localizations.map((localization, id) => (

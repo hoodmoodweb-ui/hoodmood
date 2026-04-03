@@ -1,7 +1,6 @@
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
 import { data, featureCards } from "./data";
-import Link from "next/link";
 import {
   Card,
   CardDescription,
@@ -26,7 +25,6 @@ export default function ProofBento() {
                 key={featureCard.id}
                 className="w-full   overflow-hidden  mx-auto max-w-none "
               >
-                {/* <div className="h-fit "> */}
                 {featureCard.img !== null && (
                   <div className={cn("relative", featureCard.imgClass)}>
                     <Image
@@ -47,7 +45,6 @@ export default function ProofBento() {
                     {featureCard.description}
                   </CardDescription>
                 </CardHeader>
-                {/* </div> */}
               </Card>
             ))}
           </div>

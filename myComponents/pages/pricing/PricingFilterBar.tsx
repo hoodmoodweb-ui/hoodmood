@@ -28,19 +28,8 @@ export default function PricingFilterBar() {
   } = usePricingFilters();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[7fr_2fr_4fr] gap-8">
-      {/* <div   className="    grid grid-cols-1 md:grid-cols-[7fr_2fr_4fr] gap-5
-     rounded-[28px]
-     border border-black/[0.06] dark:border-white/[0.08]
-     bg-white/[0.72] dark:bg-white/[0.04]
-     backdrop-blur-xl
-     ring-1 ring-inset ring-white/50 dark:ring-white/[0.05]
-     shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.55)]
-     dark:shadow-[0_12px_40px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.06)]
-     p-4 md:p-5" > */}
-      {/* <Field className="flex-1"> */}
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-[7fr_2fr_4fr]">
       <Field className="flex flex-col gap-2.5">
-        {/* <FieldLabel htmlFor="searchInput">Wyszukaj zajęć</FieldLabel> */}
         <FieldLabel
           htmlFor="searchInput"
           className="ui-muted-label pl-1 text-[11px] font-semibold uppercase tracking-[0.16em]"
@@ -72,9 +61,7 @@ export default function PricingFilterBar() {
         </InputGroup>
       </Field>
 
-      {/* <Field className="flex-1"> */}
       <Field className="flex flex-col gap-2.5">
-        {/* <FieldLabel htmlFor="age">Wiek uczestnika</FieldLabel> */}
         <FieldLabel
           htmlFor="age"
           className="ui-muted-label pl-1 text-[11px] font-semibold uppercase tracking-[0.16em]"
@@ -114,9 +101,7 @@ export default function PricingFilterBar() {
         </InputGroup>
       </Field>
 
-      {/* <Field className="flex-1"> */}
       <Field className="flex flex-col gap-2.5">
-        {/* <FieldLabel>Sortowanie</FieldLabel> */}
         <FieldLabel className="ui-muted-label pl-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
           Sortowanie
         </FieldLabel>
@@ -157,8 +142,7 @@ export const inputStyles =
   "ui-field ui-outline ui-interactive h-10 rounded-lg text-foreground";
 export const selectTriggerStyles =
   "ui-field ui-outline ui-interactive h-10 rounded-lg px-5 text-foreground";
-export const selectContentStyles =
-  "ui-floating rounded-lg p-2";
+export const selectContentStyles = "ui-floating rounded-lg p-2";
 export const selectItemStyles =
   "ui-interactive rounded-md text-foreground focus:bg-accent motion-safe:hover:bg-accent/80";
 
