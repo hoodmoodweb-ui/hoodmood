@@ -19,14 +19,22 @@ function Switch({
 }: React.ComponentProps<typeof SwitchPrimitive.Root> & {
   size?: "sm" | "default";
 }) {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
   const themeSwitchLabel = "Przełącz motyw";
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isLightTheme = mounted && resolvedTheme === "light";
 
   return (
     <Tooltip delayDuration={0}>
       <TooltipTrigger asChild className="bg-(--brand-700)">
         <SwitchPrimitive.Root
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          checked={isLightTheme}
+          onCheckedChange={(checked) => setTheme(checked ? "light" : "dark")}
           aria-label={themeSwitchLabel}
           title={themeSwitchLabel}
           data-slot="switch"
