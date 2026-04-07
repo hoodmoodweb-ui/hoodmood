@@ -25,7 +25,7 @@ export default function TeamCard({ id, name, role, images }: Props) {
           src={images[0]}
           alt={name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+          sizes="(max-width: 767px) calc(100vw - 4rem), (max-width: 1279px) calc(33vw - 3rem), 280px"
           className="object-cover transition-transform duration-500 ease-out group-hover/card:scale-[1.035]"
           priority={false}
         />

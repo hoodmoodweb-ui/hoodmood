@@ -5,6 +5,7 @@ type HoverCardProps = {
   img: string;
   hoverImg: string;
   title: string;
+  sizes?: string;
   customStyles?: string;
 };
 
@@ -12,6 +13,7 @@ export function HoverCard({
   img,
   hoverImg,
   title,
+  sizes = "(max-width: 768px) 100vw, 420px",
   customStyles = "",
 }: HoverCardProps) {
   return (
@@ -26,7 +28,7 @@ export function HoverCard({
         src={img}
         alt={title}
         fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+        sizes={sizes}
         className="object-cover   transition-opacity duration-500 group-hover:opacity-0 "
       />
 
@@ -35,7 +37,7 @@ export function HoverCard({
         quality={75}
         alt=""
         fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+        sizes={sizes}
         className="object-cover   opacity-0 transition-opacity duration-500 group-hover:opacity-100 "
       />
     </div>

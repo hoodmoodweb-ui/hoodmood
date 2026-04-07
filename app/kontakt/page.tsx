@@ -5,6 +5,7 @@ import { data } from "./data";
 import MainWrapper from "@/myComponents/common/MainWrapper";
 import LocalizationsMapTabs from "./_components/LocalizationsMapTabs";
 import Form from "./_components/Form";
+import Toaster from "@/components/ui/sonner";
 
 export default function TermsAndConditions() {
   return (
@@ -25,6 +26,7 @@ export default function TermsAndConditions() {
         </div>
 
         <AnyQuestionsContact />
+        <Toaster />
       </SectionContainer>
     </MainWrapper>
   );

@@ -3,9 +3,11 @@ import { ChevronsDown } from "lucide-react";
 import ButtonSecondary from "@/myComponents/common/ButtonSecondary";
 import ButtonPrimary from "@/myComponents/common/ButtonPrimary";
 import LocationBadge from "./LocationBadge";
+import HeroVideo from "./HeroVideo";
 
 type HeroProps = {
   videoSrc?: string;
+  mobileVideoSrc?: string;
   posterSrc?: string;
   location?: string;
   title?: string;
@@ -14,7 +16,8 @@ type HeroProps = {
 
 export default function Hero({
   videoSrc = "/assets/videos/lightHeroVid.mp4",
-  posterSrc = "/assets/videos/vidPoster.png",
+  mobileVideoSrc = "/assets/optimized/home/lightHeroVid-mobile.mp4",
+  posterSrc = "/assets/optimized/home/hero-poster.jpg",
   title = "Hoodmood",
   description = "Zajęcia dla dzieci, młodzieży i dorosłych, w tym hip-hop, breakdance, balet, taniec współczesny, KPOP, akrobatyka i lekcje indywidualne.",
 }: HeroProps) {
@@ -30,19 +33,11 @@ export default function Hero({
         sizes="100vw"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
-      <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        poster={posterSrc}
-        controls={false}
-        aria-hidden="true"
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
+      <HeroVideo
+        videoSrc={videoSrc}
+        mobileVideoSrc={mobileVideoSrc}
+        posterSrc={posterSrc}
+      />
 
       <div className="mx-auto flex min-h-screen max-w-380 items-center">
         <div className="px-8 lg:px-12 xl:px-16">

@@ -20,6 +20,7 @@ const Offer = () => {
                 img={item.img}
                 hoverImg={item.hoverImg}
                 title={item.title}
+                sizes="(max-width: 767px) calc(100vw - 4rem), (max-width: 1023px) calc(50vw - 3rem), (max-width: 1279px) calc(25vw - 2rem), 280px"
                 customStyles="md:aspect-video lg:aspect-square"
               />
               <CardHeader>

@@ -4,6 +4,7 @@ import SectionContent from "@/myComponents/common/SectionContent";
 import { data } from "./data";
 import MainWrapper from "@/myComponents/common/MainWrapper";
 import EnrollmentForm from "./_components/enrollmentForm/EnrollmentForm";
+import Toaster from "@/components/ui/sonner";
 
 export default function TermsAndConditions() {
   return (
@@ -17,6 +18,7 @@ export default function TermsAndConditions() {
         <EnrollmentForm />
 
         <AnyQuestionsContact />
+        <Toaster />
       </SectionContainer>
     </MainWrapper>
   );

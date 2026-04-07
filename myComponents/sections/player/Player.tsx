@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionContainer from "@/myComponents/common/SectionContainer";
 import SectionContent from "@/myComponents/common/SectionContent";
 import { data } from "./data";
@@ -17,10 +18,14 @@ export default function Player() {
           />
           <div className="flex gap-8">
             <ButtonSecondary href="/spotify">
-              <img
+              <Image
                 src="/icons/spotify.svg"
-                className="w-4 dark:invert brightness-0 block"
-              />{" "}
+                alt=""
+                aria-hidden="true"
+                width={16}
+                height={16}
+                className="block w-4 dark:invert brightness-0"
+              />
               Spotify
             </ButtonSecondary>
             <ButtonSecondary href="/youtube">

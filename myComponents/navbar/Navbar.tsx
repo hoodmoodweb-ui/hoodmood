@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import MenuButton from "./MenuButton";
 import NavMenuDesktop from "./NavMenuDesktop";
@@ -40,9 +41,12 @@ export default function Navbar() {
               "
               aria-label="Przejdź do strony głównej"
             >
-              <img
-                src="/assets/svg/mainLogo/logo.svg"
+              <Image
+                src="/assets/optimized/home/logo.png"
                 alt="Hoodmood"
+                width={320}
+                height={259}
+                sizes="160px"
                 className="h-auto max-h-11 w-auto xl:max-h-14"
               />
             </Link>

@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/myComponents/navbar/Navbar";
 import Footer from "@/myComponents/footer/Footer";
 import NextTopLoader from "nextjs-toploader";
-import Toaster from "@/components/ui/sonner";
 
 const fontAnton = Anton({
   variable: "--anton",
@@ -65,7 +64,7 @@ export default function RootLayout({
         className={`${fontAnton.variable} ${fontRoboto.variable} w-full relative bg-transparent`}
       >
         <div className="fixed inset-0 -z-40 overflow-hidden ">
-          <div className="absolute inset-0 bg-[url('/assets/images/static_bg.jpg')] dark:bg-[url('/assets/images/static_bg_dark.jpg')] bg-cover bg-center bg-no-repeat " />
+          <div className="absolute inset-0 bg-[url('/assets/optimized/home/static-bg.jpg')] dark:bg-[url('/assets/optimized/home/static-bg-dark.jpg')] bg-cover bg-center bg-no-repeat " />
 
           <div className="absolute inset-0 bg-white/50 dark:bg-black/80" />
         </div>
@@ -90,7 +89,6 @@ export default function RootLayout({
           </TooltipProvider>
           {children}
           <Footer />
-          <Toaster />
         </ThemeProvider>
       </body>
     </html>

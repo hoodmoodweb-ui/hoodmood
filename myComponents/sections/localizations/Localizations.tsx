@@ -20,6 +20,7 @@ export default function Localizations() {
               img={item.img}
               hoverImg={item.hoverImg}
               title={item.title}
+              sizes="(max-width: 767px) calc(100vw - 4rem), (max-width: 1279px) calc(33vw - 3rem), 360px"
             />
             <CardHeader>
               <CardTitle className="font-anton font-light text-xl">
