@@ -28,6 +28,7 @@ export default function ProofBento() {
                 {featureCard.img !== null && (
                   <div className={cn("relative", featureCard.imgClass)}>
                     <Image
+                      quality={60}
                       src={featureCard.img!}
                       alt={featureCard.title}
                       fill

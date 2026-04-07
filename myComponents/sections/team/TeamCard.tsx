@@ -21,7 +21,7 @@ export default function TeamCard({ id, name, role, images }: Props) {
     <Card className="group/card overflow-hidden">
       <div className="relative aspect-square w-full overflow-hidden">
         <Image
-          quality={75}
+          quality={60}
           src={images[0]}
           alt={name}
           fill

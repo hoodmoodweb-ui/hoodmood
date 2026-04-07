@@ -20,12 +20,16 @@ function Switch({
   size?: "sm" | "default";
 }) {
   const { theme, setTheme } = useTheme();
+  const nextThemeLabel =
+    theme === "dark" ? "Włącz jasny motyw" : "Włącz ciemny motyw";
 
   return (
     <Tooltip delayDuration={0}>
       <TooltipTrigger asChild className="bg-(--brand-700)">
         <SwitchPrimitive.Root
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          aria-label={nextThemeLabel}
+          title={nextThemeLabel}
           data-slot="switch"
           data-size={size}
           className={cn(

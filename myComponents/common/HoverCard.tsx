@@ -24,7 +24,7 @@ export function HoverCard({
       )}
     >
       <Image
-        quality={75}
+        quality={60}
         src={img}
         alt={title}
         fill
@@ -34,7 +34,7 @@ export function HoverCard({
 
       <Image
         src={hoverImg}
-        quality={75}
+        quality={55}
         alt=""
         fill
         sizes={sizes}

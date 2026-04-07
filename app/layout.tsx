@@ -64,7 +64,7 @@ export default function RootLayout({
         className={`${fontAnton.variable} ${fontRoboto.variable} w-full relative bg-transparent`}
       >
         <div className="fixed inset-0 -z-40 overflow-hidden ">
-          <div className="absolute inset-0 bg-[url('/assets/optimized/home/static-bg.jpg')] dark:bg-[url('/assets/optimized/home/static-bg-dark.jpg')] bg-cover bg-center bg-no-repeat " />
+          <div className="absolute inset-0 bg-[url('/assets/optimized/home/static-bg.webp')] dark:bg-[url('/assets/optimized/home/static-bg-dark.webp')] bg-cover bg-center bg-no-repeat " />
 
           <div className="absolute inset-0 bg-white/50 dark:bg-black/80" />
         </div>
