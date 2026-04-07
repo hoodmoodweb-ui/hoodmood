@@ -20,16 +20,15 @@ function Switch({
   size?: "sm" | "default";
 }) {
   const { theme, setTheme } = useTheme();
-  const nextThemeLabel =
-    theme === "dark" ? "Włącz jasny motyw" : "Włącz ciemny motyw";
+  const themeSwitchLabel = "Przełącz motyw";
 
   return (
     <Tooltip delayDuration={0}>
       <TooltipTrigger asChild className="bg-(--brand-700)">
         <SwitchPrimitive.Root
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          aria-label={nextThemeLabel}
-          title={nextThemeLabel}
+          aria-label={themeSwitchLabel}
+          title={themeSwitchLabel}
           data-slot="switch"
           data-size={size}
           className={cn(
@@ -41,7 +40,7 @@ function Switch({
           <SwitchPrimitive.Thumb
             data-slot="switch-thumb"
             className={cn(
-              "bg-background  dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none  rounded-full ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0 flex items-center justify-center ",
+              "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none rounded-full ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0 flex items-center justify-center",
             )}
           >
             <ThemeSwitchIcon />
