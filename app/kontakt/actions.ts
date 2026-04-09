@@ -16,7 +16,7 @@ export async function submitContactForm(data: ContactFormData) {
     // Send email with Resend
     const result = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "hoodmoodweb@gmail.com",
+      to: "hoodmood.recepcja@gmail.com",
       subject: `Nowa wiadomość od ${validatedData.fullName}`,
       html: `
         <h2>Nowa wiadomość z formularza kontaktowego</h2>

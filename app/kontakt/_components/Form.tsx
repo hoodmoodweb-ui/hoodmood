@@ -5,16 +5,18 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, MessageSquareText, Phone, User } from "lucide-react";
 import { toast } from "sonner";
+import type { FieldError } from "react-hook-form";
 
 import { buttonPrimaryStyes } from "@/myComponents/common/ButtonPrimary";
 import { contactFormSchema } from "@/lib/schemas/contactSchema";
+import type { ContactFormInput } from "@/lib/schemas/contactSchema";
 import type { ContactFormData } from "@/lib/schemas/contactSchema";
 import { submitContactForm } from "../actions";
 import FormTextField from "@/myComponents/forms/fields/FormTextField";
 import FormCheckboxField from "@/myComponents/forms/fields/FormCheckboxField";
 import FormTextareaField from "@/myComponents/forms/fields/FormTextareaField";
 
-const defaultValues: ContactFormData = {
+const defaultValues: ContactFormInput = {
   fullName: "",
   email: "",
   phone: "",
@@ -29,13 +31,19 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<ContactFormData>({
+  } = useForm<ContactFormInput>({
     resolver: zodResolver(contactFormSchema),
     defaultValues,
     mode: "onSubmit",
   });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const phoneRegistration = register("phone", {
+    onChange: (event) => {
+      event.target.value = event.target.value.replace(/\D/g, "").slice(0, 9);
+    },
+  });
+
+  const onSubmit = async (data: ContactFormInput) => {
     try {
       const validatedData = contactFormSchema.parse(data);
       const response = await submitContactForm(validatedData);
@@ -93,13 +101,16 @@ export default function ContactForm() {
         <FormTextField
           id="input-field-phone"
           label="Numer telefonu"
-          type="tel"
+          type="text"
           placeholder="Wpisz numer telefonu"
           icon={Phone}
           disabled={isSubmitting}
-          error={errors.phone}
+          error={errors.phone as FieldError | undefined}
           wrapperClassName="flex flex-1 flex-col gap-2.5"
-          registration={register("phone")}
+          registration={phoneRegistration}
+          inputMode="numeric"
+          maxLength={9}
+          autoComplete="tel-national"
         />
       </div>
 
@@ -113,7 +124,7 @@ export default function ContactForm() {
         registration={register("message")}
       />
 
-      <FormCheckboxField<ContactFormData>
+      <FormCheckboxField<ContactFormInput>
         control={control}
         name="termsAccepted"
         id="terms-checkbox"
