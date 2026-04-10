@@ -30,7 +30,7 @@ export async function submitEnrollmentForm(data: EnrollmentFormData) {
       .join("");
 
     const result = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
+      from: process.env.RESEND_FROM_EMAIL || "zapisy@kontakt.hoodmood.pl",
       to:
         process.env.RESEND_ENROLLMENT_TO_EMAIL || "hoodmood.recepcja@gmail.com",
       subject: `Nowe zgłoszenie: ${validatedData.participantFullName}`,
